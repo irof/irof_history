@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical" >
+
+    <TextView
+        android:textSize="48dip"
+        android:textColor="#ff00ff"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+		android:layout_gravity="center|top"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/irof_world"
+        android:id="@+id/irof_title"
+        tools:context=".IrofActivity" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/irof_title"
+	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:id="@+id/viewpager"/>
+    	
+</RelativeLayout>
