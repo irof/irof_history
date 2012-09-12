@@ -3,6 +3,13 @@
     <string name="app_name">irof_history</string>
     <string name="irof_world">irof world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_irof">IrofActivity</string>
+    <string name="menu_capture">Capture</string>
+    
+    <string name="title_activity_irof">Irof History</string>
 
+    <string name="ask_capture">Do you want to save \n in the camera folder?</string>
+	<string name="infomation">Infomation</string>
+	<string name="d_saved">Has been saved.</string>
+    <string name="d_savedno">Could not be saved</string>
+    
 </resources>
