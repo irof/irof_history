@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">irof_history</string>
+    <string name="irof_world">irof world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_irof">IrofActivity</string>
+
+</resources>
