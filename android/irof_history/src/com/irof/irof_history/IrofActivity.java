@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnKeyListener;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,23 +11,19 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.irof.util.LogUtil;
 
 public class IrofActivity extends Activity {
 
-	
-	private Animation anime;
 	private Resources m_r;
 	private String TAG;
     @Override
@@ -38,7 +33,6 @@ public class IrofActivity extends Activity {
         
         TAG = LogUtil.getClassName();
         
-        anime = AnimationUtils.loadAnimation(this, R.anim.move);
         m_r = getResources();
         
         ViewPager mViewPager = _findViewById(R.id.viewpager);
@@ -83,7 +77,6 @@ public class IrofActivity extends Activity {
 
     	@Override
     	public void destroyItem(ViewGroup container, int position, Object object) {
-    		((ViewPager)container).removeView((View)object);
     	}
 
     	@Override
@@ -97,44 +90,26 @@ public class IrofActivity extends Activity {
     		return view.equals(object);
     	}
     }
-    
-	public void on_groovy(View v) {
+
+    public void on_groovy(View v) {
 		switch(v.getId()){
 			case R.id.icon_twitter05:
 				{
-					ImageView iv = _findViewById(R.id.icon_twitter05);
-					iv.setAnimation(anime);
-					iv.startAnimation(anime);
-					if(iv.getTag()==null || "normal".equals(iv.getTag())){
-						iv.setImageResource(R.drawable.icon_twitter05g);
-						iv.setTag("groovy");
-					}
-					else{
-						iv.setImageResource(R.drawable.icon_twitter05);
-						iv.setTag("normal");
-					}
+					IrofImageView iv = _findViewById(R.id.icon_twitter05);
+					iv.on_groovy(v);
 				}
 				break;
 			case R.id.icon_twitter07:
 				{
-					ImageView iv = _findViewById(R.id.icon_twitter07);
-					iv.setAnimation(anime);
-					iv.startAnimation(anime);
-					if(iv.getTag()==null || "normal".equals(iv.getTag())){
-						iv.setImageResource(R.drawable.icon_twitter07g);
-						iv.setTag("groovy");
-					}
-					else{
-						iv.setImageResource(R.drawable.icon_twitter07);
-						iv.setTag("normal");
-					}
+					IrofImageView iv = _findViewById(R.id.icon_twitter07);
+					iv.on_groovy(v);
 				}
 				break;
 			default:
 				break;
 		}
 	}
-	
+    
 	@SuppressWarnings("unchecked")
 	protected <T extends View> T _findViewById(final int id){
 	    return (T)findViewById(id);
@@ -233,5 +208,15 @@ public class IrofActivity extends Activity {
 	        return false;
 
 	    }
+	 
+		@Override
+	    public boolean onKeyDown(int keyCode, KeyEvent event) {
+	        if(keyCode == KeyEvent.KEYCODE_BACK){
+	        	onDestroy();
+				android.os.Process.killProcess(android.os.Process.myPid());
+				return false;
+	        }
+	        return super.onKeyDown(keyCode, event);
+		}
 
 }

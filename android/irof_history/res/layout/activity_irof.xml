@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.irof.irof_history.IrofDraw 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/root"
     android:layout_width="match_parent"
@@ -24,4 +25,4 @@
     	android:layout_height="wrap_content"
     	android:id="@+id/viewpager"/>
     	
-</RelativeLayout>
+</com.irof.irof_history.IrofDraw>
