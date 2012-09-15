@@ -12,6 +12,13 @@ import android.view.View;
 
 import com.irof.util.MouseUtil;
 
+/*
+ * note)
+ *  bitmap使わずに出来るか試作。ダメならbitmap作る形で
+ * 　　see http://dev.classmethod.jp/smartphone/android-tips-1-view/
+ * 
+ */
+
 public class IrofDrawUtil {
 
 	private static IrofDrawUtil instance = null;
@@ -30,7 +37,7 @@ public class IrofDrawUtil {
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
-        paint.setStrokeWidth(10);
+        paint.setStrokeWidth(15);
 	}
 
 	public void onDraw(Canvas canvas) {
@@ -127,6 +134,14 @@ public class IrofDrawUtil {
 				break;
 		}
 		return true;
+	}
+
+	public void clear() {
+		pathList.clear();
+	}
+
+	public void undo() {
+		pathList.remove(pathList.size()-1);
 	}
 	
 }

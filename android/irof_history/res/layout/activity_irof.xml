@@ -18,11 +18,28 @@
         android:text="@string/irof_world"
         android:id="@+id/irof_title"
         tools:context=".IrofActivity" />
+    
+    <com.irof.util.ViewIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/irof_title" />
 
     <android.support.v4.view.ViewPager
-        android:layout_below="@+id/irof_title"
+        android:layout_below="@+id/indicator"
 	    android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:id="@+id/viewpager"/>
+    	android:id="@+id/viewpager">
+    	<android.support.v4.view.PagerTabStrip
+        	android:id="@+id/pager_tab_strip"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="bottom"
+        	android:background="#33B5E5"
+        	android:textColor="#FFFFFF"
+        	android:paddingTop="10dp"
+        	android:paddingBottom="10dp" />
+    </android.support.v4.view.ViewPager>
+    
     	
 </com.irof.irof_history.IrofDraw>

@@ -29,4 +29,14 @@ public class IrofDraw extends RelativeLayout{
         return true;
     }
 
+	public void clear() {
+		instance.clear();
+        invalidate();
+	}
+
+	public void undo() {
+		instance.undo();
+        invalidate();
+	}
+
 }
