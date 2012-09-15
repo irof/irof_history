@@ -19,3 +19,10 @@ irof先生は日本中を旅する勉強会旅職人です。
     浪速商人の町　おおさか  
     制圧しに　　　とうきょう  
 に来ております
+
+
+--------
+一度Fork済みの場合は  
+git pull https://github.com/irof/irof_history.git
+
+see https://twitter.com/yusuke/status/245326267455512576

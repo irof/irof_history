@@ -1,18 +1,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_clear"
+        android:title="@string/menu_clear"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/menu_undo"
+        android:title="@string/menu_undo"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:orderInCategory="101"
+        android:showAsAction="ifRoom|withText" />
     <item android:id="@+id/menu_settings"
         android:title="@string/menu_settings"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:orderInCategory="100"
+        android:orderInCategory="102"
         android:showAsAction="ifRoom|withText" />
     <item android:id="@+id/menu_capture"
         android:title="@string/menu_capture"
         android:icon="@android:drawable/ic_menu_camera"
-        android:orderInCategory="101"
+        android:orderInCategory="103"
         android:showAsAction="ifRoom|withText" />
     <!-- 
     	システムリソースを使う場合
 	    	@android:drawable/XXXXX
 	    通常リソースを使う場合
 	    	@drawable/XXXXX
+	    	
+	    android:orderInCategory
+	    	の順にレイアウトが配置
      -->
 </menu>

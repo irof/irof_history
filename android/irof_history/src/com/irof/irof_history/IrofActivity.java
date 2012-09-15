@@ -2,33 +2,25 @@ package com.irof.irof_history;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnKeyListener;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.irof.util.LogUtil;
+import com.irof.util.ViewIndicator;
 
 public class IrofActivity extends Activity {
 
-	
-	private Animation anime;
 	private Resources m_r;
 	private String TAG;
     @Override
@@ -37,104 +29,43 @@ public class IrofActivity extends Activity {
         setContentView(R.layout.activity_irof);
         
         TAG = LogUtil.getClassName();
-        
-        anime = AnimationUtils.loadAnimation(this, R.anim.move);
         m_r = getResources();
         
         ViewPager mViewPager = _findViewById(R.id.viewpager);
-        PagerAdapter mPagerAdapter = new MyPagerAdapter();
+        IrofPageAdapter mPagerAdapter = new IrofPageAdapter(this);
         mViewPager.setAdapter(mPagerAdapter);
+        
+        //viewPagerにタブを付ける
+        PagerTabStrip pagerTabStrip = _findViewById(R.id.pager_tab_strip);
+        pagerTabStrip.setDrawFullUnderline(true);
+        pagerTabStrip.setTabIndicatorColor(Color.DKGRAY);
+        
+        //円形インジケータ追加
+        ViewIndicator indicator = _findViewById(R.id.indicator);
+        indicator.setViewPager(mViewPager);
+        indicator.setPosition(0);
     }
 
-    private class MyPagerAdapter extends PagerAdapter {
-		int[] pages = {
-				R.layout.layout01, 
-				R.layout.layout02, 
-				R.layout.layout03,
-				R.layout.layout04,
-				R.layout.layout05,
-				R.layout.layout06,
-   				R.layout.layout07,
-   				R.layout.layout08,
-   				R.layout.layout09,
-   				R.layout.layout10,
-   				R.layout.layout11,
-   				R.layout.layout12,
-   				R.layout.layout13,
-   		};
-		
-		//循環ループ対応
-		public final int MAX_PAGE_NUM = 1000;
-		private final int OBJECT_NUM = pages.length;
-    	
-		@Override
-    	public Object instantiateItem(ViewGroup container, int position) {
-			int diff = (position - (MAX_PAGE_NUM / 2)) % OBJECT_NUM;
-	    	int index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
-			//int index = position
-	    	
-    		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    		FrameLayout fn = (FrameLayout)inflater.inflate(pages[index], null);
-    		container.addView(fn);
-    		TextView tx = _findViewById(R.id.irof_title);
-    		tx.setText(String.format("%s %02d",m_r.getString(R.string.irof_world),index));
-    		return fn;
-    	}
 
-    	@Override
-    	public void destroyItem(ViewGroup container, int position, Object object) {
-    		((ViewPager)container).removeView((View)object);
-    	}
-
-    	@Override
-    	public int getCount() {
-    		return MAX_PAGE_NUM;
-    		//return OBJECT_NUM;
-    	}
-
-    	@Override
-    	public boolean isViewFromObject(View view, Object object) {
-    		return view.equals(object);
-    	}
-    }
-    
-	public void on_groovy(View v) {
+    public void on_groovy(View v) {
 		switch(v.getId()){
 			case R.id.icon_twitter05:
 				{
-					ImageView iv = _findViewById(R.id.icon_twitter05);
-					iv.setAnimation(anime);
-					iv.startAnimation(anime);
-					if(iv.getTag()==null || "normal".equals(iv.getTag())){
-						iv.setImageResource(R.drawable.icon_twitter05g);
-						iv.setTag("groovy");
-					}
-					else{
-						iv.setImageResource(R.drawable.icon_twitter05);
-						iv.setTag("normal");
-					}
+					IrofImageView iv = _findViewById(R.id.icon_twitter05);
+					iv.on_groovy(v);
 				}
 				break;
 			case R.id.icon_twitter07:
 				{
-					ImageView iv = _findViewById(R.id.icon_twitter07);
-					iv.setAnimation(anime);
-					iv.startAnimation(anime);
-					if(iv.getTag()==null || "normal".equals(iv.getTag())){
-						iv.setImageResource(R.drawable.icon_twitter07g);
-						iv.setTag("groovy");
-					}
-					else{
-						iv.setImageResource(R.drawable.icon_twitter07);
-						iv.setTag("normal");
-					}
+					IrofImageView iv = _findViewById(R.id.icon_twitter07);
+					iv.on_groovy(v);
 				}
 				break;
 			default:
 				break;
 		}
 	}
-	
+    
 	@SuppressWarnings("unchecked")
 	protected <T extends View> T _findViewById(final int id){
 	    return (T)findViewById(id);
@@ -153,6 +84,18 @@ public class IrofActivity extends Activity {
             return true;
         case R.id.menu_capture:
         	showMessageBox(m_r.getString(R.string.menu_capture), m_r.getString(R.string.ask_capture),true);
+            return true;
+        case R.id.menu_clear:
+        	{
+        		IrofDraw root = _findViewById(R.id.root);
+        		root.clear();
+        	}
+            return true;
+        case R.id.menu_undo:
+        	{
+        		IrofDraw root = _findViewById(R.id.root);
+        		root.undo();
+        	}
             return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -233,5 +176,15 @@ public class IrofActivity extends Activity {
 	        return false;
 
 	    }
+	 
+		@Override
+	    public boolean onKeyDown(int keyCode, KeyEvent event) {
+	        if(keyCode == KeyEvent.KEYCODE_BACK){
+	        	onDestroy();
+				android.os.Process.killProcess(android.os.Process.myPid());
+				return false;
+	        }
+	        return super.onKeyDown(keyCode, event);
+		}
 
 }
