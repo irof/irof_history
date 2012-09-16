@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="layout_titile">
+		<item>irof world 01</item>
+		<item>irof world 02</item>
+		<item>irof world 03</item>
+		<item>irof world 04</item>
+		<item>irof world 05</item>
+		<item>irof world 06</item>
+		<item>irof world 07</item>
+		<item>irof world 08</item>
+		<item>irof world 09</item>
+		<item>irof world 10</item>
+		<item>irof world 11</item>
+		<item>irof world 12</item>
+		<item>irof world 13</item>
+	</string-array>
+	
+	<!-- //see http://d.hatena.ne.jp/itog/20100713/1278987197 -->
+    <array name="layout_list">
+		<item>@layout/layout01</item>
+		<item>@layout/layout02</item>
+		<item>@layout/layout03</item>
+		<item>@layout/layout04</item>
+		<item>@layout/layout05</item>
+		<item>@layout/layout06</item>
+		<item>@layout/layout07</item>
+		<item>@layout/layout08</item>
+		<item>@layout/layout09</item>
+		<item>@layout/layout10</item>
+		<item>@layout/layout11</item>
+		<item>@layout/layout12</item>
+		<item>@layout/layout13</item>
+	</array>
+    	
+</resources>

@@ -141,7 +141,9 @@ public class IrofDrawUtil {
 	}
 
 	public void undo() {
-		pathList.remove(pathList.size()-1);
+		if(pathList.size()>=1){
+			pathList.remove(pathList.size()-1);
+		}
 	}
 	
 }

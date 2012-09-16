@@ -3,6 +3,7 @@ package com.irof.irof_history;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -47,7 +48,14 @@ public class IrofActivity extends Activity {
     }
 
 
-    public void on_groovy(View v) {
+    //二回目起動時に呼ばれる場所
+    @Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+	}
+
+
+	public void on_groovy(View v) {
 		switch(v.getId()){
 			case R.id.icon_twitter05:
 				{
@@ -75,6 +83,25 @@ public class IrofActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_irof, menu);
         return true;
+    }
+    
+    public void showViewStub(View v){
+		switch(v.getId()){
+	        case R.id.menu_clear:
+	    		{
+	    			IrofDraw root = _findViewById(R.id.root);
+	    			root.clear();
+	    		}
+	    		break;
+	        case R.id.menu_undo:
+		    	{
+		    		IrofDraw root = _findViewById(R.id.root);
+		    		root.undo();
+		    	}
+	    		break;
+	        default:
+	        	break;
+		}
     }
 
 	@Override
