@@ -3,7 +3,7 @@ irof_history for Android
 - markdownの練習もかねて  
  - http://github-preview.herokuapp.com/#
  - http://tokkono.cute.coocan.jp/blog/slow/index.php/programming/markdown-skills-for-github-beginners/
-
+ - http://codechord.com/2012/01/readme-markdown/
 ------
 概要  
 
