@@ -12,14 +12,15 @@ irof_history for Android
 
 - スクリーンショット
 
-![device-irof05](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-irof05.png)
+![device-05](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-05.png)
+![device-11](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-11.png)
 
 
 更新履歴
 
 - first commit
 - 画面保存機能追加
-- らくがき機能（暫定）
+- らくがき機能
  - アンドゥ
  - クリア 
 - インジケータ追加

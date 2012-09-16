@@ -11,30 +11,43 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.irof.util.LogUtil;
 import com.irof.util.ViewIndicator;
 
 public class IrofActivity extends Activity {
 
+	
+	public boolean pause_f = false;
+	public float m_density = 0;
+	
 	private Resources m_r;
 	private String TAG;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_irof);
-        
+
         TAG = LogUtil.getClassName();
         m_r = getResources();
+        game_main.instance = this;
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        float scale = (metrics.widthPixels /metrics.density) / 320 ;
+        m_density = metrics.density * scale;
+
         
-        ViewPager mViewPager = _findViewById(R.id.viewpager);
+        IrofViewPager mViewPager = _findViewById(R.id.viewpager);
         IrofPageAdapter mPagerAdapter = new IrofPageAdapter(this);
         mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setCurrentItem(0);
         
         //viewPagerにタブを付ける
         PagerTabStrip pagerTabStrip = _findViewById(R.id.pager_tab_strip);
@@ -45,6 +58,7 @@ public class IrofActivity extends Activity {
         ViewIndicator indicator = _findViewById(R.id.indicator);
         indicator.setViewPager(mViewPager);
         indicator.setPosition(0);
+        
     }
 
 
@@ -87,6 +101,14 @@ public class IrofActivity extends Activity {
     
     public void showViewStub(View v){
 		switch(v.getId()){
+			case R.id.menu_judge:
+	    		break;
+			case R.id.menu_pause:
+				pause_f = !pause_f;
+				ImageButton btn = (ImageButton)v;
+				if(!pause_f)btn.setImageResource(android.R.drawable.ic_menu_myplaces);
+				else		btn.setImageResource(android.R.drawable.ic_menu_my_calendar);
+	    		break;
 	        case R.id.menu_clear:
 	    		{
 	    			IrofDraw root = _findViewById(R.id.root);

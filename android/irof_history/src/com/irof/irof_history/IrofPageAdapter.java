@@ -1,58 +1,77 @@
 package com.irof.irof_history;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 public class IrofPageAdapter extends PagerAdapter{
 
 
 	private SparseIntArray pages;
 	private String[] title_arr;
-	
+
 	//循環ループ対応
+	private boolean mugen_f = false;
 	public final int MAX_PAGE_NUM = 1000;
 
 	private Activity activity;
 	private Resources m_r;
-	private LayoutInflater inflater;
+	private ArrayList<View> pages_fn;
 	public IrofPageAdapter(Activity activity_){
-		activity = activity_;
-		m_r = activity.getResources();
-		pages = new SparseIntArray();
-		
-       title_arr = m_r.getStringArray(R.array.layout_titile);
+	   activity = activity_;
+	   m_r = activity.getResources();
+       LayoutInflater inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+       
        TypedArray arr = m_r.obtainTypedArray(R.array.layout_list);
        int len = arr.length();
+       
+	   pages = new SparseIntArray(len);
+	   pages_fn = new ArrayList<View>(len);
        for(int i=0;i<len;i++){
-    	   pages.put(i, arr.getResourceId(i, -1));
+    	   int res_id =arr.getResourceId(i, -1);
+    	   pages.put(i, res_id);
+    	   FrameLayout fn = (FrameLayout)inflater.inflate(res_id, null);
+    	   pages_fn.add(fn);
        }
+       title_arr = m_r.getStringArray(R.array.layout_titile);
 
-	   inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+	   
 	}
 	
 	
 	@Override
 	public Object instantiateItem(ViewGroup container, int position) {
 		//無限ループ対応
-		/*
-		int OBJECT_NUM = pages.size();
-		int diff = (position - (MAX_PAGE_NUM / 2)) % OBJECT_NUM;
-    	int index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
-		*/
 		int index = position;
-    	
-		FrameLayout fn = (FrameLayout)inflater.inflate(pages.get(index), null);
-		container.addView(fn);
+		if(mugen_f){
+			int OBJECT_NUM = pages.size();
+			int diff = (position - (MAX_PAGE_NUM / 2)) % OBJECT_NUM;
+	    	index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
+		}
+		View fn = pages_fn.get(index);
+		
+		try {
+			ViewPager parent = (ViewPager)fn.getParent();
+			int len_child = parent ==null ? 0:parent.getChildCount();
+			for(int i=0;i < len_child;i++){
+				View vx  = parent.getChildAt(i);
+				if(vx.equals(fn)){
+					parent.removeView(vx);
+					break;
+				}
+			}
+			container.addView(fn);
+		} catch (Exception e) {}
 		//notifyDataSetChanged();
 		/*
 		TextView tx = _findViewById(R.id.irof_title);
@@ -63,11 +82,12 @@ public class IrofPageAdapter extends PagerAdapter{
 
 	@Override
 	public void destroyItem(ViewGroup container, int position, Object object) {
+		//下手に書くとエラーで落ちるっぽいよ？？
 	}
 
 	@Override
 	public int getCount() {
-		//return MAX_PAGE_NUM;
+		if(mugen_f)return MAX_PAGE_NUM;
 		return pages.size();
 	}
 
@@ -81,12 +101,12 @@ public class IrofPageAdapter extends PagerAdapter{
 	@Override
 	public CharSequence getPageTitle(int position) {
 		//無限ループ対応
-		/*
-		int OBJECT_NUM = pages.size();
-		int diff = (position - (MAX_PAGE_NUM / 2)) % OBJECT_NUM;
-    	int index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
-		*/
 		int index = position;
+		if(mugen_f){
+			int OBJECT_NUM = pages.size();
+			int diff = (position - (MAX_PAGE_NUM / 2)) % OBJECT_NUM;
+	    	index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
+		}
 
     	return title_arr[index];
 		//return super.getPageTitle(position);
