@@ -1,22 +1,35 @@
 package com.irof.irof_history;
 
+import java.util.HashMap;
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.view.PagerTabStrip;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.irof.util.LogUtil;
 import com.irof.util.ViewIndicator;
@@ -27,8 +40,11 @@ public class IrofActivity extends Activity {
 	public boolean pause_f = false;
 	public float m_density = 0;
 	
-	private Resources m_r;
-	private String TAG;
+	private TextToSpeech mTts;
+	private int initTtsMode= -1;
+	
+	private Resources m_r =null;
+	private String TAG ="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +54,39 @@ public class IrofActivity extends Activity {
         m_r = getResources();
         game_main.instance = this;
 
+        mTts = new TextToSpeech(this,new TextToSpeech.OnInitListener(){
+        		public void onInit(int status) {
+        			if (status != TextToSpeech.SUCCESS)return;
+        			
+        			int result = 0;
+        			do{
+            			Locale locale = Locale.getDefault();
+            			if(locale.equals(Locale.JAPAN) && isCheckJpTts()){
+                   			result = mTts.setLanguage(Locale.JAPAN);
+                			if (result == TextToSpeech.LANG_MISSING_DATA ||
+                    	        result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                       			//result = mTts.setLanguage(Locale.US);
+                			}
+                			else{
+                				initTtsMode= 1;
+                				break;
+                			}
+            			}
+            			
+               			result = mTts.setLanguage(Locale.US);
+            			
+            			if (result == TextToSpeech.LANG_MISSING_DATA ||
+            	            result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            	            LogUtil.error(TAG, "Language is not available.");
+            	            return;
+            	        }
+            			initTtsMode= 0;
+        			}while(false);
+        		}
+        	}
+        );
+        
+        //dip計算用のデータ
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         float scale = (metrics.widthPixels /metrics.density) / 320 ;
@@ -59,33 +108,78 @@ public class IrofActivity extends Activity {
         indicator.setViewPager(mViewPager);
         indicator.setPosition(0);
         
+        
     }
 
 
-    //二回目起動時に呼ばれる場所
+    @Override
+	protected void onDestroy() {
+    	   if (mTts != null) {
+               mTts.stop();
+               mTts.shutdown();
+           }
+    	   super.onDestroy();
+	}
+
+
+	//二回目起動時に呼ばれる場所
     @Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
 	}
 
+    //n2ttsが入っているか判定
+	private boolean isCheckJpTts() {
+		try{
+		  //パッケージ名を指定してインストール状況をチェック
+		  PackageManager packageManager = this.getPackageManager();
+		  ApplicationInfo applicationInfo = packageManager.getApplicationInfo("jp.kddilabs.n2tts",PackageManager.GET_META_DATA);
+		  if(applicationInfo==null)return false;
+		}
+		catch(NameNotFoundException exception){
+			return false;
+		}
+		return true;
+	}
 
+    
+    
+	private Animation animeB = null;
 	public void on_groovy(View v) {
-		switch(v.getId()){
+		int id = v.getId();
+		LogUtil.trace(TAG,"on_groovy:"+id);
+		switch(id){
 			case R.id.icon_twitter05:
-				{
-					IrofImageView iv = _findViewById(R.id.icon_twitter05);
-					iv.on_groovy(v);
-				}
-				break;
 			case R.id.icon_twitter07:
 				{
-					IrofImageView iv = _findViewById(R.id.icon_twitter07);
-					iv.on_groovy(v);
+					IrofImageView iv = _findViewById(v.getId());
+					if(iv!=null)iv.on_groovy(v);
 				}
 				break;
 			default:
-				break;
+				{
+					final ImageView iv = _findViewById(R.id.ball);
+					if(animeB==null){
+						animeB = AnimationUtils.loadAnimation(this, R.anim.out_to_right);
+						animeB.setAnimationListener( new AnimationListener() {
+							public void onAnimationEnd(Animation animation) {
+					        	iv.setVisibility(View.GONE);
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+							}
+
+							public void onAnimationStart(Animation animation) {
+					        	iv.setVisibility(View.VISIBLE);
+							}
+						});
+					}
+				iv.setAnimation(animeB);
+				iv.startAnimation(animeB);
+			}
+			break;
 		}
+
 	}
     
 	@SuppressWarnings("unchecked")
@@ -99,9 +193,45 @@ public class IrofActivity extends Activity {
         return true;
     }
     
+	private Animation animeJ = null;
     public void showViewStub(View v){
 		switch(v.getId()){
 			case R.id.menu_judge:
+				{
+					final FrameLayout fn = _findViewById(R.id.irof_judge);
+					final ImageView iv = _findViewById(R.id.judge_image);
+					final TextView tx = _findViewById(R.id.judge_text);
+					//if(animeJ==null){
+						animeJ = AnimationUtils.loadAnimation(this, R.anim.out_to_left);
+						animeJ.setAnimationListener( new AnimationListener() {
+							public void onAnimationEnd(Animation animation) {
+								fn.setVisibility(View.GONE);
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+							}
+
+							public void onAnimationStart(Animation animation) {
+								iv.setImageResource(R.drawable.duke_gradle);
+								tx.setText("がおー");
+								HashMap<String, String> params = new HashMap<String, String>();
+								params.put(TextToSpeech.Engine.KEY_PARAM_VOLUME, String.valueOf(0.8));
+								params.put(TextToSpeech.Engine.KEY_PARAM_PAN, String.valueOf(1.0));
+								switch(initTtsMode){
+									case 0://英語
+										mTts.speak("GAOO",TextToSpeech.QUEUE_FLUSH,params);
+										break;
+									case 1://日本語
+										mTts.speak("がおー",TextToSpeech.QUEUE_FLUSH,params);
+										break;
+								}
+								fn.setVisibility(View.VISIBLE);
+							}
+						});
+					//}
+					fn.setAnimation(animeJ);
+					fn.startAnimation(animeJ);
+				}
 	    		break;
 			case R.id.menu_pause:
 				pause_f = !pause_f;
@@ -233,6 +363,11 @@ public class IrofActivity extends Activity {
 				android.os.Process.killProcess(android.os.Process.myPid());
 				return false;
 	        }
+	        //Homeのキーコード対応は、セキュリティのため動きません
+//	        if(keyCode == KeyEvent.KEYCODE_HOME){
+//				return false;
+//	        }
+
 	        return super.onKeyDown(keyCode, event);
 		}
 
