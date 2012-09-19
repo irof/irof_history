@@ -6,5 +6,5 @@
             android:toXDelta="300%" 
             android:fillAfter="true"  
             android:fillEnabled="true" 
-            android:duration="1000"/>
+            android:duration="2000"/>
 </set>

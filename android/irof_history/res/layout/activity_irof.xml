@@ -78,7 +78,7 @@
         	android:paddingBottom="10dp" />
     </com.irof.irof_history.IrofViewPager>
 
-    <include layout="@layout/ball" android:visibility="gone"/>   
+    <include layout="@layout/ball"/>   
     <include layout="@layout/judge" 
         android:layout_toLeftOf="@+id/viewpager"
         android:id="@+id/irof_judge" android:visibility="gone"/>   
