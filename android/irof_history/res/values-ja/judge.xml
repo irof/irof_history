@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+   <!-- //診断メッセージ＆音声再生用いろふさん名言リスト -->
+   <!-- //とりあえずtwilogから引っ張ってきた-->
    <string-array name="judge_msg">
 		<item>がおー</item>
 		<item>おなかすいたすいた</item>
