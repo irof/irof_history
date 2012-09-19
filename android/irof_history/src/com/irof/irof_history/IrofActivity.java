@@ -1,39 +1,79 @@
 package com.irof.irof_history;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import java.util.HashMap;
+import java.util.Random;
+
+import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.ViewPager;
-import android.view.KeyEvent;
+import android.util.SparseIntArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.irof.util.LogUtil;
 import com.irof.util.ViewIndicator;
 
-public class IrofActivity extends Activity {
-
-	private Resources m_r;
-	private String TAG;
+public class IrofActivity extends IrofSuperActivty {
+	
+	private SparseIntArray balls;
+	private int len_ball = 0;
+	
+	private SparseIntArray agents;
+	private int len_agents = 0;
+	
+	private String[] judge_msg = null;
+	private String[] judge_voice = null;
+	private String[] judge_voice_jp = null;
+	
+	private String TAG ="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_irof);
-        
+
         TAG = LogUtil.getClassName();
-        m_r = getResources();
+        game_main.instance = this;
         
-        ViewPager mViewPager = _findViewById(R.id.viewpager);
+        
+        TypedArray arr = m_r.obtainTypedArray(R.array.ball_list);
+        len_ball = arr.length();
+
+        balls = new SparseIntArray(len_ball);
+        for(int i=0;i<len_ball;i++){
+     	   int res_id =arr.getResourceId(i, -1);
+     	   balls.put(i, res_id);
+        } 
+        
+        TypedArray arr2 = m_r.obtainTypedArray(R.array.agent_list);
+        len_agents = arr2.length();
+
+        agents = new SparseIntArray(len_agents);
+        for(int i=0;i<len_agents;i++){
+     	   int res_id =arr2.getResourceId(i, -1);
+     	  agents.put(i, res_id);
+        } 
+        
+        judge_msg = m_r.getStringArray(R.array.judge_msg);
+        judge_voice = m_r.getStringArray(R.array.judge_voice);
+        judge_voice_jp = m_r.getStringArray(R.array.judge_voice_jp);
+        
+        
+        
+        IrofViewPager mViewPager = _findViewById(R.id.viewpager);
         IrofPageAdapter mPagerAdapter = new IrofPageAdapter(this);
         mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setCurrentItem(0);
         
         //viewPagerにタブを付ける
         PagerTabStrip pagerTabStrip = _findViewById(R.id.pager_tab_strip);
@@ -46,35 +86,117 @@ public class IrofActivity extends Activity {
         indicator.setPosition(0);
     }
 
-
-    public void on_groovy(View v) {
-		switch(v.getId()){
+    
+    private static final Random RANDOM = new Random();
+	private Animation animeB = null;
+	public void on_groovy(View v) {
+		int id = v.getId();
+		LogUtil.trace(TAG,"on_groovy:"+id);
+		switch(id){
 			case R.id.icon_twitter05:
-				{
-					IrofImageView iv = _findViewById(R.id.icon_twitter05);
-					iv.on_groovy(v);
-				}
-				break;
 			case R.id.icon_twitter07:
 				{
-					IrofImageView iv = _findViewById(R.id.icon_twitter07);
-					iv.on_groovy(v);
+					IrofImageView iv = _findViewById(v.getId());
+					if(iv!=null)iv.on_groovy(v);
 				}
 				break;
 			default:
-				break;
+				{
+					final ImageView iv = _findViewById(R.id.ball);
+					iv.setImageResource(balls.get(RANDOM.nextInt(len_ball)));
+					if(animeB==null){
+						animeB = AnimationUtils.loadAnimation(this, R.anim.out_to_right);
+						animeB.setAnimationListener( new AnimationListener() {
+							public void onAnimationEnd(Animation animation) {
+					        	iv.setVisibility(View.GONE);
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+							}
+
+							public void onAnimationStart(Animation animation) {
+					        	iv.setVisibility(View.VISIBLE);
+							}
+						});
+					}
+				iv.setAnimation(animeB);
+				iv.startAnimation(animeB);
+			}
+			break;
 		}
 	}
     
-	@SuppressWarnings("unchecked")
-	protected <T extends View> T _findViewById(final int id){
-	    return (T)findViewById(id);
-	}
     
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_irof, menu);
-        return true;
+    private static final Random RANDOM_V = new Random();
+	public boolean pause_f = false;
+	private Animation animeJ = null;
+    public void showViewStub(View v){
+		switch(v.getId()){
+			case R.id.menu_judge:
+				{
+					final FrameLayout fn = _findViewById(R.id.irof_judge);
+					final ImageView iv = _findViewById(R.id.judge_image);
+					final TextView tx = _findViewById(R.id.judge_text);
+					//if(animeJ==null){
+						if(animeJ==null)animeJ = AnimationUtils.loadAnimation(this, R.anim.out_to_left);
+						final int pos = RANDOM.nextInt(len_agents);
+						final int pos_i = RANDOM_V.nextInt(len_agents);
+						animeJ.setAnimationListener( new AnimationListener() {
+							public void onAnimationEnd(Animation animation) {
+								fn.setVisibility(View.GONE);
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+							}
+
+							public void onAnimationStart(Animation animation) {
+								iv.setImageResource(agents.get(pos_i));
+								String vmsg = judge_msg[pos];
+								tx.setText(vmsg);
+								tx.setTextSize(64 * 4/vmsg.length());
+								fn.setVisibility(View.VISIBLE);
+								
+								mTts.setSpeechRate(1.0f);//しゃべる速さ（遅い＜＝＞速い）
+								mTts.setPitch(2.0f);//声の音程(低い＜＝＞高い)
+								HashMap<String, String> params = new HashMap<String, String>();
+								params.put(TextToSpeech.Engine.KEY_PARAM_VOLUME, String.valueOf(0.8));
+								params.put(TextToSpeech.Engine.KEY_PARAM_PAN, String.valueOf(1.0));
+								switch(initTtsMode){
+									case 0://英語
+										mTts.speak(judge_voice[pos],TextToSpeech.QUEUE_FLUSH,params);
+										break;
+									case 1://日本語
+										mTts.speak(judge_voice_jp[pos],TextToSpeech.QUEUE_FLUSH,params);
+										break;
+								}
+							}
+						});
+					//}
+					fn.setAnimation(animeJ);
+					fn.startAnimation(animeJ);
+				}
+	    		break;
+			case R.id.menu_pause:
+				pause_f = !pause_f;
+				ImageButton btn = (ImageButton)v;
+				if(!pause_f)btn.setImageResource(android.R.drawable.ic_menu_myplaces);
+				else		btn.setImageResource(android.R.drawable.ic_menu_my_calendar);
+	    		break;
+	        case R.id.menu_clear:
+	    		{
+	    			IrofDraw root = _findViewById(R.id.root);
+	    			root.clear();
+	    		}
+	    		break;
+	        case R.id.menu_undo:
+		    	{
+		    		IrofDraw root = _findViewById(R.id.root);
+		    		root.undo();
+		    	}
+	    		break;
+	        default:
+	        	break;
+		}
     }
 
 	@Override
@@ -101,90 +223,16 @@ public class IrofActivity extends Activity {
             return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	private static AlertDialog alertDialog = null;
-	public void showMessageBox(final String title, final String message) {
-		showMessageBox(title,message,false);
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_irof, menu);
+        return true;
+    }
+
+	//二回目起動時に呼ばれる場所
+    @Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
 	}
-	public void showMessageBox(final String title, final String message,boolean cancel_f) {
-		if(alertDialog!=null){
-			alertDialog.dismiss();
-			alertDialog=null;
-		}
-		LogUtil.trace(TAG, "showMessageBox ");
-		LogUtil.trace(TAG, "title = " + title);
-		LogUtil.trace(TAG, "message = " + message);
-
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle(title);
-		alertDialogBuilder.setIcon(R.drawable.ic_launcher);
-		alertDialogBuilder.setMessage(message);
-		alertDialogBuilder.setPositiveButton("OK",
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						if(m_r.getString(R.string.menu_capture).equals(title)){
-							if(saveImage(findViewById(R.id.root))){
-								showMessageBox(m_r.getString(R.string.infomation), m_r.getString(R.string.d_saved));
-							}
-							else{
-								showMessageBox(m_r.getString(R.string.infomation), m_r.getString(R.string.d_savedno));
-							}
-						}
-					}
-				});
-		if(cancel_f){
-			alertDialogBuilder.setNegativeButton("Cancel",
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int which) {
-						}
-					});
-		}
-		alertDialogBuilder.setCancelable(false);
-		alertDialog = alertDialogBuilder.create();
-		alertDialog.show();
-	}
-
-	
-	 public boolean saveImage(View view) {
-	        // 該当のViewのサイズを取得し、Bitmapを生成する
-	        int width = view.getWidth();
-	        int height = view.getHeight();
-	        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);// ①
-
-	        // Viewのdrawメソッドを実行する
-	        Canvas canvas = new Canvas(bitmap);
-	        view.draw(canvas);// ②
-
-	        // Bitmapを保存する
-	        try {
-	        	String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "", null);
-	        	if(url!=null) {
-	        		return true;
-	        	}
-//	            String file =
-//	                    Environment.getExternalStorageDirectory().getPath()
-//	                            + "/capture.png";
-//	            FileOutputStream fos = new FileOutputStream(file);
-//	            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos); // ③
-//	            fos.close();
-	        } catch (Exception e) {
-	        }
-	        finally{
-		        // bitmapの破棄
-		        bitmap.recycle();
-	        }
-	        return false;
-
-	    }
-	 
-		@Override
-	    public boolean onKeyDown(int keyCode, KeyEvent event) {
-	        if(keyCode == KeyEvent.KEYCODE_BACK){
-	        	onDestroy();
-				android.os.Process.killProcess(android.os.Process.myPid());
-				return false;
-	        }
-	        return super.onKeyDown(keyCode, event);
-		}
-
 }

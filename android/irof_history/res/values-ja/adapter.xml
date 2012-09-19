@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="layout_titile">
+		<item>いろふのせかい01</item>
+		<item>いろふのせかい02</item>
+		<item>いろふのせかい03</item>
+		<item>いろふのせかい04</item>
+		<item>いろふのせかい05</item>
+		<item>いろふのせかい06</item>
+		<item>いろふのせかい07</item>
+		<item>いろふのせかい08</item>
+		<item>いろふのせかい09</item>
+		<item>いろふのせかい10</item>
+		<item>いろふのせかい11</item>
+		<item>いろふのせかい12</item>
+		<item>いろふのせかい13</item>
+	</string-array>
+	
+</resources>

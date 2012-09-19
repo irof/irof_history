@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!-- //診断メッセージ＆音声再生用いろふさん名言リスト -->
+   <!-- //とりあえずtwilogから引っ張ってきた-->
+   <string-array name="judge_msg">
+		<item>がおー</item>
+		<item>おなかすいたすいた</item>
+		<item>ごめんなさい嘘です……</item>
+		<item>お待ちしてますw</item>
+		<item>転がってますw</item>
+		<item>失敗した失敗した失敗した。</item>
+		<item>どうどう……</item>
+		<item>刺されるw</item>
+		<item>来世かも</item>
+		<item>ひ、ひやかしじゃないよ！</item>
+		<item>内緒にしとく</item>
+   </string-array>
+   <string-array name="judge_voice">
+		<item>GAOO</item>
+		<item>ONAKASUITA.SUITA</item>
+		<item>GOMENASAI.USODESU</item>
+		<item>OMACHISHITEORIMASU</item>
+		<item>KOROGATEMASU</item>
+		<item>SHIPAISHITA.SHIPAISHITA.SHIPAISHITA.</item>
+		<item>DOUDOU</item>
+		<item>SASARERU</item>
+		<item>RAISEKAMO</item>
+		<item>HI.HIYAKASHIJYANAIYO</item>
+		<item>NAISYONISHITOKU</item>
+	</string-array>
+   <string-array name="judge_voice_jp">
+		<item>がおー</item>
+		<item>おなかすいたすいた</item>
+		<item>ごめんなさい嘘です……</item>
+		<item>お待ちしてますw</item>
+		<item>転がってますw</item>
+		<item>失敗した失敗した失敗した。</item>
+		<item>どうどう……</item>
+		<item>刺されるw</item>
+		<item>来世かも</item>
+		<item>ひ、ひやかしじゃないよ！</item>
+		<item>内緒にしとく</item>
+	</string-array>
+   
+</resources>

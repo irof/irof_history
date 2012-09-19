@@ -7,25 +7,62 @@
     android:orientation="vertical" 
     android:background="#ffffff">
 
-    <TextView
-        android:textSize="48dip"
-        android:textColor="#ff00ff"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|top"
-		android:layout_gravity="center|top"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/irof_world"
-        android:id="@+id/irof_title"
-        tools:context=".IrofActivity" />
+  <LinearLayout
+    android:id="@+id/irof_liner"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:padding="5dip"
+    >
+    <ImageButton
+      android:id="@+id/menu_judge"
+      android:layout_weight="1"
+      android:layout_width="0dip"
+      android:layout_height="30dip"
+      android:layout_margin="5dip"
+      android:background="#ffffff"
+      android:src="@android:drawable/ic_menu_view"
+      android:onClick="showViewStub"
+      />
+    <ImageButton
+      android:id="@+id/menu_clear"
+      android:layout_weight="1"
+      android:layout_width="0dip"
+      android:layout_height="30dip"
+      android:layout_margin="5dip"
+      android:background="#ffffff"
+      android:src="@android:drawable/ic_menu_delete"
+      android:onClick="showViewStub"
+      />
+    <ImageButton
+      android:id="@+id/menu_undo"
+      android:layout_weight="1"
+      android:layout_width="0dip"
+      android:layout_height="30dip"
+      android:layout_margin="5dip"
+      android:background="#ffffff"
+      android:src="@android:drawable/ic_menu_recent_history"
+      android:onClick="showViewStub"
+      />
+    <ImageButton
+      android:id="@+id/menu_pause"
+      android:layout_weight="1"
+      android:layout_width="0dip"
+      android:layout_height="30dip"
+      android:layout_margin="5dip"
+      android:background="#ffffff"
+      android:src="@android:drawable/ic_menu_myplaces"
+      android:onClick="showViewStub"
+      />
+    </LinearLayout>
     
     <com.irof.util.ViewIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
         android:layout_height="30dp"
-        android:layout_below="@id/irof_title" />
-
-    <android.support.v4.view.ViewPager
+        android:layout_below="@id/irof_liner" />
+    
+    <com.irof.irof_history.IrofViewPager
         android:layout_below="@+id/indicator"
 	    android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
@@ -35,11 +72,16 @@
         	android:layout_width="match_parent"
         	android:layout_height="wrap_content"
         	android:layout_gravity="bottom"
-        	android:background="#33B5E5"
+        	android:background="#7f7f7f"
         	android:textColor="#FFFFFF"
         	android:paddingTop="10dp"
         	android:paddingBottom="10dp" />
-    </android.support.v4.view.ViewPager>
+    </com.irof.irof_history.IrofViewPager>
+
+    <include layout="@layout/ball"/>   
+    <include layout="@layout/judge" 
+        android:layout_toLeftOf="@+id/viewpager"
+        android:id="@+id/irof_judge" android:visibility="gone"/>   
     
     	
 </com.irof.irof_history.IrofDraw>
