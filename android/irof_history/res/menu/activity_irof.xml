@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 
     <item android:id="@+id/menu_clear"
         android:title="@string/menu_clear"
         android:icon="@android:drawable/ic_menu_delete"
@@ -9,6 +10,7 @@
         android:icon="@android:drawable/ic_menu_recent_history"
         android:orderInCategory="101"
         android:showAsAction="ifRoom|withText" />
+-->
     <item android:id="@+id/menu_settings"
         android:title="@string/menu_settings"
         android:icon="@android:drawable/ic_menu_preferences"

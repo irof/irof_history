@@ -6,11 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.os.Build;
 import android.view.MotionEvent;
-import android.view.View;
-
-import com.irof.util.MouseUtil;
 
 /*
  * note)
@@ -27,32 +23,65 @@ public class IrofDrawUtil {
 		if(instance==null)instance = new IrofDrawUtil();
 		return instance;
 	}
-
-	private Paint paint;
+	
     private ArrayList<Path> pathList = new ArrayList<Path>();
+    private ArrayList<Paint> paintList = new ArrayList<Paint>();
     private Path path;
 
 	private IrofDrawUtil(){
-        paint = new Paint();
+	}
+	
+	private double colorCnt =0;
+	private Paint createPaint(){
+		Paint paint = new Paint(Paint.DITHER_FLAG);
         paint.setColor(Color.GREEN);
+        //paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
-        paint.setStrokeWidth(15);
+
+        paint.setXfermode(null);
+        paint.setMaskFilter(null);
+        paint.setAlpha(0xFF);
+
+        if(game_main.instance==null){
+        	paint.setStrokeWidth(15);
+        }
+        else{
+    		paint.setStrokeWidth(15 * game_main.instance.m_density);
+        }
+
+		colorCnt += 0.1;
+		if (colorCnt >= 1.0) {
+			colorCnt -= 1.0;
+		}
+		float hsv[] = { (float) colorCnt * 360, 1.0f, 1.0f };
+		int c = Color.HSVToColor(hsv);
+		int r = Color.red(c);
+		int g = Color.green(c);
+		int b = Color.blue(c);
+		paint.setColor(Color.argb(255, r, g, b));
+
+        return paint;
 	}
 
 	public void onDraw(Canvas canvas) {
-        for (Path path : pathList) {
+		int len_path = pathList.size();
+		for(int i=0;i<len_path;i++){
+			Path path =pathList.get(i);
+			Paint paint =paintList.get(i);
             canvas.drawPath(path, paint);
         }
 	}
 
 	public void onTouchEvent(MotionEvent event) {
+		
         switch (event.getAction()) {
         case MotionEvent.ACTION_DOWN:
             // タッチしたとき
             path = new Path();
             path.moveTo(event.getX(), event.getY());
             pathList.add(path);
+            paintList.add(createPaint());
             break;
         case MotionEvent.ACTION_MOVE:
             // タッチしたまま動かしたとき
@@ -65,83 +94,23 @@ public class IrofDrawUtil {
         default:
             break;
         }
+        
 	}
 
-	public boolean onTouch(View v, MotionEvent event) {
-		int action = event.getAction();
 
-		int[] l = new int[2];
-	    v.getLocationOnScreen(l);
-	    int h_x = l[0];
-	    int h_y = l[1];
-
-		switch (action) {
-			case MotionEvent.ACTION_DOWN:
-			case MotionEvent.ACTION_POINTER_DOWN:
-			case MotionEvent.ACTION_POINTER_2_DOWN:
-			case MotionEvent.ACTION_POINTER_3_DOWN:
-			case 0x306:
-			case 0x406:
-				if(Build.VERSION.SDK_INT>=5){
-					int pointCount = MouseUtil.getPointerCount(event);
-					for (int p = 0; p < pointCount; p++) {
-						int px=(int)MouseUtil.getX(event,p) + h_x;
-						int py=(int)MouseUtil.getY(event,p) + h_y;
-			            path = new Path();
-			            path.moveTo(px, py);
-			            pathList.add(path);
-					}
-				}
-				else{
-		            path = new Path();
-		            path.moveTo(event.getX(), event.getY());
-		            pathList.add(path);
-				}
-				break;
-
-	        case MotionEvent.ACTION_MOVE:
-	            // タッチしたまま動かしたとき
-				if(Build.VERSION.SDK_INT>=5){
-					int pointCount = MouseUtil.getPointerCount(event);
-					for (int p = 0; p < pointCount; p++) {
-						int px=(int)MouseUtil.getX(event,p) + h_x;
-						int py=(int)MouseUtil.getY(event,p) + h_y;
-			            path.lineTo(px, py);
-					}
-				}
-				else{
-		            path.lineTo(event.getX(), event.getY());
-				}
-	            break;
-				
-			case MotionEvent.ACTION_UP:
-			case MotionEvent.ACTION_POINTER_UP:
-			case MotionEvent.ACTION_POINTER_2_UP:
-			case MotionEvent.ACTION_POINTER_3_UP:
-			case 0x305:
-			case 0x405:
-				if(Build.VERSION.SDK_INT>=5){
-					int pointCount = MouseUtil.getPointerCount(event);
-					for (int p = 0; p < pointCount; p++) {
-						int px=(int)MouseUtil.getX(event,p) + h_x;
-						int py=(int)MouseUtil.getY(event,p) + h_y;
-			            path.lineTo(px, py);
-					}
-				}
-				else{
-		            path.lineTo(event.getX(), event.getY());
-				}
-				break;
-		}
-		return true;
-	}
-
+	
 	public void clear() {
 		pathList.clear();
+		paintList.clear();
 	}
 
 	public void undo() {
-		pathList.remove(pathList.size()-1);
+		if(pathList.size()>=1){
+			pathList.remove(pathList.size()-1);
+		}
+		if(paintList.size()>=1){
+			paintList.remove(paintList.size()-1);
+		}
 	}
 	
 }

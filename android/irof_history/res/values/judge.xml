@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="agent_list">
+		<item>@drawable/duke_agenda</item>
+		<item>@drawable/duke_code</item>
+		<item>@drawable/duke_gradle_g</item>
+		<item>@drawable/duke_gradle</item>
+		<item>@drawable/duke_groovy</item>
+		<item>@drawable/duke_java</item>
+		<item>@drawable/duke_junit</item>
+		<item>@drawable/duke_scala</item>
+		<item>@drawable/duke_scala2gradle</item>
+	</array>
+    
+   
+   <string-array name="judge_msg">
+		<item>GAO-</item>
+   </string-array>
+   <string-array name="judge_voice">
+		<item>GAOO</item>
+   </string-array>
+   
+</resources>

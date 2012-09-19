@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/irof_judge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	  <LinearLayout
+   		android:gravity="center|left"
+		android:layout_gravity="center|left"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	
+	    <TextView 
+	        android:scrollHorizontally="false"
+        	android:id="@+id/judge_text"
+        	android:textColor="@color/deepskyblue"
+        	android:textSize="64dip"
+        	android:textStyle="bold"
+        	android:text="ああ"
+        	android:layout_marginRight="10dip"
+        	android:shadowDx="3.0"
+	        android:shadowDy="5.0"
+	        android:shadowRadius="2.0"
+    	    android:shadowColor="#00ff00"
+	    	android:layout_width="150dip"
+   			android:layout_height="wrap_content"/>
+      	<ImageView
+        	android:id="@+id/judge_image"
+	    	android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:src="@drawable/duke_gradle"
+   			/>
+      	
+	  </LinearLayout>      
+    
+</FrameLayout>

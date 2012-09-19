@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ball_list">
+		<item>@drawable/grails</item>
+		<item>@drawable/griffon</item>
+		<item>@drawable/gradle</item>
+		<item>@drawable/gaelyk</item>
+	</array>
+    
+</resources>
