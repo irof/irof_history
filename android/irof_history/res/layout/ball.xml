@@ -11,6 +11,6 @@
    		android:layout_height="wrap_content"
    		android:gravity="center"
 		android:layout_gravity="center"
-   		android:background="@drawable/grails"
+   		android:src="@drawable/grails"
     />
 </FrameLayout>
