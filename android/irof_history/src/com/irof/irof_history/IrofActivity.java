@@ -3,6 +3,8 @@ package com.irof.irof_history;
 import java.util.HashMap;
 import java.util.Random;
 
+import yanzm.products.quickaction.lib.ActionItem;
+import yanzm.products.quickaction.lib.QuickAction;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -198,14 +200,42 @@ public class IrofActivity extends IrofSuperActivty {
 	        	break;
 		}
     }
-
+    
+    private final int MENU_CAPTURE = 200;
+    android.view.View.OnClickListener qaAction = new android.view.View.OnClickListener(){
+    	public void onClick(View v) {
+    		switch(v.getId()){
+    			case MENU_CAPTURE:
+    				showMessageBox(m_r.getString(R.string.menu_capture), m_r.getString(R.string.ask_capture),true);
+    				break;
+    			default:
+    				break;
+    		}
+    	}
+    };
+    
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
         case R.id.menu_settings:
             return true;
-        case R.id.menu_capture:
-        	showMessageBox(m_r.getString(R.string.menu_capture), m_r.getString(R.string.ask_capture),true);
+        case R.id.menu_preferences:
+        	{
+        		View anchor = this.findViewById(R.id.pager_tab_strip);
+        		QuickAction qa = new QuickAction(anchor);
+
+        		ActionItem capture = new ActionItem();  
+        		capture.setId(MENU_CAPTURE);
+        		capture.setTitle(m_r.getString(R.string.menu_capture));  
+        		capture.setIcon(getResources().getDrawable(android.R.drawable.ic_menu_camera));  
+        		capture.setOnClickListener(qaAction);
+        		qa.addActionItem(capture);
+        		
+        		qa.setLayoutStyle(QuickAction.STYLE_LIST);
+        		qa.setAnimStyle(QuickAction.ANIM_GROW_FROM_CENTER);  
+        		qa.show();
+        	}
+        	//showMessageBox(m_r.getString(R.string.menu_capture), m_r.getString(R.string.ask_capture),true);
             return true;
         case R.id.menu_clear:
         	{

@@ -4,6 +4,7 @@
    <!-- //とりあえずtwilogから引っ張ってきた-->
    <string-array name="judge_msg">
 		<item>がおー</item>
+		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
 		<item>お待ちしてますw</item>
@@ -17,6 +18,7 @@
    </string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
+		<item>KIJYOUNO KURON WA AKITA！ WARERAGA MOTOMERUWA JIXTUSENNAEI！</item>
 		<item>ONAKASUITA.SUITA</item>
 		<item>GOMENASAI.USODESU</item>
 		<item>OMACHISHITEORIMASU</item>
@@ -30,6 +32,7 @@
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
+		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
 		<item>お待ちしてますw</item>

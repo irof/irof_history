@@ -3,6 +3,7 @@
     <string name="app_name">irofの黒歴史</string>
     <string name="irof_world">irofの世界!</string>
     <string name="menu_settings">設定</string>
+    <string name="menu_preferences">ツールBOX</string>
     <string name="menu_capture">画面キャプチャ</string>
     <string name="menu_clear">画面クリア</string>
     <string name="menu_undo">アンドゥ</string>
@@ -14,5 +15,7 @@
     <string name="infomation">通知</string>
     <string name="d_saved">保存しました</string>
     <string name="d_savedno">保存できませんでした</string>
+    
+    <string name="newAccountBaseName">いろふさんの友達</string>
     
 </resources>
