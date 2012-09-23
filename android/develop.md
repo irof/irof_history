@@ -16,7 +16,7 @@ emuratorで動かす場合の設定
 ------
 キーの設定、取得
 
- - res/values/ad_keymst.xml => ad_key.xmlをコピー作成してください(.gitignoreには上がらない設定になっています)
+ - setting/ad_key_mst.xml => res/values/ad_key.xmlをコピー作成してください(.gitignoreには上がらない設定になっています)
  - nakamapのキーを取得してください
   - http://developer.nakamap.com/
   - nakamap自体のユーザ登録が必要です（別途公式アプリ等が必要かも）
