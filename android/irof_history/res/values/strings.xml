@@ -3,6 +3,7 @@
     <string name="app_name">irof_history</string>
     <string name="irof_world">irof world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_preferences">ToolBox</string>
     <string name="menu_capture">Capture</string>
     <string name="menu_clear">Clear</string>
     <string name="menu_undo">Undo</string>
@@ -14,5 +15,7 @@
 	<string name="infomation">Infomation</string>
 	<string name="d_saved">Has been saved.</string>
     <string name="d_savedno">Could not be saved</string>
+    
+    <string name="newAccountBaseName">Irof Friends</string>
     
 </resources>

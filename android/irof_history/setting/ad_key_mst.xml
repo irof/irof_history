@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- //サンプルのID。正式版取得の事 -->
+    <string name="nakamap_scheme">nakamapapp-d534747a58dba2003deb451bc49fdce211eed4bb</string>
+    <string name="nakamap_clientid">d534747a58dba2003deb451bc49fdce211eed4bb</string>
+    <string name="nakamap_client_sercret"></string>
+    
+    
+    <string name="adUnitId_mediation"></string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="nakamapsdk_confirm_launch_appstore">AppStoreで「ナカマップ」をダウンロードします（無料！）</string>
+  <string name="nakamapsdk_ok">OK</string>
+  <string name="nakamapsdk_cancel">キャンセル</string>
+  <string name="nakamapsdk_access_token_response_error">サーバエラー1.</string>
+  <string name="nakamapsdk_access_token_response_empty_error">サーバエラー2.</string>
+  <string name="nakamapsdk_take_photo">写真をとる</string>
+  <string name="nakamapsdk_choose_from_album">ギャラリーから選ぶ</string>
+  <string name="nakamapsdk_unselect_photo">選択を解除</string>
+  <string name="nakamapsdk_use_photo">この写真を使う</string>
+  <string name="nakamapsdk_open_with_browser">このURLをブラウザで開きますか？</string>
+  <string name="nakamapsdk_dear_nakamap_team">ナカマップ開発チームへ</string>
+  <string name="nakamapsdk_close">閉じる</string>
+  <string name="nakamapsdk_unsupported_pasteboart_copy">この端末はコピーをサポートしていません。</string>
+  <string name="nakamapsdk_invaite">招待する</string>
+  <string name="nakamapsdk_invaite_application_not_found">招待できるアプリケーションがインストールされていません。</string>
+  <string name="nakamapsdk_proper_scheme_is_not_defined">AndroidManifest.xmlのcom.kayac.nakamap.sdk.activity.NakamapActivityのintent-filterを以下のように設定して下さい。\n\n  &lt;intent-filter&gt;\n      &lt;action android:name=\"android.intent.action.VIEW\" /&gt;\n      &lt;category android:name=\"android.intent.category.DEFAULT\" /&gt;\n      &lt;category android:name=\"android.intent.category.BROWSABLE\" /&gt;\n      &lt;data android:scheme=\"nakamapapp-%1$s\" /&gt;\n  &lt;/intent-filter&gt;</string>
+  <string name="nakamapsdk_failed_to_attach_photo">写真の添付に失敗しました。</string>
+  <string name="nakamapsdk_failed_open_nakamap_activity">チャットを開けませんでした。ネットワークの状況を確認してください。</string>
+</resources>

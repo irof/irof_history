@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="nakamapsdk_confirm_launch_appstore">Nakamap from AppStore (Free!)</string>
+  <string name="nakamapsdk_ok">OK</string>
+  <string name="nakamapsdk_cancel">Cancel</string>
+  <string name="nakamapsdk_access_token_response_error">server error 1.</string>
+  <string name="nakamapsdk_access_token_response_empty_error">server error 2.</string>
+  <string name="nakamapsdk_take_photo">Take a photo</string>
+  <string name="nakamapsdk_choose_from_album">Choose from Gallery</string>
+  <string name="nakamapsdk_unselect_photo">Unselect photo</string>
+  <string name="nakamapsdk_use_photo">Use this photo</string>
+  <string name="nakamapsdk_open_with_browser">Open URL in Browser?</string>
+  <string name="nakamapsdk_dear_nakamap_team">Dear Nakamap team,</string>
+  <string name="nakamapsdk_close">Close</string>
+  <string name="nakamapsdk_unsupported_pasteboart_copy">This device does not support copy.</string>
+  <string name="nakamapsdk_invaite">Invaite</string>
+  <string name="nakamapsdk_invaite_application_not_found">Sharable application is not found</string>
+  <string name="nakamapsdk_proper_scheme_is_not_defined">Please define intent-filter for com.kayac.nakamap.sdk.activity.NakamapActivity in AndroidManifest.xml as folling.\n\n  &lt;intent-filter&gt;\n      &lt;action android:name="android.intent.action.VIEW" /&gt;\n      &lt;category android:name="android.intent.category.DEFAULT" /&gt;\n      &lt;category android:name="android.intent.category.BROWSABLE" /&gt;\n      &lt;data android:scheme="nakamapapp-%1$s" /&gt;\n  &lt;/intent-filter&gt;</string>
+  <string name="nakamapsdk_failed_to_attach_photo">Failed to attach photo.</string>
+  <string name="nakamapsdk_failed_open_nakamap_activity">Chat open failed. Please check network status.</string>
+ </resources>

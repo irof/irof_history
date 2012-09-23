@@ -2,8 +2,6 @@ package com.irof.irof_history;
 
 import java.util.Locale;
 
-import com.irof.util.LogUtil;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -19,6 +17,9 @@ import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
+
+import com.irof.util.LogUtil;
+import com.kayac.nakamap.sdk.Nakamap;
 
 public class IrofSuperActivty extends Activity {
 
@@ -42,6 +43,7 @@ public class IrofSuperActivty extends Activity {
         TAG = LogUtil.getClassName();
         m_r = getResources();
 
+        //TTS初期化
         mTts = new TextToSpeech(this,new TextToSpeech.OnInitListener(){
     		public void onInit(int status) {
     			if (status != TextToSpeech.SUCCESS)return;
@@ -72,6 +74,13 @@ public class IrofSuperActivty extends Activity {
     			}while(false);
     		}
     	});
+        
+        //Nakamapの初期化
+        String NAKAMAP_CLIENT_ID = m_r.getString(R.string.nakamap_clientid);
+        String newAccountBaseName = m_r.getString(R.string.newAccountBaseName);
+        Nakamap.setup(getApplicationContext(),
+                NAKAMAP_CLIENT_ID,
+                newAccountBaseName);
     }
     
     @Override

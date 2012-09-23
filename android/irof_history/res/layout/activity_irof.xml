@@ -1,6 +1,7 @@
 <com.irof.irof_history.IrofDraw 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" 
 	android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
@@ -54,6 +55,14 @@
       android:src="@android:drawable/ic_menu_myplaces"
       android:onClick="showViewStub"
       />
+    
+    <!-- バッジビューを表示 -->
+    <com.kayac.nakamap.sdk.view.NakamapBadgeView
+	    android:layout_weight="1"
+    	android:layout_width="0dip"
+        android:layout_height="wrap_content"
+    />
+    
     </LinearLayout>
     
     <com.irof.util.ViewIndicator
@@ -82,6 +91,16 @@
     <include layout="@layout/judge" 
         android:layout_toLeftOf="@+id/viewpager"
         android:id="@+id/irof_judge" android:visibility="gone"/>   
+    
+    <com.google.ads.AdView  
+         android:layout_marginBottom="50dip"
+	     android:id="@+id/AdMob_medview" 
+		 android:layout_width="fill_parent"  
+		 android:layout_height="wrap_content"  
+		 ads:adUnitId="@string/adUnitId_mediation"  
+		 ads:adSize="BANNER" 
+		 android:layout_alignParentBottom="true"
+		 ads:loadAdOnCreate="true" />  
     
     	
 </com.irof.irof_history.IrofDraw>
