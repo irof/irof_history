@@ -14,6 +14,8 @@
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
+		<item>私が一番馴染んでるのはExcelです！</item>
+		<item>大事なのはいまからです</item>
    </string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
@@ -27,6 +29,8 @@
 		<item>RAISEKAMO</item>
 		<item>HI.HIYAKASHIJYANAIYO</item>
 		<item>NAISYONISHITOKU</item>
+		<item>WATASHIGAICHIBANNAJINDERUNOHAEXCELDESU</item>
+		<item>DAIJINANOHAIMAKARADESU</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
@@ -40,6 +44,8 @@
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
+		<item>私が一番馴染んでるのはExcelです！</item>
+		<item>大事なのはいまからです</item>
 	</string-array>
    
 </resources>
