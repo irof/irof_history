@@ -26,6 +26,7 @@
 		<item>児童化エンジニア</item>
 		<item>僕が一番staticを上手く使えるんだ！</item>
 		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+		<item>カレーは頭脳労働（きりっ</item>
 	</string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
@@ -51,17 +52,18 @@
 		<item>JIDOUKA ENJINIA</item>
 		<item>BOKUGA ICHIBAN static WO UMAKUTUKAERUNDA！</item>
 		<item>KADENWO KADENTOYOMUKA IEDENTOYOMUKA MAYOTTERU</item>
+		<item>CAREI WA ZUNOUROUDOU KIRI</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
 		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
-		<item>お待ちしてますw</item>
-		<item>転がってますw</item>
+		<item>お待ちしてますー</item>
+		<item>転がってますー</item>
 		<item>失敗した失敗した失敗した。</item>
 		<item>どうどう……</item>
-		<item>刺されるw</item>
+		<item>刺されるー</item>
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
@@ -76,6 +78,7 @@
 		<item>児童化エンジニア</item>
 		<item>僕が一番staticを上手く使えるんだ！</item>
 		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+		<item>カレーは頭脳労働（きりっ</item>
 	</string-array>
    
 </resources>
