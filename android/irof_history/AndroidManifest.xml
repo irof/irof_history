@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <!-- //nakamap用 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
     <application
@@ -29,6 +30,11 @@
             </intent-filter>
         </activity>
         
+        <receiver android:name="com.irof.util.HeadsetStateReceiver" android:enabled="false">
+			<intent-filter>
+        		<action android:name="android.intent.action.HEADSET_PLUG"/>
+		    </intent-filter>
+		</receiver>
         
         <!-- チャットアクティビティ -->
         <activity

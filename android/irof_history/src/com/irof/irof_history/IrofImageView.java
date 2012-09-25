@@ -2,6 +2,7 @@ package com.irof.irof_history;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -10,10 +11,12 @@ import android.widget.ImageView;
 
 public class IrofImageView extends ImageView {
 
+	private IrofDrawUtil instance = null;
 	private Animation anime;
 	public IrofImageView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		anime = AnimationUtils.loadAnimation(context, R.anim.rotate);
+		instance = IrofDrawUtil.getInstance();
 		setClickable(true);
 	}
 	
@@ -74,6 +77,19 @@ public class IrofImageView extends ImageView {
 		}
 	}
 	
+    @Override
+	public boolean onTouchEvent(MotionEvent event) {
+    	int[] l = new int[2];
+		 getLocationOnScreen(l);
+		 int h_x = l[0];
+		 int h_y = l[1];
+
+    	 instance.onTouchEvent(event,h_x,h_y);
+         invalidate();
+         
+         return super.onTouchEvent(event);
+    }
+
 	@SuppressWarnings("unchecked")
 	protected <T extends View> T _findViewById(final int id){
 	    return (T)findViewById(id);

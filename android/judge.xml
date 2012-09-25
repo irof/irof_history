@@ -4,6 +4,7 @@
    <!-- //とりあえずtwilogから引っ張ってきた-->
    <string-array name="judge_msg">
 		<item>がおー</item>
+		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
 		<item>お待ちしてますw</item>
@@ -14,9 +15,21 @@
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
-   </string-array>
+		<item>私が一番馴染んでるのはExcelです！</item>
+		<item>大事なのはいまからです</item>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+	</string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
+		<item>KIJYOUNO KURON WA AKITA！ WARERAGA MOTOMERUWA JIXTUSENNAEI！</item>
 		<item>ONAKASUITA.SUITA</item>
 		<item>GOMENASAI.USODESU</item>
 		<item>OMACHISHITEORIMASU</item>
@@ -27,9 +40,21 @@
 		<item>RAISEKAMO</item>
 		<item>HI.HIYAKASHIJYANAIYO</item>
 		<item>NAISYONISHITOKU</item>
+		<item>WATASHIGAICHIBANNAJINDERUNOHAEXCELDESU</item>
+		<item>DAIJINANOHAIMAKARADESU</item>
+		<item>WATASHIGAMAMOTERU</item>
+		<item>EIENNO JYU-HASSAI</item>
+		<item>MUKASHIWA HARACHIKOETARA OCHITUKUTOOMOTTETAKAEA MADAMISEINEN NISITOKU</item>
+		<item>A- BOKUWA UYOUYOIMASUYO NENNNOTAME</item>
+		<item>WATASHIWOTAOSERUMONOGA ARAWARERUNOWO ZUTTOMATTEITA</item>
+		<item>GOSYUSYOUSAMADESU KANSUUGATAGENGO</item>
+		<item>JIDOUKA ENJINIA</item>
+		<item>BOKUGA ICHIBAN static WO UMAKUTUKAERUNDA！</item>
+		<item>KADENWO KADENTOYOMUKA IEDENTOYOMUKA MAYOTTERU</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
+		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
 		<item>お待ちしてますw</item>
@@ -40,6 +65,17 @@
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
+		<item>私が一番馴染んでるのはExcelです！</item>
+		<item>大事なのはいまからです</item>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
 	</string-array>
    
 </resources>

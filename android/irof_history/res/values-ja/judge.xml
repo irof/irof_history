@@ -17,7 +17,16 @@
 		<item>内緒にしとく</item>
 		<item>私が一番馴染んでるのはExcelです！</item>
 		<item>大事なのはいまからです</item>
-   </string-array>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+	</string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
 		<item>KIJYOUNO KURON WA AKITA！ WARERAGA MOTOMERUWA JIXTUSENNAEI！</item>
@@ -33,6 +42,15 @@
 		<item>NAISYONISHITOKU</item>
 		<item>WATASHIGAICHIBANNAJINDERUNOHAEXCELDESU</item>
 		<item>DAIJINANOHAIMAKARADESU</item>
+		<item>WATASHIGAMAMOTERU</item>
+		<item>EIENNO JYU-HASSAI</item>
+		<item>MUKASHIWA HARACHIKOETARA OCHITUKUTOOMOTTETAKAEA MADAMISEINEN NISITOKU</item>
+		<item>A- BOKUWA UYOUYOIMASUYO NENNNOTAME</item>
+		<item>WATASHIWOTAOSERUMONOGA ARAWARERUNOWO ZUTTOMATTEITA</item>
+		<item>GOSYUSYOUSAMADESU KANSUUGATAGENGO</item>
+		<item>JIDOUKA ENJINIA</item>
+		<item>BOKUGA ICHIBAN static WO UMAKUTUKAERUNDA！</item>
+		<item>KADENWO KADENTOYOMUKA IEDENTOYOMUKA MAYOTTERU</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
@@ -49,6 +67,15 @@
 		<item>内緒にしとく</item>
 		<item>私が一番馴染んでるのはExcelです！</item>
 		<item>大事なのはいまからです</item>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
 	</string-array>
    
 </resources>

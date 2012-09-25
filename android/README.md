@@ -33,6 +33,7 @@ irof_history for Android
   - 名言集募集中です(judge.xml)
 - nakamap掲示板機能
 - irofさん広告設定(use AdMob)
+- マナーモード対応（マナーモード中でもイヤフォンを付ければTTS音声が聞こえます）
 
 ------
 未作成項目

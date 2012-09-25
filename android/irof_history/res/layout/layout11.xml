@@ -10,7 +10,7 @@
     	android:layout_height="wrap_content"
     	android:gravity="center"
 		android:layout_gravity="center"
-    	android:background="@drawable/icon_twitter11"
+    	android:src="@drawable/icon_twitter11"
     	android:onClick="on_groovy"
     />
 

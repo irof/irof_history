@@ -158,18 +158,13 @@ public class IrofActivity extends IrofSuperActivty {
 								tx.setTextSize(64 * 4/vmsg.length());
 								fn.setVisibility(View.VISIBLE);
 								
-								mTts.setSpeechRate(1.0f);//しゃべる速さ（遅い＜＝＞速い）
-								mTts.setPitch(2.0f);//声の音程(低い＜＝＞高い)
-								HashMap<String, String> params = new HashMap<String, String>();
-								params.put(TextToSpeech.Engine.KEY_PARAM_VOLUME, String.valueOf(0.8));
-								params.put(TextToSpeech.Engine.KEY_PARAM_PAN, String.valueOf(1.0));
 								switch(initTtsMode){
-									case 0://英語
-										mTts.speak(judge_voice[pos],TextToSpeech.QUEUE_FLUSH,params);
-										break;
-									case 1://日本語
-										mTts.speak(judge_voice_jp[pos],TextToSpeech.QUEUE_FLUSH,params);
-										break;
+								case 0://英語
+									tts_play(judge_voice[pos]);
+									break;
+								case 1://日本語
+									tts_play(judge_voice_jp[pos]);
+									break;
 								}
 							}
 						});
@@ -265,4 +260,5 @@ public class IrofActivity extends IrofSuperActivty {
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
 	}
+
 }
