@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <com.irof.irof_history.IrofImageView
+    <com.irof.irof_parts.IrofImageView
         android:id="@+id/icon_twitter10"
  	    android:layout_width="wrap_content"
     	android:layout_height="wrap_content"

@@ -1,6 +1,8 @@
-package com.irof.irof_history;
+package com.irof.irof_parts;
 
 import java.util.ArrayList;
+
+import com.irof.irof_history.game_main;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

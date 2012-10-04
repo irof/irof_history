@@ -1,4 +1,9 @@
-package com.irof.irof_history;
+package com.irof.irof_parts;
+
+import com.irof.irof_history.R;
+import com.irof.irof_history.R.anim;
+import com.irof.irof_history.R.drawable;
+import com.irof.irof_history.R.id;
 
 import android.content.Context;
 import android.util.AttributeSet;

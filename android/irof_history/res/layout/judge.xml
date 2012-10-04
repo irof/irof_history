@@ -13,10 +13,10 @@
 	    <TextView 
 	        android:scrollHorizontally="false"
         	android:id="@+id/judge_text"
+        	android:text="ああ"
         	android:textColor="@color/deepskyblue"
         	android:textSize="64dip"
         	android:textStyle="bold"
-        	android:text="ああ"
         	android:layout_marginRight="10dip"
         	android:shadowDx="3.0"
 	        android:shadowDy="5.0"

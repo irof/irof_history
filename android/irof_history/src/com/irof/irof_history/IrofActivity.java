@@ -1,20 +1,25 @@
 package com.irof.irof_history;
 
-import java.util.HashMap;
+import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
+
 import java.util.Random;
 
 import yanzm.products.quickaction.lib.ActionItem;
 import yanzm.products.quickaction.lib.QuickAction;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
+import android.os.Handler;
 import android.support.v4.view.PagerTabStrip;
 import android.util.SparseIntArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewStub;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
@@ -23,10 +28,19 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.irof.irof_parts.IrofDraw;
+import com.irof.irof_parts.IrofImageView;
+import com.irof.irof_parts.IrofPageAdapter;
+import com.irof.irof_parts.IrofViewPager;
+import com.irof.irof_super.IrofSuperActivity;
 import com.irof.util.LogUtil;
+import com.irof.util.PrefUtil;
 import com.irof.util.ViewIndicator;
+import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.animation.PropertyValuesHolder;
+import com.nineoldandroids.animation.ValueAnimator;
 
-public class IrofActivity extends IrofSuperActivty {
+public class IrofActivity extends IrofSuperActivity {
 	
 	private SparseIntArray balls;
 	private int len_ball = 0;
@@ -37,55 +51,101 @@ public class IrofActivity extends IrofSuperActivty {
 	private String[] judge_msg = null;
 	private String[] judge_voice = null;
 	private String[] judge_voice_jp = null;
-	
+
+
+	private Activity activity;
 	private String TAG ="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_irof);
 
         TAG = LogUtil.getClassName();
         game_main.instance = this;
-        
-        
-        TypedArray arr = m_r.obtainTypedArray(R.array.ball_list);
-        len_ball = arr.length();
+    	activity = this;
+    	PrefUtil.init(activity);//初期化
 
-        balls = new SparseIntArray(len_ball);
-        for(int i=0;i<len_ball;i++){
-     	   int res_id =arr.getResourceId(i, -1);
-     	   balls.put(i, res_id);
-        } 
-        
-        TypedArray arr2 = m_r.obtainTypedArray(R.array.agent_list);
-        len_agents = arr2.length();
+        //起動ロゴ画面を表示する
+    	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        agents = new SparseIntArray(len_agents);
-        for(int i=0;i<len_agents;i++){
-     	   int res_id =arr2.getResourceId(i, -1);
-     	  agents.put(i, res_id);
-        } 
         
-        judge_msg = m_r.getStringArray(R.array.judge_msg);
-        judge_voice = m_r.getStringArray(R.array.judge_voice);
-        judge_voice_jp = m_r.getStringArray(R.array.judge_voice_jp);
-        
-        
-        
-        IrofViewPager mViewPager = _findViewById(R.id.viewpager);
-        IrofPageAdapter mPagerAdapter = new IrofPageAdapter(this);
-        mViewPager.setAdapter(mPagerAdapter);
-        mViewPager.setCurrentItem(0);
-        
-        //viewPagerにタブを付ける
-        PagerTabStrip pagerTabStrip = _findViewById(R.id.pager_tab_strip);
-        pagerTabStrip.setDrawFullUnderline(true);
-        pagerTabStrip.setTabIndicatorColor(Color.DKGRAY);
-        
-        //円形インジケータ追加
-        ViewIndicator indicator = _findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
-        indicator.setPosition(0);
+    	try {
+        	setContentView(R.layout.opening);
+        	new Handler().post(new Runnable(){
+        		public void run() {
+        			ViewStub stub = _findViewById(R.id.opening);
+        			stub.setLayoutResource(R.layout.opening_img);
+        			View ball = stub.inflate();
+        			animate(ball).rotationYBy(720).setDuration(3000);        			
+        		}
+        	});
+		} catch (Exception e2) {
+			LogUtil.error(TAG,"onCreate",e2);
+		}
+
+
+
+        new Thread(new Runnable(){
+            public void run() {
+                // これは別スレッド上での処理
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ignore) {
+                }
+
+        		activity.runOnUiThread(new Runnable(){
+                    public void run() {
+                    	onCreateAction();
+                    }
+        		});
+            }
+        }).start();
+    }
+    
+	private void onCreateAction() {
+	    new Handler().post(new Runnable(){
+	        public void run() {
+	            TypedArray arr = m_r.obtainTypedArray(R.array.ball_list);
+	            len_ball = arr.length();
+
+	            balls = new SparseIntArray(len_ball);
+	            for(int i=0;i<len_ball;i++){
+	         	   int res_id =arr.getResourceId(i, -1);
+	         	   balls.put(i, res_id);
+	            } 
+	            
+	            TypedArray arr2 = m_r.obtainTypedArray(R.array.agent_list);
+	            len_agents = arr2.length();
+
+	            agents = new SparseIntArray(len_agents);
+	            for(int i=0;i<len_agents;i++){
+	         	   int res_id =arr2.getResourceId(i, -1);
+	         	  agents.put(i, res_id);
+	            } 
+	            
+	            judge_msg = m_r.getStringArray(R.array.judge_msg);
+	            judge_voice = m_r.getStringArray(R.array.judge_voice);
+	            judge_voice_jp = m_r.getStringArray(R.array.judge_voice_jp);
+	            
+	            
+	            setContentView(R.layout.activity_irof);
+	            
+	            IrofViewPager mViewPager = _findViewById(R.id.viewpager);
+	            IrofPageAdapter mPagerAdapter = new IrofPageAdapter(activity);
+	            mViewPager.setAdapter(mPagerAdapter);
+	            mViewPager.setCurrentItem(0);
+	            
+	            //viewPagerにタブを付ける
+	            PagerTabStrip pagerTabStrip = _findViewById(R.id.pager_tab_strip);
+	            pagerTabStrip.setDrawFullUnderline(true);
+	            pagerTabStrip.setTabIndicatorColor(Color.DKGRAY);
+	            
+	            //円形インジケータ追加
+	            ViewIndicator indicator = _findViewById(R.id.indicator);
+	            indicator.setViewPager(mViewPager);
+	            indicator.setPosition(0);
+	        }
+	    });
     }
 
     
@@ -155,7 +215,9 @@ public class IrofActivity extends IrofSuperActivty {
 								iv.setImageResource(agents.get(pos_i));
 								String vmsg = judge_msg[pos];
 								tx.setText(vmsg);
-								tx.setTextSize(64 * 4/vmsg.length());
+								int txSize = 64 * 4/ vmsg.length();
+								if(txSize < 24)txSize=24;
+								tx.setTextSize(txSize);
 								fn.setVisibility(View.VISIBLE);
 								
 								switch(initTtsMode){

@@ -27,6 +27,12 @@
 		<item>僕が一番staticを上手く使えるんだ！</item>
 		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
 		<item>カレーは頭脳労働（きりっ</item>
+		<item>「目からいろふ」の意味を答えよ（制限時間10分）</item>
+		<item>「○○な機能無いの？」「(作れば)あるよ」</item>
+		<item>いろふ vs. 鳩</item>
+		<item>なごやの生態</item>
+		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
+		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
 	</string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
@@ -53,6 +59,12 @@
 		<item>BOKUGA ICHIBAN static WO UMAKUTUKAERUNDA！</item>
 		<item>KADENWO KADENTOYOMUKA IEDENTOYOMUKA MAYOTTERU</item>
 		<item>CAREI WA ZUNOUROUDOU KIRI</item>
+		<item>MEKARAIROFU NO IMI WO KOTAEYO SEIGENJIKAN 10 PUN</item>
+		<item>MARUMARU NAKINOUHA NAINO? TUKUREBA ARUYO</item>
+		<item>IROF VS HATO</item>
+		<item>NAGOYA NO SEITAI</item>
+		<item>SOKUHOU Twitter SINAGARA ARUITARA HATOFUNDA</item>
+		<item>IROFURU DOU (1)ASI WO NENZASUEU YOUSU (2) SINSYUTUKIBOTU NASAMA (3) HATOWOFUMU  NEW!</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
@@ -79,6 +91,12 @@
 		<item>僕が一番staticを上手く使えるんだ！</item>
 		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
 		<item>カレーは頭脳労働（きりっ</item>
+		<item>「目からいろふ」の意味を答えよ（制限時間10分）</item>
+		<item>「○○な機能無いの？」「(作れば)あるよ」</item>
+		<item>いろふ vs. 鳩</item>
+		<item>なごやの生態</item>
+		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
+		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
 	</string-array>
    
 </resources>

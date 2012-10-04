@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" 
+	android:background="#ffffff"
+>
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:scaleType="fitXY"
+		android:src="@drawable/logo"
+	/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="64dip"
+		android:layout_weight="0"
+		android:text="http://hogedriven.net/"
+	    android:scrollHorizontally="false"
+		android:textColor="@color/deepskyblue"
+        android:textSize="28dip"
+        android:textStyle="bold"
+        android:shadowDx="3.0"
+	    android:shadowDy="5.0"
+	    android:shadowRadius="2.0"
+    	android:shadowColor="#00ff00"
+		android:layout_marginBottom="32dip"
+		android:layout_marginLeft="24dip"
+		android:background="#ffffff"
+		android:autoLink="web"
+	/>
+	
+</LinearLayout>

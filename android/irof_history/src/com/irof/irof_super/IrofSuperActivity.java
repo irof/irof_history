@@ -1,9 +1,8 @@
-package com.irof.irof_history;
+package com.irof.irof_super;
 
 import java.util.HashMap;
 import java.util.Locale;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -26,12 +25,13 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.irof.irof_history.R;
 import com.irof.util.HeadsetStateReceiver;
 import com.irof.util.LogUtil;
 import com.irof.util.PrefUtil;
 import com.kayac.nakamap.sdk.Nakamap;
 
-public class IrofSuperActivty extends Activity {
+public class IrofSuperActivity extends BaseActivity {
 
 	private String TAG ="";
 	protected TextToSpeech mTts;
@@ -185,6 +185,7 @@ public class IrofSuperActivty extends Activity {
 
     @Override
 	protected void onPause() {
+    	super.onPause();
 		try {
 			unregisterReceiver(headsetStateReceiver);
 			enableReceiver(false,headsetStateReceiver);
