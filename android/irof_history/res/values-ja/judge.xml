@@ -17,7 +17,23 @@
 		<item>内緒にしとく</item>
 		<item>私が一番馴染んでるのはExcelです！</item>
 		<item>大事なのはいまからです</item>
-   </string-array>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+		<item>カレーは頭脳労働（きりっ</item>
+		<item>「目からいろふ」の意味を答えよ（制限時間10分）</item>
+		<item>「○○な機能無いの？」「(作れば)あるよ」</item>
+		<item>いろふ vs. 鳩</item>
+		<item>なごやの生態</item>
+		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
+		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
+	</string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
 		<item>KIJYOUNO KURON WA AKITA！ WARERAGA MOTOMERUWA JIXTUSENNAEI！</item>
@@ -33,22 +49,54 @@
 		<item>NAISYONISHITOKU</item>
 		<item>WATASHIGAICHIBANNAJINDERUNOHAEXCELDESU</item>
 		<item>DAIJINANOHAIMAKARADESU</item>
+		<item>WATASHIGAMAMOTERU</item>
+		<item>EIENNO JYU-HASSAI</item>
+		<item>MUKASHIWA HARACHIKOETARA OCHITUKUTOOMOTTETAKAEA MADAMISEINEN NISITOKU</item>
+		<item>A- BOKUWA UYOUYOIMASUYO NENNNOTAME</item>
+		<item>WATASHIWOTAOSERUMONOGA ARAWARERUNOWO ZUTTOMATTEITA</item>
+		<item>GOSYUSYOUSAMADESU KANSUUGATAGENGO</item>
+		<item>JIDOUKA ENJINIA</item>
+		<item>BOKUGA ICHIBAN static WO UMAKUTUKAERUNDA！</item>
+		<item>KADENWO KADENTOYOMUKA IEDENTOYOMUKA MAYOTTERU</item>
+		<item>CAREI WA ZUNOUROUDOU KIRI</item>
+		<item>MEKARAIROFU NO IMI WO KOTAEYO SEIGENJIKAN 10 PUN</item>
+		<item>MARUMARU NAKINOUHA NAINO? TUKUREBA ARUYO</item>
+		<item>IROF VS HATO</item>
+		<item>NAGOYA NO SEITAI</item>
+		<item>SOKUHOU Twitter SINAGARA ARUITARA HATOFUNDA</item>
+		<item>IROFURU DOU (1)ASI WO NENZASUEU YOUSU (2) SINSYUTUKIBOTU NASAMA (3) HATOWOFUMU  NEW!</item>
 	</string-array>
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
 		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
 		<item>おなかすいたすいた</item>
 		<item>ごめんなさい嘘です……</item>
-		<item>お待ちしてますw</item>
-		<item>転がってますw</item>
+		<item>お待ちしてますー</item>
+		<item>転がってますー</item>
 		<item>失敗した失敗した失敗した。</item>
 		<item>どうどう……</item>
-		<item>刺されるw</item>
+		<item>刺されるー</item>
 		<item>来世かも</item>
 		<item>ひ、ひやかしじゃないよ！</item>
 		<item>内緒にしとく</item>
 		<item>私が一番馴染んでるのはExcelです！</item>
 		<item>大事なのはいまからです</item>
+		<item>わたしがまもってる。</item>
+		<item>えいえんのじゅーはっさい</item>
+		<item>昔はハタチ越えたらもっと落ち着くと思ってたから、まだ未成年にしとく。</item>
+		<item>あー、僕はｳﾖｳﾖいますよ念の為。</item>
+		<item>私を倒せる者が現れるのをずっと待っていた</item>
+		<item>ご愁傷様です関数型言語</item>
+		<item>児童化エンジニア</item>
+		<item>僕が一番staticを上手く使えるんだ！</item>
+		<item>家電を「かでん」と読むか「いえでん」と読むかで迷ってる</item>
+		<item>カレーは頭脳労働（きりっ</item>
+		<item>「目からいろふ」の意味を答えよ（制限時間10分）</item>
+		<item>「○○な機能無いの？」「(作れば)あるよ」</item>
+		<item>いろふ vs. 鳩</item>
+		<item>なごやの生態</item>
+		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
+		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
 	</string-array>
    
 </resources>

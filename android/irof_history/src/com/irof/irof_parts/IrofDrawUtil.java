@@ -1,6 +1,8 @@
-package com.irof.irof_history;
+package com.irof.irof_parts;
 
 import java.util.ArrayList;
+
+import com.irof.irof_history.game_main;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -72,24 +74,28 @@ public class IrofDrawUtil {
             canvas.drawPath(path, paint);
         }
 	}
-
+	
 	public void onTouchEvent(MotionEvent event) {
+		onTouchEvent(event,0,0);
+	}
+
+	public void onTouchEvent(MotionEvent event,int h_x,int h_y) {
 		
         switch (event.getAction()) {
         case MotionEvent.ACTION_DOWN:
             // タッチしたとき
             path = new Path();
-            path.moveTo(event.getX(), event.getY());
+            path.moveTo(event.getX() + h_x, event.getY() + h_y);
             pathList.add(path);
             paintList.add(createPaint());
             break;
         case MotionEvent.ACTION_MOVE:
             // タッチしたまま動かしたとき
-            path.lineTo(event.getX(), event.getY());
+            path.lineTo(event.getX()+ h_x, event.getY() + h_y);
             break;
         case MotionEvent.ACTION_UP:
             // 指を離したとき
-            path.lineTo(event.getX(), event.getY());
+            path.lineTo(event.getX()+ h_x, event.getY() + h_y);
             break;
         default:
             break;

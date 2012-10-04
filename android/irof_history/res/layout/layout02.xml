@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <com.irof.irof_history.IrofImageView
+    <com.irof.irof_parts.IrofImageView
         android:id="@+id/icon_twitter02"
 	    android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:gravity="center"
 		android:layout_gravity="center"
-    	android:background="@drawable/icon_twitter02"
+    	android:src="@drawable/icon_twitter02"
     	android:onClick="on_groovy"
     />
 

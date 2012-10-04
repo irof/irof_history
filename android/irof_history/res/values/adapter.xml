@@ -15,6 +15,7 @@
 		<item>irof world 11</item>
 		<item>irof world 12</item>
 		<item>irof world 13</item>
+		<item>irof world 14</item>
 	</string-array>
 	
 	<!-- //see http://d.hatena.ne.jp/itog/20100713/1278987197 -->
@@ -32,6 +33,7 @@
 		<item>@layout/layout11</item>
 		<item>@layout/layout12</item>
 		<item>@layout/layout13</item>
+		<item>@layout/layout14</item>
 	</array>
     	
 </resources>

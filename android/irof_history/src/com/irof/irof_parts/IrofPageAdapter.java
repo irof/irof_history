@@ -1,6 +1,9 @@
-package com.irof.irof_history;
+package com.irof.irof_parts;
 
 import java.util.ArrayList;
+
+import com.irof.irof_history.R;
+import com.irof.irof_history.R.array;
 
 import android.app.Activity;
 import android.content.Context;

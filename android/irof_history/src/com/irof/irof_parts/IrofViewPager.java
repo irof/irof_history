@@ -1,4 +1,6 @@
-package com.irof.irof_history;
+package com.irof.irof_parts;
+
+import com.irof.irof_history.game_main;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
