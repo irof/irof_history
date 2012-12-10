@@ -14,10 +14,74 @@
     
    
    <string-array name="judge_msg">
-		<item>GAO-</item>
+		<item>GAOO</item>
+		<item>Congratulations</item>
+  		<item>Hmm</item>
+    	<item>Amazing</item>
+    	<item>Boooo</item>
+    	<item>Great</item>
+    	<item>Wonderful</item>
+    	<item>Excellent</item>
+    	<item>Picasso?</item>
+    	<item>Oh my god</item>
+    	<item>Wow</item>
+    	<item>I see</item>
+    	<item>Haw haw haw</item>
+    	<item>Meow</item>
+    	<item>Moo</item>
+    	<item>Quack</item>
+    	<item>O-OH!</item>
+    	<item>Babble</item>
+    	<item>cock-a-doodle-doo</item>
+    	<item>Sounds good</item>
+    	<item>Wow wow</item>
    </string-array>
    <string-array name="judge_voice">
 		<item>GAOO</item>
+		<item>Congratulations</item>
+  		<item>Hmm</item>
+    	<item>Amazing</item>
+    	<item>Boooo</item>
+    	<item>Great</item>
+    	<item>Wonderful</item>
+    	<item>Excellent</item>
+    	<item>Picasso?</item>
+    	<item>Oh my god</item>
+    	<item>Wow</item>
+    	<item>I see</item>
+    	<item>Haw haw haw</item>
+    	<item>Meow</item>
+    	<item>Moo</item>
+    	<item>Quack</item>
+    	<item>O-OH!</item>
+    	<item>Babble</item>
+    	<item>cock-a-doodle-doo</item>
+    	<item>Sounds good</item>
+    	<item>Wow wow</item>
    </string-array>
+
+   <string-array name="judge_voice_jp">
+		<item>GAOO</item>
+		<item>Congratulations</item>
+  		<item>Hmm</item>
+    	<item>Amazing</item>
+    	<item>Boooo</item>
+    	<item>Great</item>
+    	<item>Wonderful</item>
+    	<item>Excellent</item>
+    	<item>Picasso?</item>
+    	<item>Oh my god</item>
+    	<item>Wow</item>
+    	<item>I see</item>
+    	<item>Haw haw haw</item>
+    	<item>Meow</item>
+    	<item>Moo</item>
+    	<item>Quack</item>
+    	<item>O-OH!</item>
+    	<item>Babble</item>
+    	<item>cock-a-doodle-doo</item>
+    	<item>Sounds good</item>
+    	<item>Wow wow</item>
+	</string-array>
    
 </resources>

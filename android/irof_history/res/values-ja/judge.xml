@@ -33,7 +33,44 @@
 		<item>なごやの生態</item>
 		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
 		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
+		<item>日本よ、これがHoge駆動だ</item>
+		<item>顔にしか見えんTwT</item>
+		<item>なっ………(絶句)</item>
+		<item>俺の方眼紙綺麗すぎる。。。</item>
+		<item>【龍角散希望】</item>
+		<item>「ハトも踏んだこと無い奴が何を言ってもなぁ……」</item>
+		<item>関サバ！(黙れ</item>
+		<item>"なごやか大都会"の可能性はまだ残されている……。</item>
+		<item>「おお、いろふよ。やられてしまうとは情けない！」</item>
+		<item>ほげ駆動四天王「いろふさんがやられたか…」</item>
+		<item>いろふさんを比叡山で焼き討ちにするか</item>
+		<item>ねむいです。ねむいですよ。</item>				
+		<item>行動できない頭でっかちをどうしたもんかと。</item>				
+		<item>おなか空かせてやってるのに、誰も飯食わせてくれない。</item>				
+		<item>ロック運用を崩せない私に足りないのは、知識か、話術か、政治力か、権力か、はたまた運か……。</item>				
+		<item>×期待が重い ○的外れな期待</item>				
+		<item>gradle力が3あがった。</item>				
+		<item>「断言してもいい」とか言われるとさせたくなる。うずうず。</item>				
+		<item>夢枕に立つ訓練は怠ってない。</item>				
+		<item>github とんかつとは。</item>				
+		<item>ノマドはモナドである。</item>				
+		<item>偽物のプログラマが使う言語を教えてください。</item>				
+		<item>石のスープを思い出す。</item>																
+		<item>やめろてらすんじゃないしんでしまう</item>																
+		<item>黒歴史の闇に遮られているため、ある年代より過去は見えなくなっています。</item>																
+		<item>誤ったスケールアウト: キーボード2つでタイプ速度2倍</item>																
+		<item>押し付けられた側は溜まったもんじゃないぜ……</item>																
+		<item>先送り。未来の自分に押し付け。そんなにアテになるんだろうか。</item>																
+		<item>足の親指を攣っています。現在進行形です。</item>																
+		<item>いろふ「いろふがやられたか」いろふ「くくく……奴は四天王でも最弱……」いろふ「同じだから最弱とも言えるか」</item>																
+		<item>金曜夜くらいにresetしたくなるな……</item>																
+		<item>足を挫くのには数センチあれば十分だな……</item>																
+		<item>やきに駆動が来週なわけだが。</item>																
+		<item>資料？当日前に作ったらフライングだよ！</item>																
+		<item>エクセルと格闘してるうちに話進んでた。。。これが時代の流れの早さか。</item>																
+		<item>避雷針たてて避難してるが如く</item>																
 	</string-array>
+	
    <string-array name="judge_voice">
 		<item>GAOO</item>
 		<item>KIJYOUNO KURON WA AKITA！ WARERAGA MOTOMERUWA JIXTUSENNAEI！</item>
@@ -65,7 +102,44 @@
 		<item>NAGOYA NO SEITAI</item>
 		<item>SOKUHOU Twitter SINAGARA ARUITARA HATOFUNDA</item>
 		<item>IROFURU DOU (1)ASI WO NENZASUEU YOUSU (2) SINSYUTUKIBOTU NASAMA (3) HATOWOFUMU  NEW!</item>
+		<item>NIHONYO KOREGA Hoge KUDOUDA</item>
+		<item>KAONISHIKAMIEN TwT</item>
+		<item>NAXTU (ZEKKU)</item>
+		<item>ORENO HOUGANSHI KIREISUGIRU</item>
+		<item>RYOUKAKUSAN KIBOU</item>
+		<item>HATOWOFUNDAKTOGANAIYATU GA NANIITTUTEMONA</item>
+		<item>KANSABA</item>
+		<item>NAGOYAKA DAITOKAI NO KANOUSEIHA NOKOSARETERU</item>
+		<item>OO IROFYO YARARETESHIMAUTOHA NASAKENAI</item>
+		<item>HOGEKUDOU SITENNOU IROFUSANGA YARARETAKA</item>
+		<item>IROFSANWO HIEIZANDE YAKIUCHI NISURUA</item>
+		<item>NEMIIDESU NEMUIDESUYO</item>				
+		<item>KOUDOUDEKINAI ATAMADEKACHI WO DOUSITAMONKATO</item>				
+		<item>ONAKASUKASETEYAXTUTERUNONI DAREMOKUWASETEKURENAI</item>				
+		<item>ROCK UNNYOU KUZUSENAI WATASHINITARINAINOHA CHISHIKI WAZYUTU SEIJIRYOKU KENRYOKU HATAMATAUNNKA</item>				
+		<item>KITAIGAOMOI MATOHAZURENAKITAI</item>				
+		<item>gradle RYOKUGA 3 AGATA</item>				
+		<item>DANGENSHITEMOII TOKAIWASETAKUNARU UZUUZU</item>				
+		<item>YUMEMAKUEANI TATUKUNRENWA OKOTAXTUTENAI</item>				
+		<item>github TONNKATUTOWA</item>				
+		<item>NOMADOHAMONADODEAARU</item>				
+		<item>NISEMONONO PUROGUEAMAGATUKAU GENGOWO OSHIETEKUDASAI</item>				
+		<item>ISHINOSUPEWOOMOIDASU</item>																
+		<item>YAMERO TERASUNA SINDESHIMAU</item>																
+		<item>KUROREKISHINOYAMINI SAEGIRARETERUTAAME ARUNENNDAIYORIKAKOHAMIENAKUNAXTUTEMASU</item>																
+		<item>AYAMAXTUTASUKE-RUAUTO:KI-BO-DO FUTATUDE TAIPU 2BAI</item>																
+		<item>OSHITUERARETAHOUHA TAMAXTUTAMONNZYANAIZE</item>																
+		<item>SAKUOKUEI MIEAINOJIBUNMOPSITUKE SONNNANIATENINAEUMONDAROUKA</item>																
+		<item>ASHINOOYAYUBIWOHINEXTUTEMASU GENZAISHINNKOUKEIDESU</item>																
+		<item>IROFUGAYARARETAKA YATUWASHITENNOUDEMOSAIZYAKU ONAJIDAKARASAIZYAKUTOMOIERUGA</item>																
+		<item>KINYOUNO YORUKURAINI reset SITAKUNARUNA</item>																
+		<item>ASHIWOKUJIKUNONIWA SUUSENCHIAREBA ZYUUBUNNDANA…</item>																
+		<item>YAKINIKUDOUGARAISYUUNAWAKEDAGA</item>																
+		<item>SIROU? TOUJITUMAENI TUXTUTARA FURAINGDAYO</item>																
+		<item>EKUSERUTOKAAKUTOU SITERUUCHINI HANASISUSUNNDETA KOREGAJIDAINONAGARENOHAYASAKA</item>																
+		<item>HIRAISINN TATETEHINANSHITERUGAGOTOKU</item>																
 	</string-array>
+	
    <string-array name="judge_voice_jp">
 		<item>がおー</item>
 		<item>机上の空論は聞き飽きた！我らが求めるは実践なり！</item>
@@ -97,6 +171,42 @@
 		<item>なごやの生態</item>
 		<item>速報: Twitterしながら歩いてたらハト踏んだ</item>
 		<item>いろふる【いろふ・る】[動](1)足を捻挫する様子 (2) 神出鬼没な様 (3) 鳩を踏む ← NEW!</item>
+		<item>日本よ、これがHoge駆動だ</item>
+		<item>顔にしか見えんTwT</item>
+		<item>なっ………(絶句)</item>
+		<item>俺の方眼紙綺麗すぎる。。。</item>
+		<item>【龍角散希望】</item>
+		<item>「ハトも踏んだこと無い奴が何を言ってもなぁ……」</item>
+		<item>関サバ！(黙れ</item>
+		<item>"なごやか大都会"の可能性はまだ残されている……。</item>
+		<item>「おお、いろふよ。やられてしまうとは情けない！」</item>
+		<item>ほげ駆動四天王「いろふさんがやられたか…」</item>
+		<item>いろふさんを比叡山で焼き討ちにするか</item>
+		<item>ねむいです。ねむいですよ。</item>				
+		<item>行動できない頭でっかちをどうしたもんかと。</item>				
+		<item>おなか空かせてやってるのに、誰も飯食わせてくれない。</item>				
+		<item>ロック運用を崩せない私に足りないのは、知識か、話術か、政治力か、権力か、はたまた運か……。</item>				
+		<item>×期待が重い ○的外れな期待</item>				
+		<item>gradle力が3あがった。</item>				
+		<item>「断言してもいい」とか言われるとさせたくなる。うずうず。</item>				
+		<item>夢枕に立つ訓練は怠ってない。</item>				
+		<item>github とんかつとは。</item>				
+		<item>ノマドはモナドである。</item>				
+		<item>偽物のプログラマが使う言語を教えてください。</item>				
+		<item>石のスープを思い出す。</item>																
+		<item>やめろてらすんじゃないしんでしまう</item>																
+		<item>黒歴史の闇に遮られているため、ある年代より過去は見えなくなっています。</item>																
+		<item>誤ったスケールアウト: キーボード2つでタイプ速度2倍</item>																
+		<item>押し付けられた側は溜まったもんじゃないぜ……</item>																
+		<item>先送り。未来の自分に押し付け。そんなにアテになるんだろうか。</item>																
+		<item>足の親指を攣っています。現在進行形です。</item>																
+		<item>いろふ「いろふがやられたか」いろふ「くくく……奴は四天王でも最弱……」いろふ「同じだから最弱とも言えるか」</item>																
+		<item>金曜夜くらいにresetしたくなるな……</item>																
+		<item>足を挫くのには数センチあれば十分だな……</item>																
+		<item>やきに駆動が来週なわけだが。</item>																
+		<item>資料？当日前に作ったらフライングだよ！</item>																
+		<item>エクセルと格闘してるうちに話進んでた。。。これが時代の流れの早さか。</item>																
+		<item>避雷針たてて避難してるが如く</item>																
 	</string-array>
    
 </resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="operate_title">操作説明</string>
+    <string name="operate_desc">
+    	いろふ先生のあいこんをデコレーションして楽しむアプリです。\n
+    	右にスクロールして 好きなアイコンを選択してください\n
+    	\n
+    	目のアイコン：絵の評価(N2TTS https://play.google.com/store/apps/details?id=jp.kddilabs.n2tts をいれると日本語をしゃべります)\n
+    	ごみ箱アイコン：書いた線を全部消す\n
+    	火花アイコン：1個前の線を消す\n
+    	旗アイコン；絵を固定/固定解除します\n
+    	\n
+    	デコレーションした画像を保存/twitterに投稿するには\n
+    	menuボタンより選択してください
+    </string>
+    <string name="update_title">更新履歴</string>
+    <string name="update_desc">
+        v1.1g/2)\n
+        ・REGZAでリソース取得エラーが出る対処\n
+    	v1.0g/1)\n
+        ・はじめてのリリース\n
+    </string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="list_data">
+		<item>いんふぉめーしょん</item>
+		<item>操作説明</item>
+		<item>更新履歴</item>
+		<item>バージョン情報</item>
+		<item>twitpicのギャラリーをみる</item>
+		<item>twitter認証</item>
+	</string-array>
+	<string name="list_data_notfound">データが存在しません。</string>
+	
+	<string name="Message_Update">\n\nGooglePlayに最新版があります。\nRelease:%1$s\nVersion:%2$s</string>
+	
+	<string name="info_title">いろふ先生 とは。。。</string>
+	<string name="info_desc">
+	いろふ先生は日本中を旅する勉強会旅職人です。\n
+\n
+	主な活動範囲は  \n
+    関数型都市　　なごや\n  
+    浪速商人の町　おおさか\n  
+    制圧しに　　　とうきょう\n  
+	に来ております\n
+	</string>
+	
+</resources>

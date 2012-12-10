@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="operate_title">Operation</string>
+    <string name="operate_desc">
+    	It is an app that you enjoy the decorations the icon of Professor Irof there.\n
+    	Please choose a favorite icon to scroll to the right\n
+    	\n
+    	Eye icon:Evaluation of the painting \n
+    	trash icon:Turn off all the lines wrote\n
+    	spark icon:Erase the previous line \n
+    	flag icon:unlock /loc the picture \n
+    	\n
+    	To post twitter or save images Decorations\n
+     	Please select from the menu button\n
+    </string>
+    <string name="update_title">Update</string>
+    <string name="update_desc">
+        v1.1g/2)\n
+        ・fix REGZA resource not found error\n
+    	v1.0g/1)\n
+        ・First release
+    </string>
+</resources>

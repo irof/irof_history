@@ -58,13 +58,15 @@
     
     <!-- バッジビューを表示 -->
     <com.kayac.nakamap.sdk.view.NakamapBadgeView
+    	android:id="@+id/menu_nakamap"
 	    android:layout_weight="1"
     	android:layout_width="0dip"
         android:layout_height="wrap_content"
     />
-    
     </LinearLayout>
-    
+ 
+  
+  
     <com.irof.util.ViewIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
