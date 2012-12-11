@@ -3,6 +3,8 @@ package com.irof.irof_super;
 import java.util.HashMap;
 import java.util.Locale;
 
+import twitter4j.TwitterException;
+
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -17,6 +19,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -25,7 +28,10 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.google.tts.TextToSpeechBeta;
 import com.irof.irof_history.R;
+import com.irof.sns.ImageCache;
+import com.irof.sns.twitter_main;
 import com.irof.util.HeadsetStateReceiver;
 import com.irof.util.LogUtil;
 import com.irof.util.PrefUtil;
@@ -54,48 +60,113 @@ public class IrofSuperActivity extends BaseActivity {
         m_r = getResources();
         PrefUtil.init(this);
         
-        //TTS初期化
-        mTts = new TextToSpeech(this,new TextToSpeech.OnInitListener(){
-    		public void onInit(int status) {
-    			if (status != TextToSpeech.SUCCESS)return;
-    			
-    			int result = 0;
-    			do{
-        			Locale locale = Locale.getDefault();
-        			if(locale.equals(Locale.JAPAN) && isCheckJpTts()){
-               			result = mTts.setLanguage(Locale.JAPAN);
-            			if (result == TextToSpeech.LANG_MISSING_DATA ||
-                	        result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                   			//result = mTts.setLanguage(Locale.US);
-            			}
-            			else{
-            				initTtsMode= 1;
-            				break;
-            			}
-        			}
-        			
-           			result = mTts.setLanguage(Locale.US);
-        			
-        			if (result == TextToSpeech.LANG_MISSING_DATA ||
-        	            result == TextToSpeech.LANG_NOT_SUPPORTED) {
-        	            LogUtil.error(TAG, "Language is not available.");
-        	            return;
-        	        }
-        			initTtsMode= 0;
-    			}while(false);
-    		}
-    	});
+        tts_init();
         
-        //Nakamapの初期化
-        String NAKAMAP_CLIENT_ID = m_r.getString(R.string.nakamap_clientid);
-        String newAccountBaseName = m_r.getString(R.string.newAccountBaseName);
-        Nakamap.setup(getApplicationContext(),
-                NAKAMAP_CLIENT_ID,
-                newAccountBaseName);
+        //IS01だとNakamap動かないようなので保留にしておく
+	  	if( "KDDI".equals(Build.BRAND) && "IS01".equals(Build.MODEL) ){
+        
+	  	}
+	  	else{
+	        //Nakamapの初期化
+	        new NakamapUtil().nakamapSetup(this);
+	  	}
+
         
         //音声初期化
         sound_init();
+        
+        //tw_iconの保存
+    	twitter_main.init(this);
+    	//twitter認証
+    	try {
+			twitter_main.loginOAuth();
+		} catch (TwitterException e) {
+			LogUtil.error(TAG,"",e);
+		}
     }
+
+
+	private void tts_init() {
+		//2.1以下で、
+		//	Text-To-Speech Extended
+		//	 N2 TTS 
+		//	が入っている状態のとき
+		if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.ECLAIR_MR1 
+			&& isCheck_N2Tts() && isCheck_GoogleTts()){
+			TextToSpeechBeta.OnInitListener listner = 
+					new TextToSpeechBeta.OnInitListener(){
+						//TTS
+						@Override
+						public void onInit(int status, int version) {
+							if (status != TextToSpeech.SUCCESS)return;
+							
+							int result = 0;
+			    			do{
+			        			Locale locale = Locale.getDefault();
+			        			if(locale.equals(Locale.JAPAN) && isCheck_N2Tts()){
+			               			result = mTts.setLanguage(Locale.JAPAN);
+			            			if (result == TextToSpeech.LANG_MISSING_DATA ||
+			                	        result == TextToSpeech.LANG_NOT_SUPPORTED) {
+			                   			//result = mTts.setLanguage(Locale.US);
+			            			}
+			            			else{
+			            				initTtsMode= 1;
+			            				break;
+			            			}
+			        			}
+			        			
+			           			result = mTts.setLanguage(Locale.US);
+			        			
+			        			if (result == TextToSpeech.LANG_MISSING_DATA ||
+			        	            result == TextToSpeech.LANG_NOT_SUPPORTED) {
+			        	            LogUtil.error(TAG, "Language is not available.");
+			        	            return;
+			        	        }
+			        			initTtsMode= 0;
+			    			}while(false);
+						}
+					};
+			mTts = new TextToSpeechBeta( this,listner);
+		}
+		else{
+			TextToSpeech.OnInitListener listner = 
+				new TextToSpeech.OnInitListener(){
+					//TTS
+					@Override
+					public void onInit(int status) {
+						if (status != TextToSpeech.SUCCESS)return;
+						
+						int result = 0;
+		    			do{
+		        			Locale locale = Locale.getDefault();
+		        			if(locale.equals(Locale.JAPAN) && isCheck_N2Tts()){
+		               			result = mTts.setLanguage(Locale.JAPAN);
+		            			if (result == TextToSpeech.LANG_MISSING_DATA ||
+		                	        result == TextToSpeech.LANG_NOT_SUPPORTED) {
+		                   			//result = mTts.setLanguage(Locale.US);
+		            			}
+		            			else{
+		            				//女性の声の方が良い場合の指定方法
+		            				//mTts.setLanguage(new Locale(Locale.JAPAN.getLanguage(), Locale.JAPAN.getCountry(), "F01")); 
+		            				initTtsMode= 1;
+		            				break;
+		            			}
+		        			}
+		        			
+		           			result = mTts.setLanguage(Locale.US);
+		        			
+		        			if (result == TextToSpeech.LANG_MISSING_DATA ||
+		        	            result == TextToSpeech.LANG_NOT_SUPPORTED) {
+		        	            LogUtil.error(TAG, "Language is not available.");
+		        	            return;
+		        	        }
+		        			initTtsMode= 0;
+		    			}while(false);
+		    		}
+				};
+			mTts = new TextToSpeech( this,listner);
+		}
+	}
     
     private static int org_musicVol = 0;
     private static int set_musicVol = 0;
@@ -165,6 +236,8 @@ public class IrofSuperActivity extends BaseActivity {
  	   PrefUtil.put_int("set_musicVol",set_musicVol);
  	   audio.setStreamVolume(AudioManager.STREAM_MUSIC,org_musicVol, 0);
 
+ 	  ImageCache.saveIconList();
+ 	  
  	   super.onDestroy();
 	}
 
@@ -214,8 +287,22 @@ public class IrofSuperActivity extends BaseActivity {
 		pm.setComponentEnabledSetting(receiverName, newState, PackageManager.DONT_KILL_APP);
 	}
 
+    //google_ttsが入っているか判定
+  	private boolean isCheck_GoogleTts() {
+  		try{
+  		  //パッケージ名を指定してインストール状況をチェック
+  		  PackageManager packageManager = this.getPackageManager();
+  		  ApplicationInfo applicationInfo = packageManager.getApplicationInfo("com.google.tts",PackageManager.GET_META_DATA);
+  		  if(applicationInfo==null)return false;
+  		}
+  		catch(NameNotFoundException exception){
+  			return false;
+  		}
+  		return true;
+  	}
+
 	//n2ttsが入っているか判定
-	private boolean isCheckJpTts() {
+	private boolean isCheck_N2Tts() {
 		try{
 		  //パッケージ名を指定してインストール状況をチェック
 		  PackageManager packageManager = this.getPackageManager();
@@ -274,13 +361,7 @@ public class IrofSuperActivity extends BaseActivity {
 	
 	 public boolean saveImage(View view) {
 	        // 該当のViewのサイズを取得し、Bitmapを生成する
-	        int width = view.getWidth();
-	        int height = view.getHeight();
-	        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);// ①
-
-	        // Viewのdrawメソッドを実行する
-	        Canvas canvas = new Canvas(bitmap);
-	        view.draw(canvas);// ②
+	        Bitmap bitmap = getBitmap(view);
 
 	        // Bitmapを保存する
 	        try {
@@ -303,6 +384,17 @@ public class IrofSuperActivity extends BaseActivity {
 	        return false;
 
     }
+
+	public Bitmap getBitmap(View view) {
+		int width = view.getWidth();
+		int height = view.getHeight();
+		Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);// ①
+
+		// Viewのdrawメソッドを実行する
+		Canvas canvas = new Canvas(bitmap);
+		view.draw(canvas);// ②
+		return bitmap;
+	}
 
 	@Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

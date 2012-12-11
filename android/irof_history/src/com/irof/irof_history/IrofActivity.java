@@ -6,10 +6,10 @@ import java.util.Random;
 
 import yanzm.products.quickaction.lib.ActionItem;
 import yanzm.products.quickaction.lib.QuickAction;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerTabStrip;
@@ -28,17 +28,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.irof.adapter.TwitterPostTask;
 import com.irof.irof_parts.IrofDraw;
 import com.irof.irof_parts.IrofImageView;
 import com.irof.irof_parts.IrofPageAdapter;
 import com.irof.irof_parts.IrofViewPager;
 import com.irof.irof_super.IrofSuperActivity;
+import com.irof.irof_super.OnActivityResultCallback;
+import com.irof.sns.twitter_main;
 import com.irof.util.LogUtil;
 import com.irof.util.PrefUtil;
 import com.irof.util.ViewIndicator;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
-import com.nineoldandroids.animation.ValueAnimator;
 
 public class IrofActivity extends IrofSuperActivity {
 	
@@ -53,7 +53,7 @@ public class IrofActivity extends IrofSuperActivity {
 	private String[] judge_voice_jp = null;
 
 
-	private Activity activity;
+	private IrofActivity activity;
 	private String TAG ="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,8 +62,8 @@ public class IrofActivity extends IrofSuperActivity {
         TAG = LogUtil.getClassName();
         game_main.instance = this;
     	activity = this;
-    	PrefUtil.init(activity);//初期化
-
+    	PrefUtil.init(this);//初期化
+    	
         //起動ロゴ画面を表示する
     	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -76,7 +76,7 @@ public class IrofActivity extends IrofSuperActivity {
         			ViewStub stub = _findViewById(R.id.opening);
         			stub.setLayoutResource(R.layout.opening_img);
         			View ball = stub.inflate();
-        			animate(ball).rotationYBy(720).setDuration(3000);        			
+        			animate(ball).rotationYBy(360).setDuration(2000);        			
         		}
         	});
 		} catch (Exception e2) {
@@ -102,6 +102,8 @@ public class IrofActivity extends IrofSuperActivity {
         }).start();
     }
     
+    private IrofViewPager mViewPager;
+    private IrofPageAdapter mPagerAdapter;
 	private void onCreateAction() {
 	    new Handler().post(new Runnable(){
 	        public void run() {
@@ -130,8 +132,19 @@ public class IrofActivity extends IrofSuperActivity {
 	            
 	            setContentView(R.layout.activity_irof);
 	            
-	            IrofViewPager mViewPager = _findViewById(R.id.viewpager);
-	            IrofPageAdapter mPagerAdapter = new IrofPageAdapter(activity);
+	            //IS01だとNakamap動かないようなので保留にしておく
+	    	  	if( "KDDI".equals(Build.BRAND) && "IS01".equals(Build.MODEL) ){
+	    	  		findViewById(R.id.menu_nakamap).setVisibility(View.GONE);
+	    	  	}
+	    	  	else{
+	    	        //Nakamapの表示
+	    			ViewStub stub = _findViewById(R.id.menu_nakamap);
+	    			stub.setLayoutResource(R.layout.nakamap_view);
+	    			stub.inflate();
+	    	  	}
+	            
+	            mViewPager = _findViewById(R.id.viewpager);
+	            mPagerAdapter = new IrofPageAdapter(activity);
 	            mViewPager.setAdapter(mPagerAdapter);
 	            mViewPager.setCurrentItem(0);
 	            
@@ -144,6 +157,7 @@ public class IrofActivity extends IrofSuperActivity {
 	            ViewIndicator indicator = _findViewById(R.id.indicator);
 	            indicator.setViewPager(mViewPager);
 	            indicator.setPosition(0);
+	            
 	        }
 	    });
     }
@@ -259,11 +273,41 @@ public class IrofActivity extends IrofSuperActivity {
     }
     
     private final int MENU_CAPTURE = 200;
+    private final int MENU_TWITTER = 201;
     android.view.View.OnClickListener qaAction = new android.view.View.OnClickListener(){
     	public void onClick(View v) {
     		switch(v.getId()){
     			case MENU_CAPTURE:
     				showMessageBox(m_r.getString(R.string.menu_capture), m_r.getString(R.string.ask_capture),true);
+    				break;
+    			case MENU_TWITTER:
+    				if(twitter_main.isTwitterLogin()){
+    					TwitterPostTask post = new TwitterPostTask(activity);
+    					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
+    					break;
+    				}
+			    	Intent intent = new Intent(activity, com.irof.sns.AuthTwActivity.class);
+			    	/*
+			    	//コールバック形式の時
+			    	intent.putExtra("CALLBACK_URL", 
+			    			String.format("%s://%s", 
+			    						game_main.instance.m_r.getString(R.string.callback_scheme),
+			    						game_main.instance.m_r.getString(R.string.callback_host)
+			    					));
+			    	intent.putExtra("finishClass", this.getClass().getName()); 
+			    	*/
+			    	startActivityForCallback(intent, new OnActivityResultCallback() {
+			            // ここで値を受け取れる
+			            public void onResult(int resultCode, Intent data) {
+		                	final int state = data==null ? 0:data.getIntExtra("State",0);
+		                	LogUtil.trace(TAG,"state="+state);
+
+		                	if(state==1){
+		    					TwitterPostTask post = new TwitterPostTask(activity);
+		    					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
+		                	}
+			            }
+			    	});
     				break;
     			default:
     				break;
@@ -274,7 +318,10 @@ public class IrofActivity extends IrofSuperActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-        case R.id.menu_settings:
+        case R.id.menu_settings:{
+        		Intent intent = new Intent(activity, setting_main.class);
+        		startActivity(intent);
+        	}
             return true;
         case R.id.menu_preferences:
         	{
@@ -284,9 +331,16 @@ public class IrofActivity extends IrofSuperActivity {
         		ActionItem capture = new ActionItem();  
         		capture.setId(MENU_CAPTURE);
         		capture.setTitle(m_r.getString(R.string.menu_capture));  
-        		capture.setIcon(getResources().getDrawable(android.R.drawable.ic_menu_camera));  
+        		capture.setIcon(m_r.getDrawable(android.R.drawable.ic_menu_camera));  
         		capture.setOnClickListener(qaAction);
         		qa.addActionItem(capture);
+
+        		ActionItem twitter = new ActionItem();  
+        		twitter.setId(MENU_TWITTER);
+        		twitter.setTitle(m_r.getString(R.string.menu_twitter));  
+        		twitter.setIcon(m_r.getDrawable(R.drawable.twitter_bird_light_bgs));  
+        		twitter.setOnClickListener(qaAction);
+        		qa.addActionItem(twitter);
         		
         		qa.setLayoutStyle(QuickAction.STYLE_LIST);
         		qa.setAnimStyle(QuickAction.ANIM_GROW_FROM_CENTER);  

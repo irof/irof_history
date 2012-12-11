@@ -1,96 +1,92 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.irof.irof_history"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-sdk
-        android:minSdkVersion="4"
-        android:targetSdkVersion="16" />
-		
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- //nakamap用 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
-    <application
-        android:name="com.irof.irof_super.MyApplication"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name=".IrofActivity"
-            android:label="@string/title_activity_irof" 
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"
-		    android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale|uiMode">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
-        <!-- twitter activity-->
-<!-- 
-        <activity
-            android:name="..TwActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" >
- -->
-        <activity
-            android:name=".TwActivity"
-             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-        	android:screenOrientation="portrait"
-        	android:configChanges="orientation|keyboardHidden"
- 			>
-            <intent-filter >
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-           		<action android:name="android.intent.action.VIEW" />
-            	<category android:name="android.intent.category.DEFAULT" />
-            	<category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="irof_history" android:host="black_world"/>
- 	       </intent-filter>
-        </activity>
-        
-        
-        <!-- Resiver -->
-        <receiver android:name="com.irof.util.HeadsetStateReceiver" android:enabled="false">
+	package="com.irof.irof_history"
+	android:installLocation="preferExternal"
+	android:versionCode="3"
+	android:versionName="1.2g" >
+	<uses-sdk android:minSdkVersion="4"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	
+	<!-- //nakamap用 -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<application
+		android:name="com.irof.irof_super.MyApplication"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme" >
+		<activity
+			android:name=".IrofActivity"
+			android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale|uiMode"
+			android:label="@string/title_activity_irof"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
 			<intent-filter>
-        		<action android:name="android.intent.action.HEADSET_PLUG"/>
-		    </intent-filter>
-		</receiver>
-        
-        <!-- ChatActivity -->
-        <activity
-            android:name="com.kayac.nakamap.sdk.activity.NakamapActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            >
-            <intent-filter>
-                    <action android:name="android.intent.action.VIEW"/>
-                    <category android:name="android.intent.category.DEFAULT" />
-                    <category android:name="android.intent.category.BROWSABLE" />
-                    <data android:scheme="@string/nakamap_scheme"/>
-            </intent-filter>
-        </activity>
-        
-        <!-- //AdMob -->
-        <activity android:name="com.google.ads.AdActivity" 
-                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
-
-        <receiver android:name="com.admob.android.ads.analytics.InstallReceiver" android:exported="true">
-			<intent-filter> 
-		    	<action android:name="com.android.vending.INSTALL_REFERRER" />
-			</intent-filter> 
-		</receiver>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<!-- twitter activity -->
+		<activity
+			android:name="com.irof.sns.AuthTwActivity"
+			android:configChanges="orientation|keyboardHidden"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data
+					android:host="black_world"
+					android:scheme="irof_history" />
+			</intent-filter>
+		</activity>
 		
-    </application>
-
+		<activity android:name=".setting_main"
+            android:theme="@style/AppTheme"
+        	android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>       
+		
+		<!-- Resiver -->
+		<receiver
+			android:name="com.irof.util.HeadsetStateReceiver"
+			android:enabled="false"  android:process=":remote">
+			<intent-filter>
+				<action android:name="android.intent.action.HEADSET_PLUG" />
+			</intent-filter>
+		</receiver>
+		<!-- ChatActivity -->
+		<activity
+			android:name="com.kayac.nakamap.sdk.activity.NakamapActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="nakamapapp-f4fc0143e33ed3933a81e51dff610ae5cb5b0460" /> 
+<!-- 
+				<data android:scheme="@string/nakamap_scheme" /> 
+ -->
+			</intent-filter>
+		</activity>
+	
+		<!-- //AdMob -->
+		<activity
+			android:name="com.google.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+		<receiver
+			android:name="com.admob.android.ads.analytics.InstallReceiver"
+			android:exported="true" >
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+			</intent-filter>
+		</receiver>
+	</application>
 </manifest>

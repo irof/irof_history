@@ -2,9 +2,6 @@ package com.irof.irof_parts;
 
 import java.util.ArrayList;
 
-import com.irof.irof_history.R;
-import com.irof.irof_history.R.array;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -16,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import com.irof.irof_history.R;
 
 public class IrofPageAdapter extends PagerAdapter{
 

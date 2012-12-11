@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kayac.nakamap.sdk.view.NakamapBadgeView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_nakamap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+/>

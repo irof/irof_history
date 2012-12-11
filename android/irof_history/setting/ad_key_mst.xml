@@ -3,8 +3,22 @@
     <!-- //サンプルのID。正式版取得の事 -->
     <string name="nakamap_scheme">nakamapapp-d534747a58dba2003deb451bc49fdce211eed4bb</string>
     <string name="nakamap_clientid">d534747a58dba2003deb451bc49fdce211eed4bb</string>
+<!-- //コレはAndroid版ではいらないらしい -->
+<!-- 
     <string name="nakamap_client_sercret"></string>
-    
+ -->
     
     <string name="adUnitId_mediation"></string>
+    
+    <!-- twitter関連,取得したAPIキーを記載 -->
+    <string name="consumar_key"></string>
+    <string name="consumar_secret"></string>
+    <string name="twitpic_api_key"></string>
+    
+<!-- 
+ irof_history://black_world とした場合
+-->   
+    <string name="callback_scheme">irof_history</string>
+	<string name="callback_host">black_world</string>
+    
 </resources>

@@ -57,12 +57,20 @@
       />
     
     <!-- バッジビューを表示 -->
+    <ViewStub
+    	android:id="@+id/menu_nakamap"
+	    android:layout_weight="1"
+    	android:layout_width="0dip"
+        android:layout_height="wrap_content"
+	 />
+    <!-- 
     <com.kayac.nakamap.sdk.view.NakamapBadgeView
     	android:id="@+id/menu_nakamap"
 	    android:layout_weight="1"
     	android:layout_width="0dip"
         android:layout_height="wrap_content"
     />
+    -->
     </LinearLayout>
  
   
