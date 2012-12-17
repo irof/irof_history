@@ -5,6 +5,8 @@
 		<item>@drawable/griffon</item>
 		<item>@drawable/gradle</item>
 		<item>@drawable/gaelyk</item>
+		<item>@drawable/codenarc</item>
+		<item>@drawable/spock</item>
 	</array>
     
 </resources>

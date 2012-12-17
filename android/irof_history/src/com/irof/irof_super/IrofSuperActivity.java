@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import twitter4j.TwitterException;
-
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -35,7 +34,6 @@ import com.irof.sns.twitter_main;
 import com.irof.util.HeadsetStateReceiver;
 import com.irof.util.LogUtil;
 import com.irof.util.PrefUtil;
-import com.kayac.nakamap.sdk.Nakamap;
 
 public class IrofSuperActivity extends BaseActivity {
 
