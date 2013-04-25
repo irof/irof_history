@@ -7,6 +7,7 @@
 		<item>Version</item>
 		<item>see twitpic Gallery</item>
 		<item>twitterOAuth</item>
+		<item>facebookOAuth</item>
 	</string-array>
 	
 	<string name="list_data_notfound">data not found</string>

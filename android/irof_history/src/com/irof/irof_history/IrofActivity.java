@@ -28,6 +28,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.irof.adapter.FacebookPostTask;
 import com.irof.adapter.TwitterPostTask;
 import com.irof.irof_parts.IrofDraw;
 import com.irof.irof_parts.IrofImageView;
@@ -35,10 +36,12 @@ import com.irof.irof_parts.IrofPageAdapter;
 import com.irof.irof_parts.IrofViewPager;
 import com.irof.irof_super.IrofSuperActivity;
 import com.irof.irof_super.OnActivityResultCallback;
+import com.irof.sns.facebook_main;
 import com.irof.sns.twitter_main;
 import com.irof.util.LogUtil;
 import com.irof.util.PrefUtil;
 import com.irof.util.ViewIndicator;
+import com.kayac.nakamap.sdk.Nakamap;
 
 public class IrofActivity extends IrofSuperActivity {
 	
@@ -115,6 +118,7 @@ public class IrofActivity extends IrofSuperActivity {
 	         	   int res_id =arr.getResourceId(i, -1);
 	         	   balls.put(i, res_id);
 	            } 
+	            arr.recycle();
 	            
 	            TypedArray arr2 = m_r.obtainTypedArray(R.array.agent_list);
 	            len_agents = arr2.length();
@@ -123,13 +127,19 @@ public class IrofActivity extends IrofSuperActivity {
 	            for(int i=0;i<len_agents;i++){
 	         	   int res_id =arr2.getResourceId(i, -1);
 	         	  agents.put(i, res_id);
-	            } 
+	            }
+	            arr2.recycle();
 	            
 	            judge_msg = m_r.getStringArray(R.array.judge_msg);
 	            judge_voice = m_r.getStringArray(R.array.judge_voice);
 	            judge_voice_jp = m_r.getStringArray(R.array.judge_voice_jp);
-	            
-	            
+	        }
+	    });
+	    
+	    
+	       
+	    new Handler().post(new Runnable(){
+	        public void run() {
 	            setContentView(R.layout.activity_irof);
 	            
 	            //IS01だとNakamap動かないようなので保留にしておく
@@ -140,9 +150,12 @@ public class IrofActivity extends IrofSuperActivity {
 	    	        //Nakamapの表示
 	    			ViewStub stub = _findViewById(R.id.menu_nakamap);
 	    			stub.setLayoutResource(R.layout.nakamap_view);
-	    			stub.inflate();
+	    			View v = stub.inflate();
+	    			v.bringToFront();
+	    			v.requestFocus(View.FOCUS_FORWARD);
 	    	  	}
-	            
+
+	        	
 	            mViewPager = _findViewById(R.id.viewpager);
 	            mPagerAdapter = new IrofPageAdapter(activity);
 	            mViewPager.setAdapter(mPagerAdapter);
@@ -157,7 +170,6 @@ public class IrofActivity extends IrofSuperActivity {
 	            ViewIndicator indicator = _findViewById(R.id.indicator);
 	            indicator.setViewPager(mViewPager);
 	            indicator.setPosition(0);
-	            
 	        }
 	    });
     }
@@ -274,6 +286,8 @@ public class IrofActivity extends IrofSuperActivity {
     
     private final int MENU_CAPTURE = 200;
     private final int MENU_TWITTER = 201;
+    private final int MENU_FACEBOOK = 202;
+    
     android.view.View.OnClickListener qaAction = new android.view.View.OnClickListener(){
     	public void onClick(View v) {
     		switch(v.getId()){
@@ -286,17 +300,8 @@ public class IrofActivity extends IrofSuperActivity {
     					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
     					break;
     				}
-			    	Intent intent = new Intent(activity, com.irof.sns.AuthTwActivity.class);
-			    	/*
-			    	//コールバック形式の時
-			    	intent.putExtra("CALLBACK_URL", 
-			    			String.format("%s://%s", 
-			    						game_main.instance.m_r.getString(R.string.callback_scheme),
-			    						game_main.instance.m_r.getString(R.string.callback_host)
-			    					));
-			    	intent.putExtra("finishClass", this.getClass().getName()); 
-			    	*/
-			    	startActivityForCallback(intent, new OnActivityResultCallback() {
+			    	Intent intentTw = new Intent(activity, com.irof.sns.AuthTwActivity.class);
+			    	startActivityForCallback(intentTw, new OnActivityResultCallback() {
 			            // ここで値を受け取れる
 			            public void onResult(int resultCode, Intent data) {
 		                	final int state = data==null ? 0:data.getIntExtra("State",0);
@@ -304,6 +309,26 @@ public class IrofActivity extends IrofSuperActivity {
 
 		                	if(state==1){
 		    					TwitterPostTask post = new TwitterPostTask(activity);
+		    					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
+		                	}
+			            }
+			    	});
+    				break;
+    			case MENU_FACEBOOK:
+    				if(facebook_main.isFacebookLogin()){
+    					FacebookPostTask post = new FacebookPostTask(activity);
+    					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
+    					break;
+    				}
+			    	Intent intentFb = new Intent(activity, com.irof.sns.AuthFbActivity.class);
+			    	startActivityForCallback(intentFb, new OnActivityResultCallback() {
+			            // ここで値を受け取れる
+			            public void onResult(int resultCode, Intent data) {
+		                	final int state = data==null ? 0:data.getIntExtra("State",0);
+		                	LogUtil.trace(TAG,"state="+state);
+
+		                	if(state==1){
+		                		FacebookPostTask post = new FacebookPostTask(activity);
 		    					post.execute(new String[]{""+mPagerAdapter.getPageTitle(mViewPager.getCurrentItem())});
 		                	}
 			            }
@@ -341,6 +366,14 @@ public class IrofActivity extends IrofSuperActivity {
         		twitter.setIcon(m_r.getDrawable(R.drawable.twitter_bird_light_bgs));  
         		twitter.setOnClickListener(qaAction);
         		qa.addActionItem(twitter);
+        		
+        		ActionItem facebook = new ActionItem();  
+        		facebook.setId(MENU_FACEBOOK);
+        		facebook.setTitle(m_r.getString(R.string.menu_facebook));  
+        		facebook.setIcon(m_r.getDrawable(R.drawable.facebook));  
+        		facebook.setOnClickListener(qaAction);
+        		qa.addActionItem(facebook);
+
         		
         		qa.setLayoutStyle(QuickAction.STYLE_LIST);
         		qa.setAnimStyle(QuickAction.ANIM_GROW_FROM_CENTER);  

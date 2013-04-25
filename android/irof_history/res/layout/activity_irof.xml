@@ -57,10 +57,11 @@
       />
     
     <!-- バッジビューを表示 -->
+    <!-- //20dip -->
     <ViewStub
     	android:id="@+id/menu_nakamap"
 	    android:layout_weight="1"
-    	android:layout_width="0dip"
+    	android:layout_width="20dip"
         android:layout_height="wrap_content"
 	 />
     <!-- 

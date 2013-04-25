@@ -3,9 +3,12 @@
     <string name="app_name">いろふの黒歴史</string>
     <string name="irof_world">いろふの世界!</string>
     <string name="menu_settings">設定</string>
+    
     <string name="menu_preferences">ツールBOX</string>
     <string name="menu_capture">画面キャプチャ</string>
     <string name="menu_twitter">twitter投稿</string>
+    <string name="menu_facebook">facebook投稿</string>
+    
     <string name="menu_clear">画面クリア</string>
     <string name="menu_undo">アンドゥ</string>
     

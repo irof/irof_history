@@ -30,6 +30,7 @@ import android.view.View;
 import com.google.tts.TextToSpeechBeta;
 import com.irof.irof_history.R;
 import com.irof.sns.ImageCache;
+import com.irof.sns.facebook_main;
 import com.irof.sns.twitter_main;
 import com.irof.util.HeadsetStateReceiver;
 import com.irof.util.LogUtil;
@@ -59,7 +60,7 @@ public class IrofSuperActivity extends BaseActivity {
         PrefUtil.init(this);
         
         tts_init();
-        
+/*        
         //IS01だとNakamap動かないようなので保留にしておく
 	  	if( "KDDI".equals(Build.BRAND) && "IS01".equals(Build.MODEL) ){
         
@@ -68,19 +69,23 @@ public class IrofSuperActivity extends BaseActivity {
 	        //Nakamapの初期化
 	        new NakamapUtil().nakamapSetup(this);
 	  	}
-
+*/
         
         //音声初期化
         sound_init();
         
-        //tw_iconの保存
-    	twitter_main.init(this);
     	//twitter認証
+    	twitter_main.init(this);
     	try {
 			twitter_main.loginOAuth();
 		} catch (TwitterException e) {
 			LogUtil.error(TAG,"",e);
 		}
+    	
+    	//faacebook認証
+        facebook_main.init(this);
+        facebook_main.loginOAuth();
+
     }
 
 
@@ -100,7 +105,7 @@ public class IrofSuperActivity extends BaseActivity {
 							
 							int result = 0;
 			    			do{
-			        			Locale locale = Locale.getDefault();
+			        			Locale locale =  m_r.getConfiguration().locale;//Locale.getDefault();
 			        			if(locale.equals(Locale.JAPAN) && isCheck_N2Tts()){
 			               			result = mTts.setLanguage(Locale.JAPAN);
 			            			if (result == TextToSpeech.LANG_MISSING_DATA ||

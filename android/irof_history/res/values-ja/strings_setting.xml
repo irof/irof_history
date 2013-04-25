@@ -7,6 +7,7 @@
 		<item>バージョン情報</item>
 		<item>twitpicのギャラリーをみる</item>
 		<item>twitter認証</item>
+		<item>facebook認証</item>
 	</string-array>
 	<string name="list_data_notfound">データが存在しません。</string>
 	

@@ -7,20 +7,26 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
+import android.os.Environment;
 import android.support.v4.util.LruCache;
-import android.util.Log;
 
+import com.irof.irof_history.R;
+import com.irof.util.ActivityUtil;
 import com.irof.util.LogUtil;
 
 public final class ImageCache {
-	private static final String TAG = "ImageCache";
+
+    private static final String TAG = "ImageCache";
     private static final int MEM_CACHE_SIZE = 1 * 1024 * 1024; // 1MB
 
     private static LruCache<String, Bitmap> sLruCache;
@@ -48,20 +54,49 @@ public final class ImageCache {
     }
     
     
-	public static Activity activity;
-	public static void init(Activity activity_){
-		activity = activity_;
-	}
+    public static Activity activity;
+    public static void init(Activity activity_){
+    	activity = activity_;
+    	day_erase = activity.getResources().getInteger(R.integer.day_erase);
+    }
 
+    public static int differenceDays(Date date1,Date date2) {
+        long datetime1 = date1.getTime();
+        long datetime2 = date2.getTime();
+        long one_date_time = 1000 * 60 * 60 * 24;
+        long diffDays = (datetime1 - datetime2) / one_date_time;
+        return (int)diffDays; 
+    }
+
+    private static int day_erase = 1;//3;//消去期限をとりあえず３日に
     private final static String path = "SaveIconList.dat";
-	@SuppressWarnings("unchecked")
 	public static boolean loadIconList(){
+		return loadIconList(true);
+	}
+	@SuppressWarnings("unchecked")
+	public static boolean loadIconList(boolean init_f){
 		try {
 			File iconFile = null;
 		    FileInputStream fis = null;
-		    iconFile = activity.getFileStreamPath(path);
-		    if(iconFile.exists())fis = activity.openFileInput(path);
+			if(isSDCardWriteReady()){
+				File dir = getSDCardDir();
+				// 新規のファイルオブジェクトを作成
+				iconFile = new File(dir, path);
+				if(iconFile.exists())fis = new FileInputStream(iconFile);
+			}
+			else{
+			    iconFile = activity.getFileStreamPath(path);
+			    if(iconFile.exists())fis = activity.openFileInput(path);
+			}
 		    if(!iconFile.exists())return false;
+
+		    if(init_f){
+			    Date lastModDate = new Date(iconFile.lastModified());
+			    if(differenceDays(new Date(),lastModDate)>=day_erase){
+			    	iconFile.delete();
+			    	return false;
+			    }
+		    }
 
 		    long length = iconFile.length();
 		    LogUtil.debug(TAG, "[loadIconList]length = " + length);
@@ -76,10 +111,10 @@ public final class ImageCache {
     		    Bitmap value = BitmapFactory.decodeByteArray(bytSig, 0, bytSig.length);
     		    sLruCache.put(key, value);
 		    }
-		    LogUtil.trace(TAG, "[loadIconList]length = " + iconList.size());
+		    LogUtil.debug(TAG, "[loadIconList]length = " + iconList.size());
 
 		} catch (Exception e) {
-		    Log.e(TAG, "loadIconList ",e);
+		    LogUtil.error(TAG, "loadIconList ",e);
 		    return false;
 		}
 		return true;
@@ -90,8 +125,16 @@ public final class ImageCache {
 		FileOutputStream fos = null;
 		try {
 			File iconFile = null;
-		    iconFile = activity.getFileStreamPath(path);
-		    fos = activity.openFileOutput(path, Context.MODE_PRIVATE);
+			
+			if(isSDCardWriteReady()){
+				File dir = getSDCardDir();
+				iconFile = new File(dir, path);
+				fos = new FileOutputStream(iconFile);
+			}
+			else{
+			    iconFile = activity.getFileStreamPath(path);
+			    fos = activity.openFileOutput(path, Context.MODE_PRIVATE);
+			}
 		    
 		    Map<String,byte[]> iconList = new HashMap<String,byte[]>();
 		    
@@ -99,10 +142,11 @@ public final class ImageCache {
 		    Map<String,Bitmap> snap = sLruCache.snapshot();
 		    for(String key:snap.keySet()){
 		    	Bitmap bmp  = snap.get(key);
-				int size = bmp.getWidth() * bmp.getHeight();
-				ByteArrayOutputStream out = new ByteArrayOutputStream(size);
-				bmp.compress(Bitmap.CompressFormat.JPEG, 100, out);   
+		    	int size = bmp.getWidth() * bmp.getHeight();
+		    	ByteArrayOutputStream out = new ByteArrayOutputStream(size);
+		    	bmp.compress(Bitmap.CompressFormat.JPEG, 100, out);   
 		    	iconList.put(key, out.toByteArray());
+		    	//bmp.recycle();
 		    }
 		    
 		    ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -110,10 +154,10 @@ public final class ImageCache {
 		    oos.close();
 
 		    long length = iconFile.length();
-		    LogUtil.trace(TAG, "[saveIconList]length = " + length);
+		    LogUtil.debug(TAG, "[saveIconList]length = " + length);
 		    return true;
 		} catch (Exception e) {
-		    Log.e(TAG, "saveIconList ",e);
+		    LogUtil.error(TAG, "saveIconList ",e);
 		    return false;
 		}
 		finally{
@@ -122,5 +166,22 @@ public final class ImageCache {
 			} catch (IOException e) {}
 		}
 	}
+	
+    private static boolean isSDCardWriteReady(){
+    	if (activity.checkCallingOrSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)return false;
+    	 String state = Environment.getExternalStorageState();
+    	 return (Environment.MEDIA_MOUNTED.equals(state) && !Environment.MEDIA_MOUNTED_READ_ONLY.equals(state));
+    }
+    private static File getSDCardDir(){
+    	File dir = null;
+    	if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO){
+    		dir = ActivityUtil.getExternalFilesDir(activity,null);
+    	}
+    	else{
+    		dir = new File(Environment.getExternalStorageDirectory(),"/Android/data/" + activity.getClass().getPackage().getName() +"/files");
+    		dir.mkdirs();
+    	}
+    	return dir;
+    }
 
 }

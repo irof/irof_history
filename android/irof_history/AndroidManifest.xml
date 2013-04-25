@@ -9,7 +9,10 @@
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	
 	<!-- //nakamap用 -->
+<!-- 
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ -->	
+
 	<application
 		android:name="com.irof.irof_super.MyApplication"
 		android:icon="@drawable/ic_launcher"
@@ -46,7 +49,15 @@
 					android:scheme="irof_history" />
 			</intent-filter>
 		</activity>
-		
+
+		<activity android:name="com.irof.sns.AuthFbActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        	android:screenOrientation="portrait"
+        	android:configChanges="orientation|keyboardHidden"
+            android:hardwareAccelerated="false"
+            android:exported="false"
+    	/>
+				
 		<activity android:name=".setting_main"
             android:theme="@style/AppTheme"
         	android:exported="false"
@@ -61,6 +72,7 @@
 				<action android:name="android.intent.action.HEADSET_PLUG" />
 			</intent-filter>
 		</receiver>
+
 		<!-- ChatActivity -->
 		<activity
 			android:name="com.kayac.nakamap.sdk.activity.NakamapActivity"
@@ -76,6 +88,7 @@
  -->
 			</intent-filter>
 		</activity>
+        				
 	
 		<!-- //AdMob -->
 		<activity

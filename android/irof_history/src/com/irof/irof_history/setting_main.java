@@ -26,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.irof.sns.facebook_main;
 import com.irof.sns.twitter_main;
 import com.irof.util.LogUtil;
 import com.loopj.android.http.AsyncHttpClient;
@@ -52,6 +53,7 @@ public class setting_main extends ListActivity {
 	final int DEF_VERSION = 3;
 	final int DEF_TWITPIC = 4;
 	final int DEF_TWITTER = 5;
+	final int DEF_FACEBOOK = 6;
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -87,8 +89,15 @@ public class setting_main extends ListActivity {
 				if(twitter_main.isTwitterLogin()){
 					twitter_main.eraseAccessToken();
 				}
-				Intent intent = new Intent(this, com.irof.sns.AuthTwActivity.class);
-				startActivity(intent);
+				Intent intentTw = new Intent(this, com.irof.sns.AuthTwActivity.class);
+				startActivity(intentTw);
+				break;
+			case DEF_FACEBOOK:
+				if(facebook_main.isFacebookLogin()){
+					facebook_main.eraseAccessToken();
+				}
+				Intent intentFb = new Intent(this, com.irof.sns.AuthFbActivity.class);
+				startActivity(intentFb);
 				break;
 		}
 	}

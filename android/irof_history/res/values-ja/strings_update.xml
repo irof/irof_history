@@ -11,13 +11,22 @@
     	旗アイコン；絵を固定/固定解除します\n
     	\n
     	デコレーションした画像を保存/twitterに投稿するには\n
-    	menuボタンより選択してください
+    	menuボタンより選択してください\n
+    	\n
+    	上手く描くポイント的には\n
+    	外側から内側に向かって描画してください\n
     </string>
     <string name="update_title">更新履歴</string>
     <string name="update_desc">
-        v1.1g/2)\n
-        ・REGZAでリソース取得エラーが出る対処\n
+        v1.2g/3)\n
+        ・twitter API 1.1 support(using twitter4j).\n
+        ・facebook support.(using facebook4j)\n
+        \n
+    	v1.1g/2)\n
+        ・REGZA等(Android2.1系、Android4系)でリソース参照エラーが出る対処\n
+        \n
     	v1.0g/1)\n
         ・はじめてのリリース\n
+        \n
     </string>
 </resources>

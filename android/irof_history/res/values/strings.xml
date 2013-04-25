@@ -3,9 +3,12 @@
     <string name="app_name">irof_history</string>
     <string name="irof_world">irof world!</string>
     <string name="menu_settings">Settings</string>
+    
     <string name="menu_preferences">ToolBox</string>
     <string name="menu_capture">Capture</string>
     <string name="menu_twitter">twitter</string>
+    <string name="menu_facebook">facebook</string>
+    
     <string name="menu_clear">Clear</string>
     <string name="menu_undo">Undo</string>
     
