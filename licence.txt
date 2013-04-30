@@ -16,29 +16,32 @@ Irof Licence Version 0.0001
 「いろふ・ライセンス」とは？)
 
  定義は「概念」です。
-ある法則を満たせば「いろふ」と言えるものを指します
-(無限増殖＆同時多発 も適用範囲内です)
+概念を満たせば「いろふ」と言えるものを指します
+(無限増殖＆同時多発 等の概念も適用範囲内です)
 
  詳細は下記を御参照ください
 http://d.hatena.ne.jp/irof/20121225/p1 
 
-
-　それ以外の部分に関しては、NYSLライセンスに依存します
-
-詳細は http://www.kmonos.net/nysl/ を御参照ください
+* 概念シーに違反しない
+** イメージを損なう形で大幅な改変を行わない(いろふ道に基づくならば改変は自由)
+** イメージを損なう場合は、いろふ(@irof)より対象物に対して言及することが可能である
+* いろふ 関連物である事を明記
+* それ以外の部分に関しては、creativecommonsライセンス の表示に依存します
+** 詳細は http://creativecommons.jp/licenses/ を御参照ください
 
 著作者人格権は 各データ/ソフトウェア作成者 に帰属します
-商標と肖像権は いろふ(@irof)さん に帰属します 
-
+著作権は ???
+キャラクター肖像権は いろふ(@irof) に帰属します 
+商標に関しては 言及はいたしません
 ----------------------------------------
 License proposal)
 
 
 
 
-other dependent on NYSL
+other dependent on creativecommons
 
-see http://www.kmonos.net/nysl/
+see http://creativecommons.jp/licenses/
 
 Copyrighted to  data createor and soft creator.
 
