@@ -1,0 +1,10 @@
+<com.kayac.libnakamap.components.ListRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    nakamap:nakamap_leftContentLayoutId="@layout/nakamap_list_row_content_popup_menu_icon"
+    nakamap:nakamap_centerContentLayoutId="@layout/nakamap_list_row_content_one_line"
+    nakamap:nakamap_rightContentLayoutId="@layout/nakamap_list_row_content_image_view"
+    nakamap:nakamap_contentBackground="@drawable/nakamap_bg_menu_repeat"
+    />

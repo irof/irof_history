@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        style="@style/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="@string/nakamap_create_group" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nakamap_bg_light_repeat" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- AD -->
+
+            <com.kayac.libnakamap.components.AdComponent
+                android:id="@+id/nakamap_ad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                nakamap:nakamap_adPageId="android_sdk_create_groups"
+                nakamap:nakamap_autoLoad="false" />
+
+            <com.kayac.libnakamap.components.UIEditText
+                android:id="@+id/nakamap_group_create_new_group_name"
+                style="@style/nakamap_textview_black_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/nakamap_padding_high"
+                android:layout_marginRight="@dimen/nakamap_padding_high"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/nakamap_textbox_edit_selector"
+                android:focusable="true"
+                android:hint="@string/nakamap_hint_group_name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingBottom="@dimen/nakamap_padding_middle"
+                android:paddingLeft="@dimen/nakamap_padding_middle"
+                android:paddingRight="@dimen/nakamap_padding_middle"
+                android:textColorHint="@color/nakamap_text_dark_white" />
+
+            <EditText
+                android:id="@+id/nakamap_group_create_new_group_description"
+                style="@style/nakamap_textview_black_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/nakamap_padding_high"
+                android:layout_marginRight="@dimen/nakamap_padding_high"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/nakamap_textbox_edit_selector"
+                android:focusable="true"
+                android:hint="@string/nakamap_group_description"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="@dimen/nakamap_padding_middle"
+                android:paddingLeft="@dimen/nakamap_padding_middle"
+                android:paddingRight="@dimen/nakamap_padding_middle"
+                android:textColorHint="@color/nakamap_text_dark_white" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nakamap_bg_ttl_01" />
+
+                <TextView
+                    style="@style/nakamap_textview_black_default_singleline_shadow_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="@dimen/nakamap_padding_middle"
+                    android:paddingLeft="@dimen/nakamap_padding_high"
+                    android:text="@string/nakamap_publicity" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.kayac.libnakamap.components.ListRow
+                    android:id="@+id/nakamap_group_create_new_group_publicity_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    nakamap:nakamap_centerContentLayoutId="@layout/nakamap_list_row_content_one_line"
+                    nakamap:nakamap_contentBackground="@drawable/nakamap_setting_row_selector"
+                    nakamap:nakamap_leftContentVisible="false"
+                    nakamap:nakamap_rightContentLayoutId="@layout/nakamap_list_row_content_checkbox" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/nakamap_line_gray_horizontal_repeat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nakamap_group_create_new_group_public_group_category_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.kayac.libnakamap.components.ListRow
+                    android:id="@+id/nakamap_group_create_new_group_public_group_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    nakamap:nakamap_centerContentLayoutId="@layout/nakamap_list_row_content_two_line"
+                    nakamap:nakamap_contentBackground="@drawable/nakamap_setting_row_selector"
+                    nakamap:nakamap_leftContentVisible="false"
+                    nakamap:nakamap_rightContentLayoutId="@layout/nakamap_list_row_content_multiple_selection" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/nakamap_line_gray_horizontal_repeat" />
+
+                <TextView
+                    style="@style/nakamap_textview_gray_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/nakamap_padding_high"
+                    android:layout_marginRight="@dimen/nakamap_padding_high"
+                    android:layout_marginTop="@dimen/nakamap_margin_high"
+                    android:gravity="center_horizontal"
+                    android:text="@string/nakamap_public_is_a_group_which_can_be_searched" />
+
+                <TextView
+                    style="@style/nakamap_textview_gray_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/nakamap_padding_high"
+                    android:layout_marginRight="@dimen/nakamap_padding_high"
+                    android:layout_marginTop="@dimen/nakamap_margin_high"
+                    android:gravity="center_horizontal"
+                    android:text="@string/nakamap_the_group" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/nakamap_group_create_new_group_create_button"
+                style="@style/nakamap_black_button_m"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/nakamap_margin_high"
+                android:text="@string/nakamap_ok" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

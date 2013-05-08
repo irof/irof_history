@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/nakamap_icon_small"
+    android:layout_height="@dimen/nakamap_icon_small"
+    >
+    <com.kayac.libnakamap.components.ImageLoaderView
+        android:id="@+id/nakamap_account_thumbnail_image_loader"
+        android:layout_width="@dimen/nakamap_icon_small"
+        android:layout_height="@dimen/nakamap_icon_small"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="1dp"
+        android:scaleType="fitXY"
+        nakamap:nakamap_useMemoryCache="true"
+        />
+    <ImageView
+        android:layout_width="@dimen/nakamap_icon_small"
+        android:layout_height="@dimen/nakamap_icon_small"
+        android:src="@drawable/nakamap_frame_actionbar"
+        />
+</merge>

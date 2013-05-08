@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<array name="sns_list">
+		<item>@drawable/twitter</item>
+		<item>@drawable/facebook</item>
+		<item>@drawable/line</item>
+	</array>
+	
+</resources>

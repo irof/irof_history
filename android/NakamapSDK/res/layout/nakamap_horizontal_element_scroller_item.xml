@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nakamap_horizontal_scroll_element"
+        android:layout_width="@dimen/nakamap_stamp_category_thumb_width"
+        android:layout_height="@dimen/nakamap_stamp_category_thumb_height"
+        android:layout_gravity="center"
+        android:background="@drawable/nakamap_horizontal_scroller_element_img_selector"
+        android:clickable="true"
+        android:tileMode="repeat" >
+
+        <ImageView
+            android:id="@+id/nakamap_horizontal_scroll_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/nakamap_btn_stamp_tab_on"
+            android:visibility="invisible" />
+
+        <com.kayac.libnakamap.components.ImageLoaderView
+            android:id="@+id/nakamap_horizontal_scroller_image_on"
+            android:layout_width="@dimen/nakamap_stamp_thumb_small_size"
+            android:layout_height="@dimen/nakamap_stamp_thumb_small_size"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>

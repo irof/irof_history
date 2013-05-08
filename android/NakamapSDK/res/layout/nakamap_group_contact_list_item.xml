@@ -1,0 +1,9 @@
+<com.kayac.libnakamap.components.ListRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    nakamap:nakamap_leftContentLayoutId="@layout/nakamap_list_row_content_framed_icon_m"
+    nakamap:nakamap_centerContentLayoutId="@layout/nakamap_list_row_content_two_line"
+    nakamap:nakamap_rightContentVisible="false"
+    nakamap:nakamap_contentBackground="@drawable/nakamap_setting_row_selector"
+    />

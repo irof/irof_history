@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kayac.libnakamap.components.FramedImageLoader
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/nakamap_chat_members_header_member_icon_size"
+    android:layout_height="@dimen/nakamap_chat_members_header_member_icon_size"
+    nakamap:nakamap_frameResourceId="@drawable/nakamap_frame_chatgroup"
+    nakamap:nakamap_loaderId="@+id/nakamap_chat_list_header_member_icon"
+    />
+<!-- android:layout_marginRight="@dimen/nakamap_chat_members_header_member_icon_margin" -->

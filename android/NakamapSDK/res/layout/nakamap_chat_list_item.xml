@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <include
+        android:id="@+id/nakamap_chat_list_left_item"
+        layout="@layout/nakamap_chat_list_left_item"
+        />
+    <include
+        android:id="@+id/nakamap_chat_list_system_message"
+        layout="@layout/nakamap_chat_list_system_message"
+        />
+    <include
+        android:id="@+id/nakamap_chat_list_right_item"
+        layout="@layout/nakamap_chat_list_right_item"
+        />
+</FrameLayout>

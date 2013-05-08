@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/nakamap_line_gray"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nakamap_custom_dialog_button_area_height"
+            android:layout_gravity="center_vertical"
+            android:background="@color/nakamap_white"
+            android:orientation="horizontal"
+            >
+            <!-- negative -->
+            <Button
+                android:id="@+id/nakamap_custom_dialog_footer_negative_button"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                style="@style/nakamap_custom_dialog_button"
+                android:visibility="gone"
+                />
+            <FrameLayout 
+                android:id="@+id/nakamap_custom_dialog_footer_button_split"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/nakamap_line_gray_vertical"
+                android:visibility="gone"
+                />
+            <!-- ok -->
+            <Button
+                android:id="@+id/nakamap_custom_dialog_footer_positive_button"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                style="@style/nakamap_custom_dialog_button"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</merge>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_dark_tile"
+    >
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/nakamap_line_black"
+        android:fadingEdge="none" />
+    
+    <!-- AD -->
+    <com.kayac.libnakamap.components.AdComponent
+        android:id="@+id/nakamap_ad_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        nakamap:nakamap_adPageId="android_account_list_0"
+        nakamap:nakamap_autoLoad="false"
+        />
+    <com.kayac.libnakamap.components.AdComponent
+        android:id="@+id/nakamap_ad_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        nakamap:nakamap_adPageId="android_account_list_1"
+        nakamap:nakamap_autoLoad="false"
+        />
+    <com.kayac.libnakamap.components.AdComponent
+        android:id="@+id/nakamap_ad_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        nakamap:nakamap_adPageId="android_account_list_2"
+        nakamap:nakamap_autoLoad="false"
+        />
+</FrameLayout>

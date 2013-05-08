@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <array name="nakamap_change_wallpaper">
+    <item>@string/nakamap_restore_defaults</item>
+    <item>@string/nakamap_select_picture</item>
+  </array>
+  <array name="nakamap_list_popup_window_icon">
+    <item>@drawable/nakamap_ico_friendlist_menu_selector</item>
+    <item>@drawable/nakamap_ico_profile_menu_selector</item>
+    <item>@drawable/nakamap_ico_application_menu_selector</item>
+    <item>@drawable/nakamap_ico_stamp_menu_selector</item>
+    <item>@drawable/nakamap_ico_setting_menu_selector</item>
+  </array>
+  <array name="nakamap_list_popup_window_id">
+    <item>@id/nakamap_popup_menu_profile</item>
+    <item>@id/nakamap_popup_menu_setting</item>
+  </array>
+  <string-array name="nakamap_group_list_fixed_tab_titles">
+    <item>@string/nakamap_private_groups</item>
+    <item>@string/nakamap_public_groups</item>
+  </string-array>
+  <string-array name="nakamap_list_popup_window_label">
+    <item>@string/nakamap_profile</item>
+    <item>@string/nakamap_settings</item>
+  </string-array>
+</resources>

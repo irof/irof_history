@@ -1,0 +1,12 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- pressed -->
+    <item
+        android:state_enabled="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/nakamap_ico_acitonbar_accept_on"
+        />
+    <!-- default -->        
+    <item
+        android:drawable="@drawable/nakamap_ico_acitonbar_accept"
+        />
+</selector>

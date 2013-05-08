@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="51dp"
+    android:layout_height="48dp"
+    >
+    <ImageButton
+        android:id="@+id/nakamap_action_bar_button_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        />
+    <ImageView
+        android:id="@+id/nakamap_action_bar_new_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:src="@drawable/nakamap_ico_new"
+        android:layout_marginRight="@dimen/nakamap_margin_low"
+        android:layout_marginTop="@dimen/nakamap_margin_low"
+        android:visibility="gone" />
+    
+    <TextView 
+        android:id="@+id/nakamap_action_bar_new_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/nakamap_textview_white_default_shadow_green"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"/>
+</FrameLayout>

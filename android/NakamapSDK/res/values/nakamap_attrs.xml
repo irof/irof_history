@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- IMAGE LOADER VIEW -->
+    <declare-styleable name="nakamap_ImageLoaderView">
+        <attr name="nakamap_useMemoryCache" format="boolean" />
+        <attr name="nakamap_baseDrawable" format="reference" />
+        <attr name="nakamap_baseWidth" format="dimension|reference" />
+        <attr name="nakamap_baseHeight" format="dimension|reference" />
+        <attr name="nakamap_useMaxExtendedSize" format="boolean" />
+    </declare-styleable>
+
+    <!-- FRAMED IMAGE LOADER -->
+    <declare-styleable name="nakamap_FramedImageLoader">
+        <attr name="nakamap_frameResourceId" format="reference" />
+        <attr name="nakamap_loaderId" format="reference" />
+        <attr name="nakamap_frameWidth" format="dimension|reference"/>
+        <attr name="nakamap_frameHeight" format="dimension|reference"/>
+    </declare-styleable>
+
+    <!-- ACTION BAR -->
+    <declare-styleable name="nakamap_ActionBar">
+        <attr name="nakamap_content_type">
+            <enum name="nakamap_manual" value="0" />
+            <enum name="nakamap_backable" value="1" />
+            <enum name="nakamap_select_account" value="2" />
+            <enum name="nakamap_title_only" value="3" />
+        </attr>
+        <attr name="nakamap_text" format="string" />
+    </declare-styleable>
+
+    <!-- LIST ROW -->
+    <declare-styleable name="nakamap_ListRow">
+        <attr name="nakamap_leftContentLayoutId" format="reference" />
+        <attr name="nakamap_centerContentLayoutId" format="reference" />
+        <attr name="nakamap_rightContentLayoutId" format="reference" />
+        <attr name="nakamap_indexVisible" format="boolean" />
+        <attr name="nakamap_leftContentVisible" format="boolean" />
+        <attr name="nakamap_centerContentVisible" format="boolean" />
+        <attr name="nakamap_rightContentVisible" format="boolean" />
+        <attr name="nakamap_contentBackground" format="reference" />
+        <attr name="nakamap_indexBackground" format="reference" />
+        <attr name="nakamap_wrapContent" format="boolean" />
+    </declare-styleable>
+
+    <!-- PROFILE COVER -->
+    <declare-styleable name="nakamap_ProfileCover">
+        <attr name="nakamap_coverImageMinHeight" format="dimension|reference" />
+        <attr name="nakamap_coverImageMaxHeight" format="dimension|reference" />
+        <attr name="nakamap_iconLeftMargin" format="dimension|reference" />
+        <attr name="nakamap_iconTopRunOver" format="dimension|reference" />
+        <attr name="nakamap_iconFrameWidth" format="dimension|reference" />
+        <attr name="nakamap_iconFrameColor" format="color|reference" />
+        <attr name="nakamap_iconSize" format="dimension|reference" />
+    </declare-styleable>
+
+    <!-- TOGGLE ON OF BUTTON -->
+    <declare-styleable name="nakamap_ToggleOnOffButton">
+        <attr name="nakamap_isOff" format="boolean" />
+        <attr name="nakamap_blockedState" format="boolean" />
+    </declare-styleable>
+
+    <!-- AdComponent -->
+    <declare-styleable name="nakamap_AdComponent">
+        <attr name="nakamap_adPageId" format="string" />
+        <attr name="nakamap_autoLoad" format="boolean" />
+    </declare-styleable>
+
+    <!-- FIXED TAB -->
+    <declare-styleable name="nakamap_FixedTab">
+        <attr name="nakamap_titles" format="reference" />
+    </declare-styleable>
+
+    <!-- SEARCH BOX -->
+    <declare-styleable name="nakamap_SearchBox">
+        <attr name="nakamap_closeButton" format="boolean" />
+        <attr name="nakamap_frameColor">
+            <enum name="nakamap_black" value="0" />
+            <enum name="nakamap_gray" value="1" />
+        </attr>
+        <attr name="nakamap_searchHintText" format="string|reference" />
+    </declare-styleable>
+    <declare-styleable name="nakamap_CustomEditText">
+        <attr name="nakamap_hint" format="string|reference"/>
+        <attr name="nakamap_layoutId" format="reference"/>
+    </declare-styleable>
+
+</resources>

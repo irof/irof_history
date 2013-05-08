@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_pressed="true">
+        <bitmap
+            android:gravity="fill"
+            android:src="@drawable/nakamap_bg_menu_on"
+            android:tileMode="repeat" />
+    </item>
+
+    <item
+        android:state_checked="true">
+        <bitmap
+            android:gravity="fill"
+            android:src="@drawable/nakamap_bg_menu_on"
+            android:tileMode="repeat" />
+    </item>
+    
+    <item>
+        <bitmap
+            android:gravity="fill"
+            android:src="@drawable/nakamap_bg_menu"
+            android:tileMode="repeat" />
+    </item>
+
+</selector>

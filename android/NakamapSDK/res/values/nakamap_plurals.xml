@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="nakamap_view_replies">
+        <item quantity="one">View a reply</item>
+        <item quantity="other">View %d replies</item>
+    </plurals>
+</resources>

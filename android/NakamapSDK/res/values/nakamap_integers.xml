@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="nakamap_arrow_animation_duration">200</integer>
+  <integer name="nakamap_light_box_animation_time">333</integer>
+  <integer name="nakamap_light_box_configuration_changed_animation_time">777</integer>
+</resources>

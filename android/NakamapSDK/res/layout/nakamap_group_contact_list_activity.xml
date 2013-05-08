@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_light_repeat"
+    android:orientation="vertical" >
+
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        style="@style/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="@string/nakamap_add_friend" />
+
+    <com.kayac.libnakamap.components.SearchBox
+        android:id="@+id/nakamap_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        nakamap:nakamap_closeButton="true"
+        nakamap:nakamap_frameColor="nakamap_gray"
+        nakamap:nakamap_searchHintText="@string/nakamap_search_search_by_name" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" >
+
+        <ListView
+            android:id="@+id/nakamap_group_contacts_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/nakamap_line_gray"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:fastScrollEnabled="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/nakamap_img_shadow" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/nakamap_group_contact_community_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/nakamap_bnr_group_02"
+        android:background="@color/nakamap_banner_background"
+        android:visibility="gone" />
+    
+    
+</LinearLayout>

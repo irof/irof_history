@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- pressed -->
+    <item
+        android:state_enabled="true"
+        android:state_pressed="true"
+        >
+        <shape android:shape="rectangle">
+            <solid android:color="@color/nakamap_profile_add_friend_row_background_on" />
+        </shape>
+    </item>
+	<!-- default -->        
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/nakamap_profile_add_friend_row_background" />
+        </shape>
+    </item>
+</selector>

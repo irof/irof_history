@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kayac.libnakamap.components.FramedImageLoader
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    nakamap:nakamap_frameResourceId="@drawable/nakamap_frame_m"
+    nakamap:nakamap_frameWidth="@dimen/nakamap_icon_medium"
+    nakamap:nakamap_frameHeight="@dimen/nakamap_icon_medium"
+    android:layout_width="@dimen/nakamap_icon_medium"
+    android:layout_height="@dimen/nakamap_icon_medium"
+    />

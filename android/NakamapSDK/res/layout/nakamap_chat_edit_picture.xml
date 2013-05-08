@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    >
+    <ImageView
+        android:id="@+id/nakamap_chat_edit_picture_thumbnail"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:visibility="gone" />
+    <FrameLayout
+        android:id="@+id/nakamap_chat_edit_picture_button_button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        >
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/nakamap_btn_ss_white" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/nakamap_ico_photo_btn" />
+
+    </FrameLayout>
+</FrameLayout>

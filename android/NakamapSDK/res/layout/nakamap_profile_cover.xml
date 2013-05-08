@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    -->
+
+    <RelativeLayout
+        android:id="@+id/nakamap_profile_cover_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.kayac.libnakamap.components.ImageLoaderView
+            android:id="@+id/nakamap_profile_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nakamap_profile_cover_max"
+            android:scaleType="centerCrop" />
+        <!-- Cover 画像の変更ボタン -->
+
+        <ImageButton
+            android:id="@+id/nakamap_profile_cover_cover_change_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/nakamap_ico_photo_profile"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <com.kayac.libnakamap.components.UIScrollView
+        android:id="@+id/nakamap_profile_cover_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:scrollbars="none" >
+
+        <FrameLayout
+            android:id="@+id/nakamap_profile_cover_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/nakamap_profile_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <View
+                    android:id="@+id/nakamap_profile_container_image_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/nakamap_profile_cover_min" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/nakamap_profile_cover_icon_container"
+                android:layout_width="@dimen/nakamap_profile_cover_icon_size"
+                android:layout_height="@dimen/nakamap_profile_cover_icon_size"
+                android:layout_marginLeft="@dimen/nakamap_profile_cover_icon_left_margin"
+                android:background="#ffff0000" >
+
+                <com.kayac.libnakamap.components.ImageLoaderView
+                    android:id="@+id/nakamap_profile_cover_icon"
+                    android:layout_width="@dimen/nakamap_profile_cover_icon_size"
+                    android:layout_height="@dimen/nakamap_profile_cover_icon_size"
+                    android:scaleType="fitXY" />
+
+                <ImageButton
+                    android:id="@+id/nakamap_profile_cover_icon_change_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/nakamap_ico_photo_profile"
+                    android:scaleType="fitXY" />
+            </RelativeLayout>
+        </FrameLayout>
+    </com.kayac.libnakamap.components.UIScrollView>
+    <!-- </FrameLayout> -->
+
+</merge>

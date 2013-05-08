@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nakamap_bg_light_repeat"
+        android:orientation="vertical" >
+
+        <com.kayac.libnakamap.components.ActionBar
+            android:id="@+id/nakamap_action_bar"
+            style="@style/nakamap_action_bar"
+            nakamap:nakamap_content_type="nakamap_select_account"
+            nakamap:nakamap_text="nakamap_accounts" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.kayac.libnakamap.components.FixedTab
+                android:id="@+id/nakamap_sample_fixed_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                nakamap:nakamap_titles="@array/nakamap_group_list_fixed_tab_titles" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <com.kayac.libnakamap.components.InterceptableViewPager
+                    android:id="@+id/nakamap_sample_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nakamap_img_shadow_chat" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- メインアカウント用 path-/community へ遷移するためのバナー -->
+
+        <ImageView
+            android:id="@+id/nakamap_group_list_community_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/nakamap_banner_background"
+            android:scaleType="center"
+            android:src="@drawable/nakamap_bnr_group_02"
+            android:visibility="gone" />
+        <!-- メインアカウント用 path-/profile へ遷移するためのバナー -->
+
+        <ImageView
+            android:id="@+id/nakamap_group_list_to_profile_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/nakamap_banner_to_profile_background"
+            android:scaleType="center"
+            android:src="@drawable/nakamap_bnr_profile_03" />
+        <!-- サブアカウント用 path-/community へ遷移するためのバナー -->
+
+        <ImageView
+            android:id="@+id/nakamap_group_list_community_banner_for_subaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/nakamap_banner_background"
+            android:scaleType="center"
+            android:src="@drawable/nakamap_bnr_group_02"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/nakamap_sdk_terms_of_use"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

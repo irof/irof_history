@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="nakamap_Animation_PopupWindow" />
+  <style name="nakamap_action_bar" parent="@android:style/Widget">
+    <item name="android:background">@drawable/nakamap_bg_actionbar</item>
+    <item name="android:layout_height">48dp</item>
+    <item name="android:layout_width">match_parent</item>
+  </style>
+  <style name="nakamap_black_button_l" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_button_l_black_selector</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@drawable/nakamap_button_black_text_selector</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_black_button_m" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_button_m_black_selector</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@drawable/nakamap_button_black_text_selector</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_custom_check_box" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <item name="android:background">@drawable/nakamap_checkbox_selector</item>
+    <item name="android:button">@drawable/nakamap_checkbox_selector</item>
+    <item name="android:layout_height">@dimen/nakamap_checkbox_height</item>
+    <item name="android:layout_width">@dimen/nakamap_checkbox_width</item>
+  </style>
+  <style name="nakamap_custom_dialog" parent="@android:style/Theme.Dialog">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="nakamap_custom_dialog_button" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_custom_dialog_button_selector</item>
+    <item name="android:textColor">@drawable/nakamap_custom_dialog_button_text_selector</item>
+    <item name="android:textSize">@dimen/nakamap_text_large</item>
+  </style>
+  <style name="nakamap_green_button_l_with_shadow" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_button_l_green_selector</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:shadowColor">@color/nakamap_text_shadow_black</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@drawable/nakamap_button_green_text_selector</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_list_row">
+    <item name="nakamap_indexVisible">false</item>
+  </style>
+  <style name="nakamap_profile_cover">
+    <item name="nakamap_coverImageMaxHeight">@dimen/nakamap_profile_cover_max</item>
+    <item name="nakamap_coverImageMinHeight">@dimen/nakamap_profile_cover_min</item>
+    <item name="nakamap_iconFrameColor">@color/nakamap_profile_cover_icon_frame_color</item>
+    <item name="nakamap_iconFrameWidth">@dimen/nakamap_profile_cover_icon_frame_width</item>
+    <item name="nakamap_iconLeftMargin">@dimen/nakamap_profile_cover_icon_left_margin</item>
+    <item name="nakamap_iconSize">@dimen/nakamap_profile_cover_icon_size</item>
+    <item name="nakamap_iconTopRunOver">@dimen/nakamap_profile_cover_icon_top_run_over</item>
+  </style>
+  <style name="nakamap_textview_black_default" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_black_default_shadow_white" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_white</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_black_default_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_black_default_singleline_shadow_white" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:shadowColor">@color/nakamap_text_shadow_white</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_black_default_two_lines" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">2</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_black_large" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_large</item>
+  </style>
+  <style name="nakamap_textview_black_large_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_large</item>
+  </style>
+  <style name="nakamap_textview_black_very_large" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_very_large</item>
+  </style>
+  <style name="nakamap_textview_black_very_large_shadow_black" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_black</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_very_large</item>
+  </style>
+  <style name="nakamap_textview_black_very_large_shadow_white" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_white</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_black</item>
+    <item name="android:textSize">@dimen/nakamap_text_very_large</item>
+  </style>
+  <style name="nakamap_textview_gray_default" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_gray_default_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_gray_small" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_small</item>
+  </style>
+  <style name="nakamap_textview_gray_small_shadow_white" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_white</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_small</item>
+  </style>
+  <style name="nakamap_textview_gray_small_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_small</item>
+  </style>
+  <style name="nakamap_textview_gray_very_large_shadow_white" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_white</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_gray</item>
+    <item name="android:textSize">@dimen/nakamap_text_very_large</item>
+  </style>
+  <style name="nakamap_textview_green_small" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_green</item>
+    <item name="android:textSize">@dimen/nakamap_text_small</item>
+  </style>
+  <style name="nakamap_textview_pink_large_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_pink</item>
+    <item name="android:textSize">@dimen/nakamap_text_large</item>
+  </style>
+  <style name="nakamap_textview_white_default" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_white</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_white_default_shadow_green" parent="@android:style/Widget.TextView">
+    <item name="android:shadowColor">@color/nakamap_text_shadow_green</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:textColor">@color/nakamap_text_white</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_white_default_singleline" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_white</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+  <style name="nakamap_textview_white_large_singleline_shadow_green" parent="@android:style/Widget.TextView">
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:shadowColor">@color/nakamap_text_shadow_green</item>
+    <item name="android:shadowDx">0.0</item>
+    <item name="android:shadowDy">-1.0</item>
+    <item name="android:shadowRadius">0.5</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textColor">@color/nakamap_text_white</item>
+    <item name="android:textSize">@dimen/nakamap_text_large</item>
+  </style>
+  <style name="nakamap_textview_white_small" parent="@android:style/Widget.TextView">
+    <item name="android:textColor">@color/nakamap_text_white</item>
+    <item name="android:textSize">@dimen/nakamap_text_small</item>
+  </style>
+  <style name="nakamap_trash_button" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_button_trash_selector</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
+  <style name="nakamap_white_button_l" parent="@android:style/Widget.Button">
+    <item name="android:background">@drawable/nakamap_button_l_white_selector</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@drawable/nakamap_button_white_text_selector</item>
+    <item name="android:textSize">@dimen/nakamap_text_default</item>
+  </style>
+</resources>

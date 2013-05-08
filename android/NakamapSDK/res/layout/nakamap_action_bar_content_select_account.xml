@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/nakamap_action_bar_background_selector_01"
+    >
+    <!-- ACCOUNT ICON -->
+    <view class="com.kayac.libnakamap.components.ActionBar$AccountThumbnail"
+        android:id="@+id/nakamap_action_bar_account_icon"
+        android:layout_width="@dimen/nakamap_icon_small"
+        android:layout_height="@dimen/nakamap_icon_small"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="@dimen/nakamap_margin_middle"
+        android:scaleType="fitXY"
+        />
+    <!-- ACCOUNT NAME -->
+    <TextView 
+        android:id="@+id/nakamap_action_bar_account_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/nakamap_margin_middle"
+        style="@style/nakamap_textview_white_large_singleline_shadow_green"
+        />
+    <ImageView
+        android:id="@+id/nakamap_action_bar_account_down_icon" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/nakamap_margin_middle"
+        android:layout_marginRight="@dimen/nakamap_margin_middle"
+        android:layout_marginTop="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/nakamap_ico_actionbar_down"
+        />
+</LinearLayout>

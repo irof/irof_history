@@ -74,22 +74,144 @@
 		</receiver>
 
 		<!-- ChatActivity -->
+<!--		
 		<activity
 			android:name="com.kayac.nakamap.sdk.activity.NakamapActivity"
-			android:configChanges="keyboard|keyboardHidden|orientation"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
 			android:theme="@android:style/Theme.Translucent.NoTitleBar" >
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 				<data android:scheme="nakamapapp-f4fc0143e33ed3933a81e51dff610ae5cb5b0460" /> 
-<!-- 
-				<data android:scheme="@string/nakamap_scheme" /> 
- -->
 			</intent-filter>
 		</activity>
-        				
-	
+-->
+<!-- NAKAMAP SDK TEMPLATE -->
+<activity
+    android:name="com.kayac.nakamap.sdk.activity.NakamapActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@style/nakamapsdk_theme_transparent" >
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data android:scheme="nakamapapp-f4fc0143e33ed3933a81e51dff610ae5cb5b0460" />
+    </intent-filter>
+</activity>
+<service
+    android:name="com.kayac.nakamap.sdk.auth.NakamapAuthCallbackService"
+    android:exported="true" >
+    <intent-filter>
+        <action android:name="com.kayac.nakamap.NAKAMAP_APP_AUTH_CALLBACK_f4fc0143e33ed3933a81e51dff610ae5cb5b0460" />
+    </intent-filter>
+</service>
+<activity
+    android:name="com.kayac.libnakamap.activity.invitation.InvitationActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar" >
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+            android:host="invited"
+            android:scheme="nakamap" />
+    </intent-filter>
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.group.GroupListActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@style/nakamapsdk_nakamap_activity_theme" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.community.CommunityActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:windowSoftInputMode="adjustResize" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.community.SearchCommunityActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:windowSoftInputMode="adjustResize" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.chat.ChatActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.chat.ChatReplyActivity"
+    android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:windowSoftInputMode="adjustResize" />
+<activity
+    android:name="com.kayac.libnakamap.activity.chat.ChatEditActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:windowSoftInputMode="adjustResize|stateVisible" />
+<activity
+    android:name="com.kayac.libnakamap.activity.profile.ProfileActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.profile.ProfilePublicGroupsActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.profile.ProfilePublicGroupsVisibilityActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.friend.SearchFriendActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:windowSoftInputMode="adjustResize" >
+</activity>
+<activity
+    android:name="com.kayac.libnakamap.activity.chat.ChatGroupInfoActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.chat.ChatMemberActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.stamp.StampActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.group.CreateNewGroupActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.setting.WebViewSetting"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity
+    android:name="com.kayac.libnakamap.activity.group.ContactListActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:windowSoftInputMode="adjustResize|stateHidden" >
+</activity>
+<activity
+    android:name="com.kayac.nakamap.sdk.activity.MenuActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+<service
+    android:name="com.kayac.libnakamap.service.chat.GroupEventService"
+    android:label="@string/nakamap_chat_streaming" >
+</service>
+<!-- NAKAMAP SDK TEMPLATE -->
+		
+		
 		<!-- //AdMob -->
 		<activity
 			android:name="com.google.ads.AdActivity"

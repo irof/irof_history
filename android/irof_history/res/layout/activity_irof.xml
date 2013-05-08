@@ -76,7 +76,8 @@
  
   
   
-    <com.irof.util.ViewIndicator
+    <view
+    	class="com.irof.util.ViewIndicator"
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
         android:layout_height="30dp"
@@ -103,7 +104,8 @@
         android:layout_toLeftOf="@+id/viewpager"
         android:id="@+id/irof_judge" android:visibility="gone"/>   
     
-    <com.google.ads.AdView  
+    <view
+    	 class="com.google.ads.AdView"
          android:layout_marginBottom="50dip"
 	     android:id="@+id/AdMob_medview" 
 		 android:layout_width="fill_parent"  
@@ -112,6 +114,17 @@
 		 ads:adSize="BANNER" 
 		 android:layout_alignParentBottom="true"
 		 ads:loadAdOnCreate="true" />  
-    
-    	
+
+<!-- 
+		android:layout_toLeftOf="@id/AdMob_medview"
+ -->
+	 <view
+        android:layout_marginLeft="-60dip"
+        android:layout_marginBottom="50dip"
+	 	android:id="@+id/arc_menu"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:layout_alignParentBottom="true"
+	 	android:layout_alignParentLeft="true"
+	 	class="com.capricorn.ArcMenu" />
 </com.irof.irof_parts.IrofDraw>

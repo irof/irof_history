@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- INDEX -->
+
+    <FrameLayout
+        android:id="@+id/nakamap_list_row_index_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/nakamap_bg_ttl_01" />
+
+        <TextView
+            android:id="@+id/nakamap_list_row_index_text"
+            style="@style/nakamap_textview_black_default_singleline_shadow_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="@dimen/nakamap_padding_high"
+            android:text="@string/nakamap_shout" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/nakamap_list_row_area"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nakamap_custom_dialog_list_row_height"
+        android:background="@drawable/nakamap_custom_dialog_list_row_selector"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/nakamap_list_row_left_content_view_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="@dimen/nakamap_margin_middle" >
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/nakamap_list_row_center_content_view_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="@dimen/nakamap_margin_high"
+            android:layout_marginRight="@dimen/nakamap_margin_high"
+            android:layout_weight="1" >
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/nakamap_list_row_right_content_view_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/nakamap_margin_high"
+            >
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </LinearLayout>
+
+</merge>

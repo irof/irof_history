@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.kayac.nakamap.sdk"
-      android:versionName="1.70">
+      android:versionCode="1"
+      android:versionName="2.30">
     <uses-sdk android:minSdkVersion="8"/>
-    <application />
-</manifest> 
+</manifest>

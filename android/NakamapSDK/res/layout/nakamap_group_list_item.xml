@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nakamap_group_list_row_height"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/nakamap_padding_low"
+    android:paddingLeft="@dimen/nakamap_padding_middle"
+    android:paddingRight="@dimen/nakamap_padding_middle" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nakamap_base_list"
+        android:orientation="horizontal" >
+
+        <com.kayac.libnakamap.components.FramedImageLoader
+            android:id="@+id/nakamap_group_list_icon"
+            android:layout_width="@dimen/nakamap_group_list_row_icon_width"
+            android:layout_height="@dimen/nakamap_group_list_row_icon_height"
+            nakamap:nakamap_frameResourceId="@drawable/nakamap_frame_list" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/nakamap_padding_high"
+            android:paddingRight="@dimen/nakamap_padding_middle" >
+
+            <TextView
+                android:id="@+id/nakamap_group_title"
+                style="@style/nakamap_textview_black_default_singleline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/nakamap_group_description"
+                style="@style/nakamap_textview_gray_small_singleline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nakamap_ico_user_s" />
+
+                <TextView
+                    android:id="@+id/nakamap_group_list_member_number"
+                    style="@style/nakamap_textview_gray_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/nakamap_margin_low"
+                    android:gravity="center_vertical" />
+
+                <LinearLayout
+                    android:id="@+id/nakamap_group_list_online_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/nakamap_margin_middle"
+                        android:src="@drawable/nakamap_ico_map_s" />
+
+                    <TextView
+                        android:id="@+id/nakamap_group_list_online_number"
+                        style="@style/nakamap_textview_gray_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/nakamap_margin_low"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/nakamap_margin_middle"
+                    android:src="@drawable/nakamap_ico_time_s" />
+
+                <TextView
+                    android:id="@+id/nakamap_group_list_time"
+                    style="@style/nakamap_textview_gray_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/nakamap_margin_low"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/nakamap_group_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="@dimen/nakamap_margin_middle"
+            android:src="@drawable/nakamap_ico_attention_01" />
+    </LinearLayout>
+
+</LinearLayout> 

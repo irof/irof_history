@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nakamap_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        style="@style/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.kayac.libnakamap.components.ImageLoaderView
+            android:id="@+id/nakamap_chat_reply_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <FrameLayout
+            android:id="@+id/nakamap_chat_reply_fake_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|left"
+            android:background="@drawable/nakamap_bg_light_repeat" >
+
+            <TextView
+                android:id="@+id/nakamap_chat_reply_no_replies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="16dp"
+                android:text="@string/nakamap_comment"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <ListView
+                    android:id="@+id/nakamap_chat_reply_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:clickable="false"
+                    android:divider="@android:color/transparent"
+                    android:fadingEdge="none"
+                    android:fastScrollEnabled="true"
+                    android:scrollbars="none" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nakamap_img_shadow_chat" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nakamap_white"
+                android:gravity="bottom" >
+
+                <LinearLayout
+                    android:id="@+id/nakamap_chat_edit_tools_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:paddingTop="8dp" >
+
+                    <!-- CURRENT CODE -->
+
+                    <FrameLayout
+                        android:id="@+id/nakamap_chat_edit_start_stamp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="12dp" 
+                        android:layout_gravity="bottom"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/nakamap_btn_ss_white" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/nakamap_chat_stamp_selector" />
+                    </FrameLayout>
+
+                    <com.kayac.libnakamap.activity.chat.ChatEditPictureButton
+                        android:id="@+id/nakamap_chat_edit_picture"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="bottom"
+                        />
+
+                    <com.kayac.libnakamap.components.UIEditText
+                        android:id="@+id/nakamap_chat_edit"
+                        style="@style/nakamap_textview_black_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/nakamap_padding_high"
+                        android:layout_marginRight="@dimen/nakamap_padding_low"
+                        android:layout_weight="1"
+                        android:background="@drawable/nakamap_textbox_edit_selector"
+                        android:gravity="top|left"
+                        android:maxLines="3"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="@dimen/nakamap_padding_low"
+                        android:paddingRight="@dimen/nakamap_padding_low"
+                        android:paddingTop="@dimen/nakamap_padding_low" />
+
+                    <Button
+                        android:id="@+id/nakamap_chat_edit_post"
+                        style="@style/nakamap_textview_white_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/nakamap_button_send_reply_selector"
+                        android:text="@string/nakamap_send" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

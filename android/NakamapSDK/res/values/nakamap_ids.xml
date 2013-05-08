@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SELECT_PICTURE_MENU_DIALOG -->
+    <item name="nakamap_select_picture_menu_take_photo" type="id"/>
+    <item name="nakamap_select_picture_menu_select_photo" type="id"/>
+    <item name="nakamap_select_picture_menu_photo_bag" type="id"/>
+    <item name="nakamap_select_picture_menu_detach_photo" type="id"/>
+    
+    <!-- LIST POPUP WINDWO LABLE -->
+    <item name="nakamap_popup_menu_chat" type="id"/>
+    <item name="nakamap_popup_menu_friendnew" type="id"/>
+    <item name="nakamap_popup_menu_friendlist" type="id"/>
+    <item name="nakamap_popup_menu_profile" type="id"/>
+    <item name="nakamap_popup_menu_application" type="id"/>
+    <item name="nakamap_popup_menu_stamp_store" type="id" />
+    <item name="nakamap_popup_menu_setting" type="id"/>
+    <item name="nakamap_popup_menu_community" type="id"/>
+</resources>

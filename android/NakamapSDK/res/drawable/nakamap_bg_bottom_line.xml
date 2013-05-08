@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+        <item
+            android:top="0dp"
+            android:bottom="0dp"
+            android:left="0dp"
+            android:right="0dp"
+         >
+            <shape android:shape="rectangle">
+                <solid android:color="#FFF6F6F6" />
+            </shape>
+         </item>
+         <item
+            android:top="0dp"
+            android:bottom="0.5dp"
+            android:left="0dp"
+            android:right="0dp"
+         >
+            <shape android:shape="rectangle">
+                <solid android:color="#FFB8B8B8" />
+            </shape>
+         </item>
+         <item
+            android:top="0dp"
+            android:bottom="1dp"
+            android:left="0dp"
+            android:right="0dp"
+          >
+            <bitmap
+                android:dither="true"
+                android:src="@drawable/nakamap_bg_light" 
+                android:tileMode="repeat" >
+            </bitmap>
+        </item>
+</layer-list>
