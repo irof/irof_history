@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="list_data">
+	<string-array name="list_data_qa">
 		<item>いんふぉめーしょん</item>
 		<item>操作説明</item>
+		<item>twitpicのギャラリーをみる</item>
+	</string-array>
+	<string-array name="list_data">
 		<item>更新履歴</item>
 		<item>バージョン情報</item>
-		<item>twitpicのギャラリーをみる</item>
 		<item>twitter認証</item>
 		<item>facebook認証</item>
 	</string-array>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="layout_titile_carry">
+		<item>カレーろふのせかい01</item>
+		<item>カレーろふのせかい02</item>
+		<item>カレーろふのせかい03</item>
+		<item>カレーろふのせかい04</item>
+		<item>執事ろふのせかい01</item>
+	</string-array>
+	
+    	
+</resources>

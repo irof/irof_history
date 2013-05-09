@@ -34,7 +34,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class setting_main extends ListActivity {
 	private final String TAG = getClass().getSimpleName();
-	private String[] mStrings = { "Infomation", "Version", "twitterOAuth"};
+	private String[] mStrings;
 
 	private Resources m_r;
 	@Override
@@ -47,6 +47,7 @@ public class setting_main extends ListActivity {
 		setListAdapter(adapter);
 
 	}
+	/*
 	final int DEF_INFOMATION = 0;
 	final int DEF_OPERATE = 1;
 	final int DEF_UPDATE = 2;
@@ -54,18 +55,25 @@ public class setting_main extends ListActivity {
 	final int DEF_TWITPIC = 4;
 	final int DEF_TWITTER = 5;
 	final int DEF_FACEBOOK = 6;
+	*/
+	final int DEF_UPDATE = 0;
+	final int DEF_VERSION = 1;
+	final int DEF_TWITTER = 2;
+	final int DEF_FACEBOOK = 3;
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		
 		switch(position){
+/*		
 			case DEF_INFOMATION:
 				infoDlg(m_r.getString(R.string.info_title),m_r.getString(R.string.info_desc));
 				break;
 			case DEF_OPERATE:
 				infoDlg(m_r.getString(R.string.operate_title),m_r.getString(R.string.operate_desc));
 				break;
+*/				
 			case DEF_UPDATE:
 				infoDlg(m_r.getString(R.string.update_title),m_r.getString(R.string.update_desc));
 				break;
@@ -80,11 +88,13 @@ public class setting_main extends ListActivity {
 				}
 				showMessageBoxWelcome( m_r.getString(R.string.app_name),"version: " + appVer);
 				break;
+/*				
 			case DEF_TWITPIC:
 				String inURL ="http://twitpic.com/tag/irofhistory";
 				Intent browse = new Intent( Intent.ACTION_VIEW , Uri.parse( inURL ) );
 			    startActivity( browse );
 				break;
+*/				
 			case DEF_TWITTER:
 				if(twitter_main.isTwitterLogin()){
 					twitter_main.eraseAccessToken();

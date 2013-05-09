@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
     <view
+		xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:background="@null"
     	class="com.irof.irof_parts.IrofImageView"
         android:id="@+id/icon_twitter12"
 	    android:layout_width="wrap_content"
@@ -12,7 +9,6 @@
     	android:gravity="center"
 		android:layout_gravity="center"
     	android:src="@drawable/icon_twitter12"
+	   	android:clickable="true"
     	android:onClick="on_groovy"
     />
-
-</FrameLayout>

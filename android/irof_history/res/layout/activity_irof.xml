@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical" 
-    android:background="#ffffff">
+    android:background="@color/white">
 
   <LinearLayout
     android:id="@+id/irof_liner"
@@ -21,7 +21,7 @@
       android:layout_width="0dip"
       android:layout_height="30dip"
       android:layout_margin="5dip"
-      android:background="#ffffff"
+      android:background="@color/white"
       android:src="@android:drawable/ic_menu_view"
       android:onClick="showViewStub"
       />
@@ -31,9 +31,10 @@
       android:layout_width="0dip"
       android:layout_height="30dip"
       android:layout_margin="5dip"
-      android:background="#ffffff"
+      android:background="@color/white"
       android:src="@android:drawable/ic_menu_delete"
       android:onClick="showViewStub"
+      android:contentDescription="menu clear"
       />
     <ImageButton
       android:id="@+id/menu_undo"
@@ -41,9 +42,10 @@
       android:layout_width="0dip"
       android:layout_height="30dip"
       android:layout_margin="5dip"
-      android:background="#ffffff"
+      android:background="@color/white"
       android:src="@android:drawable/ic_menu_recent_history"
       android:onClick="showViewStub"
+      android:contentDescription="menu undo"
       />
     <ImageButton
       android:id="@+id/menu_pause"
@@ -51,9 +53,10 @@
       android:layout_width="0dip"
       android:layout_height="30dip"
       android:layout_margin="5dip"
-      android:background="#ffffff"
+      android:background="@color/white"
       android:src="@android:drawable/ic_menu_myplaces"
       android:onClick="showViewStub"
+      android:contentDescription="menu pause"
       />
     
     <!-- バッジビューを表示 -->
@@ -74,8 +77,6 @@
     -->
     </LinearLayout>
  
-  
-  
     <view
     	class="com.irof.util.ViewIndicator"
         android:id="@+id/indicator"
@@ -83,22 +84,28 @@
         android:layout_height="30dp"
         android:layout_below="@id/irof_liner" />
     
+    <!-- 
+    	xmlns:JazzyViewPager="http://schemas.android.com/apk/res-auto"
+    	JazzyViewPager:outlineColor="@null"
+     -->
     <com.irof.irof_parts.IrofViewPager
         android:layout_below="@+id/indicator"
-	    android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@null"
     	android:id="@+id/viewpager">
-    	<android.support.v4.view.PagerTabStrip
+    	<view
+    		class="android.support.v4.view.PagerTabStrip"
         	android:id="@+id/pager_tab_strip"
         	android:layout_width="match_parent"
         	android:layout_height="wrap_content"
         	android:layout_gravity="bottom"
-        	android:background="#7f7f7f"
-        	android:textColor="#FFFFFF"
+        	android:background="@color/gray"
+        	android:textColor="@color/white"
         	android:paddingTop="10dp"
         	android:paddingBottom="10dp" />
     </com.irof.irof_parts.IrofViewPager>
-
+    
     <include layout="@layout/ball"/>   
     <include layout="@layout/judge" 
         android:layout_toLeftOf="@+id/viewpager"
@@ -118,6 +125,20 @@
 <!-- 
 		android:layout_toLeftOf="@id/AdMob_medview"
  -->
+ 
+ 	 <ImageView
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="80dip"
+	 	android:id="@+id/slide_trigger"
+	 	android:src="@drawable/ic_launcher"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:layout_alignParentTop="true"
+	 	android:layout_alignParentRight="true"
+	 	android:clickable="true"
+	 	android:onClick="onSlide"
+	 	/>
+ 
 	 <view
         android:layout_marginLeft="-60dip"
         android:layout_marginBottom="50dip"

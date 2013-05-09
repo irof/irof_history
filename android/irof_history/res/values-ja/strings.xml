@@ -27,5 +27,8 @@
     
     <string name="tw_msg">%1$s のいろふさんをデコレーションしたよ #irof_history #irof_history_%2$s</string>
     
+    <string name="duke_carry_god_msg">5月5日は @tan_go238 の日！</string>
+    <string name="duke_carry_god_msg_voice">5月5日は tango の日！</string>
+    <string name="duke_carry_god_label">Carry神</string>
     
 </resources>

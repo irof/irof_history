@@ -1,0 +1,39 @@
+<ScrollView 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/rightBehindMenuScroll" >
+
+    <LinearLayout style="@style/behindMenuScrollContent"
+        android:paddingTop="25dp" >
+        
+    	<ImageView 
+    		android:id="@+id/menu_carry"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/duke_carry_god"
+            android:layout_gravity="center_horizontal"
+			android:clickable="true"
+		/>
+    	
+        <TextView
+        	android:layout_marginTop="8dip"
+            style="@style/behindMenuItemTitle"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/duke_carry_god_label" />
+<!--
+        <TextView
+            style="@style/behindMenuItemTitle"
+            android:text="Right" />
+        <TextView
+            style="@style/behindMenuItemLabel"
+            android:text="Item0" />
+        <TextView
+            style="@style/behindMenuItemLabel"
+            android:text="Item1" />
+        <Button
+            android:id="@+id/behind_btn"
+            style="@style/behindMenuItemLabel"
+            android:text="BUTTON" />
+ -->        
+    </LinearLayout>
+</ScrollView>

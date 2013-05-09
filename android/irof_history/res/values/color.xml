@@ -3,4 +3,10 @@
     <color name="black">#000000</color>
     <color name="pink">#FFC0CB</color>
     <color name="deepskyblue">#00BFFF</color>
+    <color name="gray">#7f7f7f</color>
+    
+<!-- 
+    <color name="holo_blue">#FF33E5B5</color>
+ -->    
+    <color name="holo_blue">@color/white</color>
 </resources>

@@ -27,5 +27,8 @@
     
     <string name="tw_msg">Mr irof of %1$1 decorated #irof_history #irof_history_%2$S</string>
     
+    <string name="duke_carry_god_msg">May 5 is day of @tan_go238 !</string>
+    <string name="duke_carry_god_msg_voice">May 5 is day of tango !</string>
+    <string name="duke_carry_god_label">Carry God</string>
     
 </resources>

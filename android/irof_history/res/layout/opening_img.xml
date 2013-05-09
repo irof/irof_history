@@ -4,14 +4,19 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical" 
-	android:background="#ffffff"
+	android:background="@drawable/bg"
 >
+<!-- 
+	android:background="#ffffff"
+ -->
+	
 	<ImageView
 		android:layout_width="match_parent"
 		android:layout_height="0dip"
 		android:layout_weight="1"
 		android:scaleType="fitXY"
 		android:src="@drawable/logo"
+		android:background="@null"
 	/>
 	<TextView
 		android:layout_width="match_parent"
@@ -30,6 +35,7 @@
 		android:layout_marginLeft="24dip"
 		android:background="#ffffff"
 		android:autoLink="web"
+		android:gravity="center_horizontal"
 	/>
 	
 </LinearLayout>

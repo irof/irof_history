@@ -18,9 +18,13 @@
     </string>
     <string name="update_title">更新履歴</string>
     <string name="update_desc">
-        v1.2g/3)\n
-        ・twitter API 1.1 support(using twitter4j).\n
-        ・facebook support.(using facebook4j)\n
+        v1.3g/4)\n
+        ・Lineのサポート.\n
+        ・Nakamapのバッチビューが押せない不具合を修正\n
+        \n
+    	v1.2g/3)\n
+        ・twitter API 1.1 サポート(using twitter4j).\n
+        ・facebook サポート(using facebook4j)\n
         \n
     	v1.1g/2)\n
         ・REGZA等(Android2.1系、Android4系)でリソース参照エラーが出る対処\n

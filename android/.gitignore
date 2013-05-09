@@ -22,6 +22,7 @@ gen/
 .metadata
 .DS_Store
 
+libs_back
 
 # sample App
 Nakamap-Android-SDK-1.70

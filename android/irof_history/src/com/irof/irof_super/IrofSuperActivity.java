@@ -2,6 +2,8 @@ package com.irof.irof_super;
 
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import twitter4j.TwitterException;
 import android.app.AlertDialog;
@@ -20,7 +22,6 @@ import android.graphics.Canvas;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
@@ -191,12 +192,13 @@ public class IrofSuperActivity extends BaseActivity {
     }
     
 	private String[] MODE_S = {"RINGER_MODE_SILENT","RINGER_MODE_VIBRATE"};
-    private Handler tts_handler = null;
+	private static ExecutorService sound_pool = null;
 	protected void tts_play(final String voice) {
-		if(tts_handler==null)tts_handler = new Handler();
-		else				 tts_handler.removeMessages(0);
-		
-    	tts_handler.post(new Runnable() {
+    	if(sound_pool==null){
+    		int cpu_num = Runtime.getRuntime().availableProcessors();
+    		sound_pool = Executors.newFixedThreadPool(cpu_num);
+    	}
+    	Runnable command = new Runnable() {
 			public void run() {
 		    	if(audio==null)audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		    	int mode = audio.getRingerMode();
@@ -221,7 +223,8 @@ public class IrofSuperActivity extends BaseActivity {
 				params.put(TextToSpeech.Engine.KEY_PARAM_PAN, String.valueOf(1.0));
 				mTts.speak(voice,TextToSpeech.QUEUE_FLUSH,params);
 			}
-    	});
+    	};
+    	sound_pool.execute(command);
 	}
     
     @Override
@@ -231,6 +234,8 @@ public class IrofSuperActivity extends BaseActivity {
            mTts.shutdown();
        }
  	   
+ 	   if(sound_pool!=null)sound_pool.shutdown();
+ 	   
  	   //音量をオリジナルに戻す
  	   if(audio==null)audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
@@ -239,7 +244,7 @@ public class IrofSuperActivity extends BaseActivity {
  	   PrefUtil.put_int("set_musicVol",set_musicVol);
  	   audio.setStreamVolume(AudioManager.STREAM_MUSIC,org_musicVol, 0);
 
- 	  ImageCache.saveIconList();
+ 	   ImageCache.saveIconList();
  	  
  	   super.onDestroy();
 	}
@@ -418,5 +423,19 @@ public class IrofSuperActivity extends BaseActivity {
 	protected <T extends View> T _findViewById(final int id){
 	    return (T)findViewById(id);
 	}
+	
+	protected boolean isCheckLine() {
+		try{
+		  //パッケージ名を指定してインストール状況をチェック
+		  PackageManager packageManager = this.getPackageManager();
+		  ApplicationInfo applicationInfo = packageManager.getApplicationInfo("jp.naver.line.android",PackageManager.GET_META_DATA);
+		  if(applicationInfo==null)return false;
+		}
+		catch(NameNotFoundException exception){
+			return false;
+		}
+		return true;
+	}
+
 
 }

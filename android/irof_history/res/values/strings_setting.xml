@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="list_data">
+	<string-array name="list_data_qa">
 		<item>Infomation</item>
 		<item>Operation</item>
+		<item>see twitpic Gallery</item>
+	</string-array>
+							
+	<string-array name="list_data">
 		<item>Update</item>
 		<item>Version</item>
-		<item>see twitpic Gallery</item>
 		<item>twitterOAuth</item>
 		<item>facebookOAuth</item>
 	</string-array>
