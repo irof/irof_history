@@ -1,11 +1,26 @@
 package com.irof.irof_super;
 
 import android.app.Application;
+import android.os.Build;
 import android.util.SparseArray;
 
 public final class MyApplication extends Application {
     private static SparseArray<OnActivityResultCallback> _activityCallbacks 
         = new SparseArray<OnActivityResultCallback>();
+
+	public void onCreate()
+	{
+		super.onCreate();
+        //IS01だとNakamap動かないようなので保留にしておく
+	  	if( "KDDI".equals(Build.BRAND) && "IS01".equals(Build.MODEL) ){
+        
+	  	}
+	  	else{
+	        //Nakamapの初期化
+	        new NakamapUtil().nakamapSetup(this);
+	  	}
+
+	}
 
     public OnActivityResultCallback getActivityCallback(int requestCode) {
         if (_activityCallbacks.indexOfKey(requestCode) >= 0) {

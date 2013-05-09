@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="list_data_qa">
+		<item>Infomation</item>
+		<item>Operation</item>
+		<item>see twitpic Gallery</item>
+	</string-array>
+							
+	<string-array name="list_data">
+		<item>Update</item>
+		<item>Version</item>
+		<item>twitterOAuth</item>
+		<item>facebookOAuth</item>
+	</string-array>
+	
+	<string name="list_data_notfound">data not found</string>
+	
+	<string name="Message_Update">\n\nHave the latest version GooglePlay.\nRelease:%1$s\nVersion:%2$s</string>
+	
+	<string name="info_title">Professor Irof Information</string>
+	<string name="info_desc">
+	Professor irof is a famous super craftsman workshop journey to travel around Japan for TDD,groovy,java,any program language etc.\n
+	\n
+	The main scope of activity\n
+    Nagoya urban function \n
+    Naniwa Osaka merchant town \n
+    Land of frigid Sapporo \n
+  	to subdue Tokyo \n
+	visited many times\n
+	</string>
+</resources>

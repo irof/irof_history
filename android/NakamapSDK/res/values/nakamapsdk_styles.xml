@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="nakamapsdk_nakamap_activity_theme" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/nakamapsdk_chatview_animation</item>
+    </style>
+
+    <style name="nakamapsdk_chatview_animation" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/nakamapsdk_activity_pending_transition_in</item>
+        <item name="android:windowExitAnimation">@anim/nakamapsdk_activity_pending_transition_out</item>
+    </style>
+
+    <style name="nakamapsdk_theme_transparent" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <com.kayac.libnakamap.components.CustomTextView
+        android:id="@+id/nakamap_text_view"
+        style="@style/nakamap_textview_black_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:paddingBottom="@dimen/nakamap_padding_low"
+        android:paddingLeft="@dimen/nakamap_padding_middle"
+        android:paddingRight="@dimen/nakamap_padding_middle" />
+
+    <!-- android:hint="@string/nakamap_group_memo" -->
+
+    <EditText
+        android:id="@+id/nakamap_edit_text"
+        style="@style/nakamap_textview_black_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nakamap_profile_textbox_edit_selector"
+        android:focusable="true"
+        android:inputType="textMultiLine"
+        android:paddingBottom="@dimen/nakamap_padding_low"
+        android:paddingLeft="@dimen/nakamap_padding_middle"
+        android:paddingRight="@dimen/nakamap_padding_middle"
+        android:visibility="gone" />
+
+</merge>

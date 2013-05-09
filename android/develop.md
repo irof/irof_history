@@ -11,7 +11,15 @@
 ------
 emuratorで動かす場合の設定
 
-
+ - [爆速エミュレータの設定](http://dev.classmethod.jp/smartphone/build-fast-android-emulator/)
+  - Lionまで。MountanLionだとエラーになるようです
+  
+ - TTSをならす設定
+ 　- エミュレーターの起動オプションに「--useaudio」を追加
+ 　- [n2tts](https://play.google.com/store/apps/details?id=jp.kddilabs.n2tts)のインストール
+ 
+ - N2TTS
+  - 対応端末にinstall後、adb pullで取得、adb pushでinstallしてください
 
 ------
 キーの設定、取得

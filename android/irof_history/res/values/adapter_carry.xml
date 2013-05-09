@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="layout_titile_carry">
+		<item>carry world 01</item>
+		<item>carry world 02</item>
+		<item>carry world 03</item>
+		<item>carry world 04</item>
+		<item>jenkins world 01</item>
+	</string-array>
+	
+    <array name="layout_list_carry">
+		<item>@layout/layout_carry01</item>
+		<item>@layout/layout_carry02</item>
+		<item>@layout/layout_carry03</item>
+		<item>@layout/layout_carry04</item>
+		<item>@layout/layout_jenkins01</item>
+	</array>
+    	
+</resources>

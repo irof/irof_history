@@ -3,8 +3,12 @@
     <string name="app_name">irof_history</string>
     <string name="irof_world">irof world!</string>
     <string name="menu_settings">Settings</string>
+    
     <string name="menu_preferences">ToolBox</string>
     <string name="menu_capture">Capture</string>
+    <string name="menu_twitter">twitter</string>
+    <string name="menu_facebook">facebook</string>
+    
     <string name="menu_clear">Clear</string>
     <string name="menu_undo">Undo</string>
     
@@ -17,5 +21,14 @@
     <string name="d_savedno">Could not be saved</string>
     
     <string name="newAccountBaseName">Irof Friends</string>
+    
+    <string name="label_ButtonTwRefresh">refresh</string>
+    <string name="msg_progress_reflesh">now refleshing...</string>
+    
+    <string name="tw_msg">Mr irof of %1$1 decorated #irof_history #irof_history_%2$S</string>
+    
+    <string name="duke_carry_god_msg">May 5 is day of @tan_go238 !</string>
+    <string name="duke_carry_god_msg_voice">May 5 is day of tango !</string>
+    <string name="duke_carry_god_label">Carry God</string>
     
 </resources>

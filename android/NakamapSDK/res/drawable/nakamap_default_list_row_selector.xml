@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- spec/image/widget/widget_chat_guide.jpg -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="true"
+        android:state_pressed="true"
+        >
+        <shape android:shape="rectangle">
+            <solid
+                android:color="#AAAAAA"
+                />
+        </shape>
+    </item>
+    <!-- デフォルト -->
+    <item android:drawable="@drawable/nakamap_bg_light_repeat">
+    </item>
+</selector>

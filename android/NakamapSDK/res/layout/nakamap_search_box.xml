@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:id="@+id/nakamap_search_back_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/nakamap_padding_middle"
+        android:paddingRight="@dimen/nakamap_padding_middle"
+        android:paddingBottom="@dimen/nakamap_padding_middle"
+        android:orientation="horizontal"
+        >
+
+        <com.kayac.libnakamap.components.UIEditText
+            android:id="@+id/nakamap_search_box_text_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/nakamap_margin_low"
+            android:layout_marginRight="@dimen/nakamap_margin_low"
+            android:layout_marginTop="@dimen/nakamap_margin_high"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/nakamap_ico_search"
+            android:focusable="true"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:paddingBottom="@dimen/nakamap_margin_middle"
+            android:background="@drawable/nakamap_textbox_search_selector"
+            android:textColor="@color/nakamap_text_white"
+            style="@style/nakamap_textview_black_default"
+            />
+
+        <FrameLayout 
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/nakamap_margin_low"
+            android:id="@+id/nakamap_search_close"
+            >
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/nakamap_ico_delete" />
+        </FrameLayout>
+    </LinearLayout> 
+</merge>

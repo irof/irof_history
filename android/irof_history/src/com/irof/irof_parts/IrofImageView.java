@@ -1,10 +1,5 @@
 package com.irof.irof_parts;
 
-import com.irof.irof_history.R;
-import com.irof.irof_history.R.anim;
-import com.irof.irof_history.R.drawable;
-import com.irof.irof_history.R.id;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -13,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.irof.irof_history.R;
 
 public class IrofImageView extends ImageView {
 

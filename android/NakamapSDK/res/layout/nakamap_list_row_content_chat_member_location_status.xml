@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/nakamap_chat_member_location_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/nakamap_margin_low"
+        android:text="1 min ago"
+        style="@style/nakamap_textview_gray_small"
+        />
+    <ImageView
+        android:id="@+id/nakamap_chat_member_isonline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nakamap_ico_map_on"
+        android:layout_gravity="center_vertical"
+        />
+</LinearLayout>

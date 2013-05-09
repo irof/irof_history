@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<ScrollView 
+    android:layout_width="fill_parent" 
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:layout_height="200dip"
+    android:fastScrollEnabled="true" >
+    <TextView  
+        android:id="@+id/InfoBody" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:gravity="left"
+        android:ellipsize="none"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:text="bbbb"
+	    android:textSize="20sp"
+	    android:textColor="@color/white"
+	    android:focusableInTouchMode="false"
+	    android:autoLink="all"
+  		android:textAppearance="?android:attr/textAppearanceLarge"
+        />
+</ScrollView>
+    
+<Button android:text="OK"
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:layout_marginTop="20dip"
+    android:layout_marginBottom="10dip"
+	android:textSize="20sp"
+    android:textStyle="bold"
+	android:id="@+id/InfoOK"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="nakamapsdk_proper_scheme_is_not_defined">AndroidManifest.xmlのcom.kayac.nakamap.sdk.activity.NakamapActivityのintent-filterを以下のように設定して下さい。\n\n  &lt;intent-filter&gt;\n      &lt;action android:name=\"android.intent.action.VIEW\" /&gt;\n      &lt;category android:name=\"android.intent.category.DEFAULT\" /&gt;\n      &lt;category android:name=\"android.intent.category.BROWSABLE\" /&gt;\n      &lt;data android:scheme=\"nakamapapp-%1$s\" /&gt;\n  &lt;/intent-filter&gt;</string>
+  <string name="nakamapsdk_error_already_sso_bound">このアカウントは認証済みです</string>
+  <string name="nakamapsdk_error_group_with_specified_exid_does_not_exist">グループが存在しません！</string>
+  <string name="nakamapsdk_download_nakamap">アプリ版ナカマップ\n\nこのチャットをより快適にしませんか？</string>
+</resources>

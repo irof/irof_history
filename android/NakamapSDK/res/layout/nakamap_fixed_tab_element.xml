@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <TextView
+        android:id="@+id/nakamap_fixed_tab_element_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="@dimen/nakamap_padding_low"
+        android:paddingBottom="@dimen/nakamap_padding_low"
+        android:gravity="center"
+        style="@style/nakamap_textview_white_default_singleline"
+        />
+    <FrameLayout
+        android:id="@+id/nakamap_fixed_tab_element_position"        
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/nakamap_green_light"
+        android:visibility="invisible"
+        >
+    </FrameLayout>
+</merge>

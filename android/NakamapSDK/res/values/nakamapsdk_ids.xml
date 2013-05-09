@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nakamap_sdk_chat_activity_fragment" type="id"/>
+    <item name="nakamap_sdk_terms_of_use_fragment" type="id"/>
+</resources>

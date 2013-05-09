@@ -1,15 +1,19 @@
 <resources>
 
-    <string name="app_name">irofの黒歴史</string>
-    <string name="irof_world">irofの世界!</string>
+    <string name="app_name">いろふの黒歴史</string>
+    <string name="irof_world">いろふの世界!</string>
     <string name="menu_settings">設定</string>
+    
     <string name="menu_preferences">ツールBOX</string>
     <string name="menu_capture">画面キャプチャ</string>
+    <string name="menu_twitter">twitter投稿</string>
+    <string name="menu_facebook">facebook投稿</string>
+    
     <string name="menu_clear">画面クリア</string>
     <string name="menu_undo">アンドゥ</string>
     
     
-    <string name="title_activity_irof">irofの世界</string>
+    <string name="title_activity_irof">いろふの世界</string>
     
     <string name="ask_capture">カメラフォルダに保存しますか？</string>
     <string name="infomation">通知</string>
@@ -17,5 +21,14 @@
     <string name="d_savedno">保存できませんでした</string>
     
     <string name="newAccountBaseName">いろふさんの友達</string>
+    
+    <string name="label_ButtonTwRefresh">リフレッシュ</string>
+    <string name="msg_progress_reflesh">更新中です</string>
+    
+    <string name="tw_msg">%1$s のいろふさんをデコレーションしたよ #irof_history #irof_history_%2$s</string>
+    
+    <string name="duke_carry_god_msg">5月5日は @tan_go238 の日！</string>
+    <string name="duke_carry_god_msg_voice">5月5日は tango の日！</string>
+    <string name="duke_carry_god_label">Carry神</string>
     
 </resources>

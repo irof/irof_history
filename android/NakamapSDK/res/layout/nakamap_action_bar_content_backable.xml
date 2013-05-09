@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <ImageView 
+        android:id="@+id/nakamap_action_bar_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:scaleType="fitXY"
+        android:src="@drawable/nakamap_action_bar_icon_back_selector_01"
+        />
+    <TextView 
+        android:id="@+id/nakamap_action_bar_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/nakamap_margin_high"
+        style="@style/nakamap_textview_white_large_singleline_shadow_green"
+        />
+</LinearLayout>

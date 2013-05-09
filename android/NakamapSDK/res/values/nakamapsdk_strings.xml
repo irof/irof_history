@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="nakamapsdk_proper_scheme_is_not_defined">Please define intent-filter for com.kayac.nakamap.sdk.activity.NakamapActivity in AndroidManifest.xml as folling.\n\n  &lt;intent-filter&gt;\n      &lt;action android:name="android.intent.action.VIEW" /&gt;\n      &lt;category android:name="android.intent.category.DEFAULT" /&gt;\n      &lt;category android:name="android.intent.category.BROWSABLE" /&gt;\n      &lt;data android:scheme="nakamapapp-%1$s" /&gt;\n  &lt;/intent-filter&gt;</string>
+  <string name="nakamapsdk_error_already_sso_bound">This account has already authenticated.</string>
+  <string name="nakamapsdk_error_group_with_specified_exid_does_not_exist">Group does not exist!</string>
+  <string name="nakamapsdk_download_nakamap">App version of Nakamap\n\nEnjoy chat more conveniently!</string>
+</resources>

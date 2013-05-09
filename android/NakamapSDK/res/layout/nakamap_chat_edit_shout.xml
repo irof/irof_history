@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dp"
+    android:layout_height="32dp" >
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/nakamap_btn_ss_white" />
+
+    <ImageView
+        android:id="@+id/nakamap_chat_edit_shout_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/nakamap_ico_shout_off_btn" />
+
+</merge>

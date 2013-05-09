@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="nakamap_banner_background">#FF6699</color>
+  <color name="nakamap_banner_to_profile_background">#44d6b5</color>
+  <color name="nakamap_chat_list_assets_information_frame">#33000000</color>
+  <color name="nakamap_gray_light">#CCCCCC</color>
+  <color name="nakamap_green">#339999</color>
+  <color name="nakamap_green_light">#66CCCC</color>
+  <color name="nakamap_group_user_account_row_background_on">#222222</color>
+  <color name="nakamap_profile_add_friend_row_background">#7F000000</color>
+  <color name="nakamap_profile_add_friend_row_background_on">#3F000000</color>
+  <color name="nakamap_profile_cover_icon_frame_color">#FFFFFF</color>
+  <color name="nakamap_profile_discription_background">#00FFFFFF</color>
+  <color name="nakamap_text_black">#333333</color>
+  <color name="nakamap_text_dark_white">#CCCCCC</color>
+  <color name="nakamap_text_gray">#777777</color>
+  <color name="nakamap_text_green">#339999</color>
+  <color name="nakamap_text_pink">#ff6699</color>
+  <color name="nakamap_text_shadow_black">#111111</color>
+  <color name="nakamap_text_shadow_green">#336666</color>
+  <color name="nakamap_text_shadow_white">#FFFFFF</color>
+  <color name="nakamap_text_white">#FFFFFF</color>
+  <color name="nakamap_white">#EEEEEE</color>
+  <color name="nakamap_white_true">#FFFFFF</color>
+</resources>

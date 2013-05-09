@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/nakamap_horizontal_scroller_element_img_selector"
+        android:tileMode="repeat"
+        android:clickable="true"
+        android:layout_width="@dimen/nakamap_stamp_category_thumb_width"
+        android:layout_height="@dimen/nakamap_stamp_category_thumb_height"
+        android:layout_gravity="center"
+        android:id="@+id/nakamap_chat_pick_preview_horizontallscroll_element"
+        >
+        <com.kayac.libnakamap.components.ImageLoaderView
+             android:id="@+id/nakamap_chat_pick_preview_horizontall_scroller_item_image"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_centerInParent="true"
+             android:scaleType="centerCrop"
+             />
+    </RelativeLayout>

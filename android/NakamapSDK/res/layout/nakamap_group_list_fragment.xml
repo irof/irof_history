@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_light_repeat"
+    >
+
+    <ListView
+        android:id="@+id/nakamap_group_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:scrollbars="none" />
+
+    <FrameLayout
+        android:id="@+id/nakamap_group_list_zero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/nakamap_you_havent"
+                android:padding="12dp"
+                style="@style/nakamap_textview_gray_default"
+                />
+            <Button
+                android:id="@+id/nakamap_group_list_go_to_community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/nakamap_margin_high"
+                android:layout_gravity="center"
+                android:text="@string/nakamap_search_public_groups"
+                style="@style/nakamap_white_button_l"
+                />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

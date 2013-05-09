@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@color/nakamap_white"
+    android:orientation="vertical"
+    >
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent" 
+        android:background="@drawable/nakamap_line_gray_horizontal_repeat"/>
+    <TextView
+        android:id="@+id/nakamap_chat_list_system_message_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="12/07/30 11:30"
+        android:gravity="center_horizontal"
+        style="@style/nakamap_textview_gray_small"
+        />
+    <com.kayac.libnakamap.components.CustomTextView
+        android:id="@+id/nakamap_chat_list_system_message_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="11dp"
+        android:paddingLeft="@dimen/nakamap_padding_high"
+        android:paddingRight="@dimen/nakamap_padding_high"
+        android:autoLink="all"
+        android:gravity="center_horizontal"
+        />
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent" 
+        android:background="@drawable/nakamap_line_gray_horizontal_repeat"/>
+</LinearLayout>

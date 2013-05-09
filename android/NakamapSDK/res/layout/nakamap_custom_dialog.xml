@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/nakamap_custom_dialog_padding_left"
+    android:paddingRight="@dimen/nakamap_custom_dialog_padding_right"
+    android:paddingTop="@dimen/nakamap_padding_high"
+    android:paddingBottom="@dimen/nakamap_padding_high"
+    tools:context=".Nakamap">
+
+    <LinearLayout
+        android:id="@+id/nakamap_custom_dialog_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+        <!-- header -->
+        <LinearLayout
+            android:id="@+id/nakamap_custom_dialog_title_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nakamap_white"
+                android:paddingTop="@dimen/nakamap_padding_high"
+                android:paddingBottom="@dimen/nakamap_padding_high"
+                >
+                <!-- title -->
+                <TextView
+                    android:id="@+id/nakamap_custom_dialog_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/nakamap_padding_low"
+                    android:layout_marginBottom="@dimen/nakamap_padding_low"
+                    android:layout_marginRight="@dimen/nakamap_padding_high"
+                    android:layout_marginLeft="@dimen/nakamap_padding_high"
+                    style="@style/nakamap_textview_black_very_large_shadow_white"
+                    />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/nakamap_line_green_dialog"
+                />
+        </LinearLayout>    <!-- header end -->
+        <!-- content -->
+        <View
+            android:id="@+id/nakamap_custom_dialog_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            />
+        <!-- footer -->
+        <!-- no button default -->
+        <View
+            android:id="@+id/nakamap_custom_dialog_footer_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>    
+</FrameLayout>

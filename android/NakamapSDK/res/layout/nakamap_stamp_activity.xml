@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_light_repeat"
+    android:orientation="vertical" >
+
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        style="@style/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nakamap_stamp_category_thumb_height"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/nakamap_stamp_shout_area"
+            android:layout_width="@dimen/nakamap_stamp_shout_button_width"
+            android:layout_height="@dimen/nakamap_stamp_shout_button_height"
+            android:background="@drawable/nakamap_bg_bottom_line" >
+
+            <com.kayac.libnakamap.activity.chat.ChatEditShoutButton
+                android:id="@+id/nakamap_stamp_shout_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/nakamap_line_gray_vertical" />
+
+        <FrameLayout
+            android:id="@+id/nakamap_chat_edit_store"
+            android:layout_width="@dimen/nakamap_stamp_shout_button_width"
+            android:layout_height="@dimen/nakamap_stamp_shout_button_height"
+            android:background="@drawable/nakamap_horizontal_scroller_element_img_selector" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/nakamap_ico_stamp_store_selector" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/nakamap_line_gray_vertical" />
+
+        <com.kayac.libnakamap.components.HorizontalElementScroller
+            android:id="@+id/nakamap_stamp_category_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#ffff00ff" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/nakamap_bg_light_repeat" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/nakamap_stamp_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <GridView
+                android:id="@+id/nakamap_stamp_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="4"
+                android:verticalSpacing="@dimen/nakamap_stamp_vertical_spacing" />
+        </android.support.v4.view.ViewPager>
+    </FrameLayout>
+
+    <!-- AD -->
+
+    <com.kayac.libnakamap.components.AdComponent
+        android:id="@+id/nakamap_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        nakamap:nakamap_adPageId="android_sdk_stamp"
+        nakamap:nakamap_autoLoad="false" />
+
+</LinearLayout>

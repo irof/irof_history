@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    	<bool name="debug_flag">false</bool>   
+<!-- 
+    String url = "http://otter.topsy.com/search.json?page=1%26perpage=20%26q=%23irof_history%26window=d";
+    q.setQuery("%23irof_history");
+    		# => %23
+            & => %26
+ -->
+    <string name="search_url_topsy">http://otter.topsy.com/search.json?page=1%26perpage=20%26q=%23irof_history%26window=d</string>
+    <string name="search_query_twitter" formatted="false" >%23irof_history</string>
+    	
+</resources>

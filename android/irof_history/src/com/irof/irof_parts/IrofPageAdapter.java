@@ -2,9 +2,6 @@ package com.irof.irof_parts;
 
 import java.util.ArrayList;
 
-import com.irof.irof_history.R;
-import com.irof.irof_history.R.array;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -15,25 +12,29 @@ import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+
+import com.irof.irof_history.R;
+import com.irof.irof_history.game_main;
 
 public class IrofPageAdapter extends PagerAdapter{
 
 
 	private SparseIntArray pages;
-	private String[] title_arr;
-
+	//private String[] title_arr;
+	private ArrayList<String> title_arr;
+	
 	//循環ループ対応
 	private boolean mugen_f = false;
 	public final int MAX_PAGE_NUM = 1000;
 
+	private LayoutInflater inflater;
 	private Activity activity;
 	private Resources m_r;
 	private ArrayList<View> pages_fn;
 	public IrofPageAdapter(Activity activity_){
 	   activity = activity_;
 	   m_r = activity.getResources();
-       LayoutInflater inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+       inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
        
        TypedArray arr = m_r.obtainTypedArray(R.array.layout_list);
        int len = arr.length();
@@ -43,14 +44,30 @@ public class IrofPageAdapter extends PagerAdapter{
        for(int i=0;i<len;i++){
     	   int res_id =arr.getResourceId(i, -1);
     	   pages.put(i, res_id);
-    	   FrameLayout fn = (FrameLayout)inflater.inflate(res_id, null);
+    	   //FrameLayout fn = (FrameLayout)inflater.inflate(res_id, null);
+    	   View fn = inflater.inflate(res_id, null);
     	   pages_fn.add(fn);
        }
-       title_arr = m_r.getStringArray(R.array.layout_titile);
-
-	   
+       arr.recycle();
+       
+       String[] arr_t = m_r.getStringArray(R.array.layout_titile);
+       int len_t = arr_t.length;
+       title_arr = new  ArrayList<String>(len_t);
+       for(String s:arr_t){
+    	   title_arr.add(s);
+       }
 	}
 	
+	//あとから動的追加
+	public void addItem(int res_id, String title) {
+	   int index = pages.size();
+ 	   pages.put(index, res_id);
+	   //FrameLayout fn = (FrameLayout)inflater.inflate(res_id, null);
+ 	   View fn = inflater.inflate(res_id, null);
+	   pages_fn.add(fn);
+	   title_arr.add(title);
+	}
+
 	
 	@Override
 	public Object instantiateItem(ViewGroup container, int position) {
@@ -80,6 +97,9 @@ public class IrofPageAdapter extends PagerAdapter{
 		TextView tx = _findViewById(R.id.irof_title);
 		tx.setText(String.format("%s %02d",m_r.getString(R.string.irof_world),index));
 		*/
+		
+		//Jazzy効果
+		game_main.instance.mViewPager.setObjectForPosition(fn, position);
 		return fn;
 	}
 
@@ -111,7 +131,7 @@ public class IrofPageAdapter extends PagerAdapter{
 	    	index = (0 > diff) ? (OBJECT_NUM + diff) : diff;
 		}
 
-    	return title_arr[index];
+    	return title_arr.get(index);
 		//return super.getPageTitle(position);
 	}
 

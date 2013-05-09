@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_light_repeat"
+    android:orientation="vertical" >
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="@string/nakamap_profile"
+        style="@style/nakamap_action_bar"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        >
+        <FrameLayout
+            android:id="@+id/nakamap_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <!-- 友だちになる -->
+        <com.kayac.libnakamap.components.ListRow
+            android:id="@+id/nakamap_profile_profile_activity_add_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            nakamap:nakamap_leftContentLayoutId="@layout/nakamap_list_row_content_image_view"
+            nakamap:nakamap_centerContentLayoutId="@layout/nakamap_list_row_content_one_line"
+            nakamap:nakamap_rightContentLayoutId="@layout/nakamap_list_row_content_white_arrow"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+    <!-- AD -->
+    <com.kayac.libnakamap.components.AdComponent
+        android:id="@+id/nakamap_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        nakamap:nakamap_adPageId="android_profile"
+        nakamap:nakamap_autoLoad="false"
+        />
+</LinearLayout>

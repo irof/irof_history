@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView android:text="twitter" 
+	    android:id="@+id/TextViewTAS" android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" android:textSize="30dp" 
+	    android:gravity="center" 
+	    android:layout_marginBottom="20dp" />
+    
+    <TextView android:text="ID:abcd" 
+	    android:layout_below="@+id/TextViewTAS"
+	    android:id="@+id/TextViewTID" 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" android:textSize="30dp" 
+	    android:layout_marginBottom="20dp" 
+	    android:layout_centerHorizontal="true"
+	    android:visibility="visible"/>
+    
+	<Button android:text="" 
+	    android:layout_below="@+id/TextViewTID"
+	    android:id="@+id/ButtonloginOAuth" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:layout_marginRight="35dp"
+	    android:layout_marginLeft="35dp"
+	    android:layout_marginBottom="10dp"/>
+	
+	<LinearLayout 
+		    android:layout_below="@id/ButtonloginOAuth"
+		    android:id="@+id/timeline_panel" 
+		  	android:layout_width="fill_parent"
+		  	android:layout_height="wrap_content"
+	      	android:layout_marginLeft="20.0dip"
+	      	android:layout_marginRight="20.0dip"
+		    android:visibility="visible">
+	    <ImageButton
+ 			 android:layout_gravity="center_vertical|left"
+             android:layout_width="48dip"
+             android:layout_height="48dip"
+             android:layout_weight="0"
+             android:background="@drawable/twitter"
+             android:onClick="onTwitterApp">
+    	</ImageButton>
+	
+		<Button android:text="@string/label_ButtonTwRefresh" 
+		    android:textSize="18dip" 
+		    android:id="@+id/timeline_refresh" 
+             android:layout_weight="1"
+		    android:layout_width="0dip" 
+		    android:layout_height="wrap_content"/>	
+	    	    
+	</LinearLayout>
+	
+	<ListView android:id="@+id/timeline_list"
+	    	android:layout_below="@+id/timeline_panel"
+	      	android:layout_marginLeft="20.0dip"
+    	 	android:layout_marginRight="20.0dip" 
+			android:layout_marginBottom="100dip"
+			android:visibility="visible"
+			android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+            android:clickable="true" 
+	   		android:background="@color/black"/>
+	
+	 
+
+<!-- 広告用フレームレイアウト -->
+			<FrameLayout android:id="@+id/FrameLayout_twitter_viewK01" 
+			    android:layout_marginTop="5dp"
+		    	android:layout_alignParentBottom="true"
+				android:foregroundGravity="center|bottom"
+				android:layout_width="fill_parent" 
+		    	android:layout_height="50dp"
+		    	android:visibility="visible"/>
+
+</RelativeLayout>

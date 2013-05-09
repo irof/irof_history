@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/nakamap_chat_edit_tools_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- CURRENT CODE -->
+        <!--
+        <com.kayac.libnakamap.components.UIEditText
+            android:id="@+id/nakamap_chat_edit"
+            style="@style/nakamap_textview_black_default"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/nakamap_padding_high"
+            android:layout_marginRight="@dimen/nakamap_padding_high"
+            android:layout_marginTop="@dimen/nakamap_padding_high"
+            android:layout_weight="1"
+            android:background="@drawable/nakamap_textbox_edit_selector"
+            android:gravity="top|left"
+            android:paddingBottom="@dimen/nakamap_padding_middle"
+            android:paddingLeft="@dimen/nakamap_padding_middle"
+            android:paddingRight="@dimen/nakamap_padding_middle" />
+        -->
+        <!-- MULTIPLE IMAGE REAL CODE -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.kayac.libnakamap.components.UIEditText
+                android:id="@+id/nakamap_chat_edit"
+                style="@style/nakamap_textview_black_default"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/nakamap_padding_high"
+                android:layout_marginRight="@dimen/nakamap_padding_high"
+                android:layout_marginTop="@dimen/nakamap_padding_high"
+                android:layout_weight="1"
+                android:gravity="top|left"
+                android:background="@color/nakamap_white"
+                android:paddingLeft="@dimen/nakamap_padding_middle"
+                android:paddingRight="@dimen/nakamap_padding_middle" />
+
+            <TextView
+                android:id="@+id/nakamap_chat_edit_counter"
+                style="@style/nakamap_textview_gray_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/nakamap_padding_high"
+                android:layout_marginRight="@dimen/nakamap_padding_high"
+                android:layout_marginTop="-5dp"
+                android:background="@drawable/nakamap_textbox_edit_selector"
+                android:gravity="top|right"
+                android:paddingLeft="@dimen/nakamap_padding_middle"
+                android:paddingRight="@dimen/nakamap_padding_middle"
+                android:singleLine="true"
+                android:text="255" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp" >
+
+            <FrameLayout
+                android:id="@+id/nakamap_chat_edit_start_stamp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp" 
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/nakamap_btn_ss_white" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/nakamap_chat_stamp_selector" />
+            </FrameLayout>
+
+            <com.kayac.libnakamap.activity.chat.ChatEditPictureButton
+                android:id="@+id/nakamap_chat_edit_picture"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                />
+
+            <TextView
+                android:id="@+id/nakamap_chat_edit_photo_counter"
+                style="@style/nakamap_textview_gray_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="Photos" />
+
+            <com.kayac.libnakamap.activity.chat.ChatEditShoutButton
+                android:id="@+id/nakamap_chat_edit_shout"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp" />
+
+            <Button
+                android:id="@+id/nakamap_chat_edit_post"
+                style="@style/nakamap_textview_white_default"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/nakamap_button_m_black_selector"
+                android:text="@string/nakamap_send" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

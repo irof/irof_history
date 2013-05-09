@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nakamap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nakamap_bg_light_repeat"
+    android:orientation="vertical" >
+
+    <com.kayac.libnakamap.components.ActionBar
+        android:id="@+id/nakamap_action_bar"
+        style="@style/nakamap_action_bar"
+        nakamap:nakamap_content_type="nakamap_backable"
+        nakamap:nakamap_text="@string/nakamap_public_groups" />
+
+    <com.kayac.libnakamap.components.SearchBox
+        android:id="@+id/nakamap_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        nakamap:nakamap_closeButton="true"
+        nakamap:nakamap_frameColor="nakamap_gray"
+        nakamap:nakamap_searchHintText="@string/nakamap_search_public_group" />
+
+    <ImageView
+        android:id="@+id/nakamap_community_activity_bnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:src="@drawable/nakamap_bnr_group_01" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/nakamap_line_gray_horizontal_repeat" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/nakamap_finder_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+    <!-- AD -->
+    <com.kayac.libnakamap.components.AdComponent
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        nakamap:nakamap_adPageId="android_public_groups_list"
+        />
+</LinearLayout>

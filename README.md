@@ -26,3 +26,8 @@ irof先生は日本中を旅する勉強会旅職人です。
 git pull https://github.com/irof/irof_history.git
 
 see https://twitter.com/yusuke/status/245326267455512576
+
+
+--------
+icon_history
+data from http://togetter.com/li/414143
