@@ -6,37 +6,52 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
-public class IrofDraw extends RelativeLayout{
+public class IrofDraw extends RelativeLayout {
 
-	private IrofDrawUtil instance = null;
-    
+	private IrofDrawUtil	instance	= null;
+
+	public IrofDrawUtil getInstance() {
+		if (instance == null) instance = IrofDrawUtil.getInstance();
+		return instance;
+	}
+
 	public IrofDraw(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		instance = IrofDrawUtil.getInstance();
+		getInstance();
 		setClickable(true);
 	}
- 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        instance.onDraw(canvas);
-    }
- 
-    @Override
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		instance.drawAction(canvas);
+	}
+
+	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-    	instance.onTouchEvent(event);
-        invalidate();
-        return true;
-    }
+		instance.onTouchEvent(event);
+		invalidate();
+		return true;
+	}
 
 	public void clear() {
 		instance.clear();
-        invalidate();
+		invalidate();
 	}
 
 	public void undo() {
 		instance.undo();
-        invalidate();
+		invalidate();
 	}
+
+	// @Override
+	// public boolean onInterceptTouchEvent (MotionEvent ev){
+	// // タッチされたらまずonInterceptTouchEventが呼ばれる
+	// // ここでtrueを返せば親ViewのonTouchEvent
+	// // ここでfalseを返せば子ViewのonClickやらonLongClickやら
+	// if(game_main.instance.pause_f)return true;
+	// return false;
+	// //return super.onInterceptTouchEvent(ev);
+	// }
 
 }

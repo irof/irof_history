@@ -22,20 +22,35 @@ emuratorで動かす場合の設定
   - 対応端末にinstall後、adb pullで取得、adb pushでinstallしてください
 
 ------
-キーの設定、取得
+キーの取得
 
  - setting/ad_key_mst.xml => res/values/ad_key.xmlをコピー作成してください(.gitignoreには上がらない設定になっています)
+
+
+------
+キーの取得
  - nakamapのキーを取得してください
   - http://developer.nakamap.com/
   - nakamap自体のユーザ登録が必要です（別途公式アプリ等が必要かも）
-  - CreateAppで作成した瞬間にemail認証が飛びますが、Gmail等では迷惑メールになるようです。直ぐ認証しない場合は、あとから再認証できませんので早急の確認を御願いします
+  - CreateAppで作成した瞬間にemail認証が飛びますが、Gmail等では迷惑メールになるようです。
+  - 直ぐ認証しない場合は、あとから再認証できませんので早急の確認を御願いします
   
  - adMobのキーを取得してください
   - 現在、irofさんのサイト向けに、自社広告の設定をしています
   - [自社広告の設定](http://support.google.com/admob/bin/answer.py?hl=ja&answer=1619751&topic=1619748&ctx=topic)
+
+ - Facebookのキーを取得してください
+  - https://github.com/kimukou/facebook4j-android-example
   
 ------
-ライブラリプロジェクト追加後の build.xmlの生成
+build.xmlが作成済みの場合に、antを通すための修正
+
+- 各フォルダのlocal.properties
+ - sdk.dir=XXXXX
+ - を自分の環境にあった形に修正
+ 
+------
+ライブラリプロジェクト追加後の build.xmlの生成(同梱済ですので操作はいらないかも。参考情報)
 
 - ライブラリプロジェクト  
 ```
@@ -51,3 +66,4 @@ android update test-project -m ../irof_history -p ./
 ```
 
 なイメージになります
+

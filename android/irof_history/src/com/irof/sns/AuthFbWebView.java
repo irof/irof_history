@@ -29,53 +29,54 @@ import facebook4j.Facebook;
  * @author Ryuji Yamashita - roundrop at gmail.com
  */
 public class AuthFbWebView extends WebView {
-    private Callback mCallback;
-    private Facebook mFacebook;
-    
-    public AuthFbWebView(Context context) {
-        super(context);
-        init();
-    }
+	private Callback	mCallback;
+	private Facebook	mFacebook;
 
-    public AuthFbWebView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
-    }
+	public AuthFbWebView(Context context) {
+		super(context);
+		init();
+	}
 
-    public AuthFbWebView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init();
-    }
+	public AuthFbWebView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init();
+	}
 
-    private void init()
-    {
-        WebSettings settings = getSettings();
-        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        setScrollBarStyle(WebView.SCROLLBARS_INSIDE_OVERLAY);
-    }
-    
-    public Facebook getFacebook() {
-        return mFacebook;
-    }
-    
-    public void setFacebook(Facebook facebook) {
-        mFacebook = facebook;
-    }
-    
-    public void start(Callback callback) {
-        mCallback = callback;
-        try {
-            //new OAuthTask().execute(this, new URL("http://facebook4j.org/"));
-            new AuthFbTask().execute(this, new URL(facebook_main.FB_LOGIN_URL));
-        } catch (MalformedURLException ignore) {}
-    }
+	public AuthFbWebView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
 
-    public void end() {
-        mCallback.onSuccess(mFacebook);
-    }
-    
-    interface Callback {
-        void onSuccess(Facebook facebook);
-    }
+	private void init() {
+		WebSettings settings = getSettings();
+		settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+		setScrollBarStyle(WebView.SCROLLBARS_INSIDE_OVERLAY);
+	}
+
+	public Facebook getFacebook() {
+		return mFacebook;
+	}
+
+	public void setFacebook(Facebook facebook) {
+		mFacebook = facebook;
+	}
+
+	public void start(Callback callback) {
+		mCallback = callback;
+		try {
+			// new OAuthTask().execute(this, new URL("http://facebook4j.org/"));
+			new AuthFbTask().execute(this, new URL(facebook_main.FB_LOGIN_URL));
+		}
+		catch (MalformedURLException ignore) {
+		}
+	}
+
+	public void end() {
+		mCallback.onSuccess(mFacebook);
+	}
+
+	interface Callback {
+		void onSuccess(Facebook facebook);
+	}
 
 }
