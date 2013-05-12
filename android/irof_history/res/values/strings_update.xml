@@ -19,9 +19,15 @@
     </string>
     <string name="update_title">Update</string>
     <string name="update_desc">
- 	     v1.3g/4)\n
+        v1.4g/5)\n
+        ・Improvement in situation Nakamap 2.30 ends up locking UI thread on startup\n
+        ・Fixed drawing are delayed Android4 system.\n
+        ・Optimization of screen lock\n
+        \n
+    	v1.3g/4)\n
         ・Line support.\n
         ・Fix Nakamap batch view can not push\n
+        ・update nakamap 2.30\n
         \n
          v1.2g/3)\n
         ・twitter API 1.1 support(using twitter4j).\n
@@ -31,6 +37,6 @@
         ・fix REGZA resource not found error\n
         \n
     	v1.0g/1)\n
-        ・First release
+        ・first release
     </string>
 </resources>

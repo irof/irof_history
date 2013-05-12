@@ -18,9 +18,15 @@
     </string>
     <string name="update_title">更新履歴</string>
     <string name="update_desc">
-        v1.3g/4)\n
-        ・Lineのサポート.\n
+        v1.4g/5)\n
+        ・起動時にNakamapがUIスレッドをロックしてしまう状況の改善\n
+        ・Android4系で描画が遅延する不具合の修正\n
+        ・画面ロックの適正化\n
+        \n
+    	v1.3g/4)\n
+        ・Lineのサポート\n
         ・Nakamapのバッチビューが押せない不具合を修正\n
+        ・Nakamap2.30にupdate\n
         \n
     	v1.2g/3)\n
         ・twitter API 1.1 サポート(using twitter4j).\n
