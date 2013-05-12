@@ -34,7 +34,7 @@ public class AuthTwWebView extends WebView {
 		WebSettings settings = getSettings();
 		settings.setJavaScriptEnabled(true);
 		settings.setBuiltInZoomControls(true);
-		addJavascriptInterface(context, "activity");
+		//addJavascriptInterface(context, "activity");
 	}
 
 	public Twitter getTwitter() {
