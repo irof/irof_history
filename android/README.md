@@ -20,7 +20,7 @@ irof_history for Android
 ------
 開発用の設定
 
-![develop.md](https://github.com/kimukou/irof_history/blob/master/android/develop.md)
+- [develop.md](https://github.com/kimukou/irof_history/blob/master/android/develop.md)
 
 
 ------
