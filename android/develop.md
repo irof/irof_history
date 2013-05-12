@@ -43,7 +43,14 @@ emuratorで動かす場合の設定
   - https://github.com/kimukou/facebook4j-android-example
   
 ------
-ライブラリプロジェクト追加後の build.xmlの生成
+build.xmlが作成済みの場合に、antを通すための修正
+
+- 各フォルダのlocal.properties
+ - sdk.dir=XXXXX
+ - を自分の環境にあった形に修正
+ 
+------
+ライブラリプロジェクト追加後の build.xmlの生成(同梱済ですので操作はいらないかも。参考情報)
 
 - ライブラリプロジェクト  
 ```
@@ -59,3 +66,4 @@ android update test-project -m ../irof_history -p ./
 ```
 
 なイメージになります
+

@@ -95,7 +95,7 @@ public class AuthTwTask extends AsyncTask<Object, Void, AuthTwWebView> {
         if(twitter_main.mOAuth !=null)return;
         //view.loadUrl("javascript:window.activity.viewSource(document.documentElement.outerHTML);");
         String script = "javascript:var elem = document.getElementsByTagName('code')[0]; if(elem) alert(elem.childNodes[0].nodeValue);";
-		view.loadUrl(script);
+	view.loadUrl(script);
     }
     
 	private class InternalWebChromeClient extends WebChromeClient{
