@@ -20,5 +20,24 @@
 -->   
     <string name="callback_scheme">irof_history</string>
 	<string name="callback_host">black_world</string>
-    
+
+<!-- //facebook4j -->	
+    <string name="fb_appId"></string>
+    <string name="fb_appSecret"></string>
+    <string name="fb_login_url"></string>
+     <string name="fb_permissions">
+     	offline_access,
+    	read_stream,
+    	publish_stream,
+    	manage_notifications,
+    	user_photos,
+    	friends_photos,
+    	read_requests,
+    	read_mailbox
+    </string>
+ <!-- 
+ 	read_frendlists,	
+ 	puplish_checkins
+  -->   
+	
 </resources>

@@ -18,6 +18,12 @@ irof_history for Android
 
 
 ------
+開発用の設定
+
+![develop.md](https://github.com/kimukou/irof_history/blob/master/android/develop.md)
+
+
+------
 更新履歴
 
 - 画面保存機能追加
@@ -35,12 +41,16 @@ irof_history for Android
 - irofさん広告設定(use AdMob)
 - マナーモード対応（マナーモード中でもイヤフォンを付ければTTS音声が聞こえます）
 
-------
+- twitter4jを使った機能
+ - twitter,twitpic投稿機能
+- facebook4jを使った機能
+ - facebook投稿
+ 
+ -----
 未作成項目
 
 - 設定画面
  - TTS音声設定
 - twitter4jを使った機能
- - twitter,twitpic投稿機能
+ - いろふさんはいま
  - ハッシュタグ検索
-- facebook4jを使った機能
