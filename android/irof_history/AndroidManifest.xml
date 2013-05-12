@@ -1,14 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.irof.irof_history"
 	android:installLocation="preferExternal"
-	android:versionCode="4"
-	android:versionName="1.3g" >
+	android:versionCode="5"
+	android:versionName="1.4g" >
+	
 	<uses-sdk android:minSdkVersion="4"/>
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	
-	<!-- //nakamap用 -->
+	<!-- //nakamap、Gallary保存用 -->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	
 	<application
@@ -47,7 +48,14 @@
 					android:scheme="irof_history" />
 			</intent-filter>
 		</activity>
-
+		<!-- //Android 2.2以降であれば
+				<data
+					android:host="@string/callback_host"
+					android:scheme="@string/callback_scheme" />
+			 でOK。
+			 Android 2.1 のREGZA等であればベタ書きしないとエラーになる
+		 -->
+		
 		<activity android:name="com.irof.sns.AuthFbActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         	android:screenOrientation="portrait"
@@ -221,5 +229,6 @@
 				<action android:name="com.android.vending.INSTALL_REFERRER" />
 			</intent-filter>
 		</receiver>
+		
 	</application>
 </manifest>

@@ -35,86 +35,87 @@ import facebook4j.auth.AccessToken;
 @TargetApi(3)
 public class AuthFbTask extends AsyncTask<Object, Void, AuthFbWebView> {
 
-    private AuthFbWebView mOAuthWebView;
-    private URL mCallbackURL;
-    private String mCode;
-    private CountDownLatch mLatch = new CountDownLatch(1);
+	private AuthFbWebView	mOAuthWebView;
+	private URL				mCallbackURL;
+	private String			mCode;
+	private CountDownLatch	mLatch	= new CountDownLatch(1);
 
-    @Override
-    protected AuthFbWebView doInBackground(Object... params) {
-        mOAuthWebView = (AuthFbWebView) params[0];
-        mCallbackURL = (URL) params[1];
+	@Override
+	protected AuthFbWebView doInBackground(Object... params) {
+		mOAuthWebView = (AuthFbWebView) params[0];
+		mCallbackURL = (URL) params[1];
 
-        mOAuthWebView.setWebViewClient(new InternalWebViewClient());
-        Facebook instance = new FacebookFactory().getInstance();
-        mOAuthWebView.setFacebook(instance);
-        publishProgress(); //onProgressUpdateを呼ぶ
-        waitForAuthorization();
-        if (mCode == null) {
-            System.out.println("oauth code is null!!!!!!!!");
-            return mOAuthWebView;
-        }
-        AccessToken accessToken = getAccessToken();
-        if (accessToken == null) {
-            System.out.println("Access Token is null!!!!!!!!");
-            return mOAuthWebView;
-        }
-        
-        //AccessTokenの保存
-        facebook_main.m_facebook = instance;
-        facebook_main.m_accessToken = accessToken;
-        facebook_main.storeAccessToken();
-        
-        return mOAuthWebView;
-    }
+		mOAuthWebView.setWebViewClient(new InternalWebViewClient());
+		Facebook instance = new FacebookFactory().getInstance();
+		mOAuthWebView.setFacebook(instance);
+		publishProgress(); // onProgressUpdateを呼ぶ
+		waitForAuthorization();
+		if (mCode == null) {
+			System.out.println("oauth code is null!!!!!!!!");
+			return mOAuthWebView;
+		}
+		AccessToken accessToken = getAccessToken();
+		if (accessToken == null) {
+			System.out.println("Access Token is null!!!!!!!!");
+			return mOAuthWebView;
+		}
 
-    @Override
-    protected void onProgressUpdate(Void... values) {
-        Facebook facebook = mOAuthWebView.getFacebook();
-        //patch merge https://github.com/ryosms/facebook4j-android-example/commit/4b1692eaa0a5b3276c3ccfc987e354661a37e13d
-        facebook.setOAuthAppId(facebook_main.FB_APPID, facebook_main.FB_APPSECRET);    // TODO: put your "App ID" and "App Secret"
-        facebook.setOAuthPermissions(facebook_main.FB_PERMISSIONS);//"read_stream");
-        String url = facebook.getOAuthAuthorizationURL(mCallbackURL.toString());
-        mOAuthWebView.loadUrl(url);
-    }
+		// AccessTokenの保存
+		facebook_main.m_facebook = instance;
+		facebook_main.m_accessToken = accessToken;
+		facebook_main.storeAccessToken();
 
+		return mOAuthWebView;
+	}
 
-    @Override
-    protected void onPostExecute(AuthFbWebView result) {
-        mOAuthWebView.end();
-    }
+	@Override
+	protected void onProgressUpdate(Void... values) {
+		Facebook facebook = mOAuthWebView.getFacebook();
+		// patch merge
+		// https://github.com/ryosms/facebook4j-android-example/commit/4b1692eaa0a5b3276c3ccfc987e354661a37e13d
+		facebook.setOAuthAppId(facebook_main.FB_APPID,
+				facebook_main.FB_APPSECRET); // TODO: put your "App ID" and
+												// "App Secret"
+		facebook.setOAuthPermissions(facebook_main.FB_PERMISSIONS);// "read_stream");
+		String url = facebook.getOAuthAuthorizationURL(mCallbackURL.toString());
+		mOAuthWebView.loadUrl(url);
+	}
 
-    private void waitForAuthorization() {
-        try {
-            mLatch.await();
-        } catch (InterruptedException e) {}
-    }
+	@Override
+	protected void onPostExecute(AuthFbWebView result) {
+		mOAuthWebView.end();
+	}
 
-    private AccessToken getAccessToken() {
-        try {
-            Facebook facebook = mOAuthWebView.getFacebook();
-            return facebook.getOAuthAccessToken(mCode);
-        } catch (FacebookException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+	private void waitForAuthorization() {
+		try {
+			mLatch.await();
+		}
+		catch (InterruptedException e) {
+		}
+	}
 
+	private AccessToken getAccessToken() {
+		try {
+			Facebook facebook = mOAuthWebView.getFacebook();
+			return facebook.getOAuthAccessToken(mCode);
+		}
+		catch (FacebookException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
+	private class InternalWebViewClient extends WebViewClient {
 
-    private class InternalWebViewClient extends WebViewClient {
+		@Override
+		public boolean shouldOverrideUrlLoading(WebView view, String url) {
+			if (!url.startsWith(mCallbackURL.toString())) { return false; }
+			Uri uri = Uri.parse(url);
+			mCode = uri.getQueryParameter("code");
+			mLatch.countDown();
+			return true;
+		}
 
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            if (!url.startsWith(mCallbackURL.toString())) {
-                return false;
-            }
-            Uri uri = Uri.parse(url);
-            mCode = uri.getQueryParameter("code");
-            mLatch.countDown();
-            return true;
-        }
-        
-    }
+	}
 
 }
