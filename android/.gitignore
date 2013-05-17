@@ -5,6 +5,9 @@
 # files for the dex VM
 *.dex
 
+# key
+*.keystore
+
 # Java class files
 *.class
 
