@@ -22,13 +22,13 @@ emuratorで動かす場合の設定
   - 対応端末にinstall後、adb pullで取得、adb pushでinstallしてください
 
 ------
-キーの取得
+SNSキーの取得
 
  - setting/ad_key_mst.xml => res/values/ad_key.xmlをコピー作成してください(.gitignoreには上がらない設定になっています)
 
 
 ------
-キーの取得
+nakamapキーの取得
  - nakamapのキーを取得してください
   - http://developer.nakamap.com/
   - nakamap自体のユーザ登録が必要です（別途公式アプリ等が必要かも）
@@ -67,3 +67,35 @@ android update test-project -m ../irof_history -p ./
 
 なイメージになります
 
+------
+署名キーの作成の仕方
+
+irof_history/createSignkey.sh を実行してください
+
+```
+keytool -genkey -v -keyalg RSA -keystore ./irof.keystore -alias irofworld -validity 10000
+
+姓名を入力してください。
+  [Unknown]:  irofworld
+組織単位名を入力してください。
+  [Unknown]:  irofworld
+組織名を入力してください。
+  [Unknown]:  irofworld
+都市名または地域名を入力してください。
+  [Unknown]:  irofworld
+州名または地方名を入力してください。
+  [Unknown]:  irofworld
+この単位に該当する 2 文字の国番号を入力してください。
+  [Unknown]:  JP
+CN=irofworld, OU=irofworld, O=irofworld, L=irofworld, ST=irofworld, C=JP でよろしいですか?
+  [いいえ]:  はい
+
+10,000 日間有効な 1,024 ビットの RSA の鍵ペアと自己署名型証明書 (SHA1withRSA) を生成しています
+    ディレクトリ名: CN=irofworld, OU=irofworld, O=irofworld, L=irofworld, ST=irofworld, C=JP
+<irofworld> の鍵パスワードを入力してください。
+    (キーストアのパスワードと同じ場合は RETURN を押してください):  
+新規パスワードを再入力してください: irofworld
+[./key を格納中]
+```
+
+のような形で作成します
