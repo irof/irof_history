@@ -28,7 +28,8 @@ SNSキーの取得
 
 
 ------
-nakamapキーの取得
+各種キーの取得
+
  - nakamapのキーを取得してください
   - http://developer.nakamap.com/
   - nakamap自体のユーザ登録が必要です（別途公式アプリ等が必要かも）
@@ -40,8 +41,11 @@ nakamapキーの取得
   - [自社広告の設定](http://support.google.com/admob/bin/answer.py?hl=ja&answer=1619751&topic=1619748&ctx=topic)
 
  - Facebookのキーを取得してください
-  - https://github.com/kimukou/facebook4j-android-example
+  - https://github.com/kimukou/facebook4j-android-example  
+![irof_fb01](screen_shot/irof_fb01.png)
+![irof_fb02](screen_shot/irof_fb02.png)
 
+なイメージで設定します
   
 ------
 build.xmlが作成済みの場合に、antを通すための修正
@@ -71,7 +75,7 @@ android update test-project -m ../irof_history -p ./
 ------
 署名キーの作成の仕方
 
-irof_history/createSignkey.sh を実行してください
+- irof_history/createSignkey.sh を実行してください
 
 ```
 keytool -genkey -v -keyalg RSA -keystore ./irof.keystore -alias irofworld -validity 10000
@@ -100,3 +104,13 @@ CN=irof_history, OU=irof, O=irof_world, L=irof_brack_world, ST=irof_cloud, C=JP 
 ```
 
 のような形で作成します
+
+- irof_history/local.properties を編集します。上記の場合は
+
+```
+key.alias=irofworld
+key.store.password=irof_friend
+key.alias.password=irof_friend
+```
+
+となります
