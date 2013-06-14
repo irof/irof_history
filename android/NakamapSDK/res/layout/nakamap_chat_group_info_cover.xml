@@ -73,7 +73,6 @@
         android:focusable="true"
         android:imeOptions="normal"
         android:inputType="textMultiLine"
-        android:maxLines="5"
         android:paddingBottom="@dimen/nakamap_padding_low"
         android:paddingLeft="@dimen/nakamap_padding_middle"
         android:paddingRight="@dimen/nakamap_padding_middle"

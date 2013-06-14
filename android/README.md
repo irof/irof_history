@@ -12,15 +12,15 @@ irof_history for Android
 
 - スクリーンショット
 
-![device-05](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-05.png)
-![device-11](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-11.png)
-![device-01](https://raw.github.com/kimukou/irof_history/master/android/screen_shot/device-01.png)
+![device-05](screen_shot/device-05.png)
+![device-11](screen_shot/device-11.png)
+![device-01](screen_shot/device-01.png)
 
 
 ------
 開発用の設定
 
-- [develop.md](https://github.com/kimukou/irof_history/blob/master/android/develop.md)
+- [develop.md](develop.md)
 
 
 ------

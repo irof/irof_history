@@ -2,6 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.kayac.nakamap.sdk"
       android:versionCode="1"
-      android:versionName="2.30">
+      android:versionName="2.40">
     <uses-sdk android:minSdkVersion="8"/>
 </manifest>

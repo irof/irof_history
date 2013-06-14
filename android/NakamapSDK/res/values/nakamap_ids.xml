@@ -15,4 +15,5 @@
     <item name="nakamap_popup_menu_stamp_store" type="id" />
     <item name="nakamap_popup_menu_setting" type="id"/>
     <item name="nakamap_popup_menu_community" type="id"/>
+    <item name="nakamap_popup_menu_help" type="id"/>
 </resources>

@@ -4,4 +4,5 @@
   <string name="nakamapsdk_error_already_sso_bound">This account has already authenticated.</string>
   <string name="nakamapsdk_error_group_with_specified_exid_does_not_exist">Group does not exist!</string>
   <string name="nakamapsdk_download_nakamap">App version of Nakamap\n\nEnjoy chat more conveniently!</string>
+  <string name="nakamapsdk_help">Help</string>
 </resources>

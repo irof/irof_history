@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="nakamap_this_is_a_closed">특정 맴버만 대화를 즐길 수 있는 전용 그룹입니다. 친한 친구나 팀 / 길드맴버와 채팅한다면 여기!</string>
+  <string name="nakamap_this_is_a_open">어플의 공식커뮤니티와 모든 사용자가 참여할 수 있는 공개그룹입니다. 모두와 같이 채팅한다면 여기!</string>
+  <string name="nakamap_do_you">모르는 것이 있다면? \"메뉴의\" 도움말에서 채팅 사용방법을 배울 수 있습니다.</string>
+  <string name="nakamap_tap">친구나 동료를 찾고 싶을 때는 여기를 탭!</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aa000000" >
+
+    <ListView
+        android:id="@+id/nakamap_tutorial_menu_list"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/nakamap_line_black_horizontal_repeat"
+        android:paddingTop="46dp"
+        android:paddingRight="@dimen/nakamap_padding_middle"
+        android:scrollbars="none" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/nakamapsdk_tutorial_line" />
+
+    <TextView
+        style="@style/nakamap_textview_white_large"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="300dp"
+        android:text="@string/nakamap_tap" />
+
+    <TextView
+        style="@style/nakamap_textview_white_large"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="380dp"
+        android:text="@string/nakamap_do_you" />
+
+</RelativeLayout>
