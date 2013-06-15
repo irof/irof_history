@@ -45,6 +45,7 @@
   <string name="nakamap_delete_group">Delete group</string>
   <string name="nakamap_delete_this_chat">Delete this chat?</string>
   <string name="nakamap_delete_this_group">Delete this group?</string>
+  <string name="nakamap_do_you">Do you have anything you don\'t understand? You can learn how to use chat by help in the \'menu\'.</string>
   <string name="nakamap_download">Download</string>
   <string name="nakamap_edit_recommendation">Edit recommendation</string>
   <string name="nakamap_enjoy">Enjoy chatting in open chat! Here is a new public group \'Nakamap beginner group\'. Why not join us and learn more from chat?</string>
@@ -75,7 +76,7 @@
   <string name="nakamap_make">Make this group public</string>
   <string name="nakamap_members">Members</string>
   <string name="nakamap_nakamap">Nakamap</string>
-  <string name="nakamap_nakamap_faq">http://nakamap.com/faq</string>
+  <string name="nakamap_nakamap_faq">http://lobi.co/faq</string>
   <string name="nakamap_nakamap_is_a_chat">&quot;Nakamap&quot; is a chat service brought to you by Kayac Inc. We support iPhone and Android version of Nakamap. If you want to chat more conveniently download app version of &quot;Nakamap&quot;</string>
   <string name="nakamap_name">Name</string>
   <string name="nakamap_none">None found</string>
@@ -123,6 +124,7 @@
   <string name="nakamap_sorry">Sorry, failed to attach the image file.</string>
   <string name="nakamap_sticker_store">Sticker Store</string>
   <string name="nakamap_take">Take a photo</string>
+  <string name="nakamap_tap">Tap here when you want to find friends!</string>
   <string name="nakamap_tell_your_friends">Tell your friends</string>
   <string name="nakamap_tell_your_friends__question">Tell your friend about this group?</string>
   <string name="nakamap_terms">Terms of Use</string>

@@ -4,4 +4,5 @@
   <string name="nakamapsdk_error_already_sso_bound">このアカウントは認証済みです</string>
   <string name="nakamapsdk_error_group_with_specified_exid_does_not_exist">グループが存在しません！</string>
   <string name="nakamapsdk_download_nakamap">アプリ版ナカマップ\n\nこのチャットをより快適にしませんか？</string>
+  <string name="nakamapsdk_help">ヘルプ</string>
 </resources>

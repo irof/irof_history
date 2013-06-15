@@ -23,7 +23,12 @@ irof先生は日本中を旅する勉強会旅職人です。
 
 --------
 一度Fork済みの場合は  
-git pull https://github.com/irof/irof_history.git
+
+git remote add irof git://github.com/irof/irof_history.git 
+git fetch irof 
+git rebase irof/master
+
+でFork済みのレポジトリにマージできます (@sinsoku_listy さん御教授感謝！
 
 see https://twitter.com/yusuke/status/245326267455512576
 

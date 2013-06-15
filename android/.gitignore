@@ -16,7 +16,7 @@ bin/
 gen/
 
 # Local configuration file (sdk path, etc)
-#local.properties
+local.properties
 
 # Eclipse project files
 #.classpath
@@ -28,11 +28,8 @@ gen/
 libs_back
 
 # sample App
-Nakamap-Android-SDK-1.70
-Nakamap-Android-SDK-2.30
-NakamapSDK_
+Nakamap-Android-SDK-*
 NakamapSDKSample
-NakamapSDKSample_
 NineOldAndroids-sample
 ImageLoadLib
 facebook4j-android-example

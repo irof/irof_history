@@ -10,7 +10,7 @@
     		android:id="@+id/menu_carry"
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:src="@drawable/duke_carry_god"
+			android:src="@drawable/duke_carry_btn"
             android:layout_gravity="center_horizontal"
 			android:clickable="true"
 		/>

@@ -45,6 +45,7 @@
   <string name="nakamap_delete_group">グループを削除</string>
   <string name="nakamap_delete_this_chat">このチャットを削除しますか？</string>
   <string name="nakamap_delete_this_group">このグループを削除しますか？</string>
+  <string name="nakamap_do_you">分からないことがあったら? \'menu\'のヘルプでチャットの使い方を学べます。</string>
   <string name="nakamap_download">ダウンロード</string>
   <string name="nakamap_edit_recommendation">設定する</string>
   <string name="nakamap_enjoy">公開グループに参加することで、ナカマップにいる他の人たちとチャットを楽しむことができます。試しに「ナカマップ初心者のグループ」に参加して見ませんか？</string>
@@ -76,7 +77,7 @@
   <string name="nakamap_make">公開グループにする</string>
   <string name="nakamap_members">メンバー</string>
   <string name="nakamap_nakamap">ナカマップ</string>
-  <string name="nakamap_nakamap_faq">http://nakamap.com/faq/ja</string>
+  <string name="nakamap_nakamap_faq">http://lobi.co/faq/ja</string>
   <string name="nakamap_nakamap_is_a_chat">株式会社カヤックが運営する、チャットサービスです。アプリの中で動くプラットフォームサービス以外に、iPhone／Android／フィーチャーフォン向けにもサービスを展開しております。ナカマップのアプリをダウンロードして、友達とのコミュニケーションをもっと楽しもう！</string>
   <string name="nakamap_name">名前</string>
   <string name="nakamap_none">結果なし</string>
@@ -124,6 +125,7 @@
   <string name="nakamap_sorry">画像の添付に失敗しました</string>
   <string name="nakamap_sticker_store">スタンプストア</string>
   <string name="nakamap_take">写真を撮る</string>
+  <string name="nakamap_tap">お友達や仲間を探したいときはココをタップ！</string>
   <string name="nakamap_tell_your_friends">友だちにお知らせする</string>
   <string name="nakamap_tell_your_friends__question">友だちにも教えますか？</string>
   <string name="nakamap_terms">ご利用規約</string>
